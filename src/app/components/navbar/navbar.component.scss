@@ -1,0 +1,104 @@
+.container {
+    position: absolute;
+    right: 0;
+    width: 85vw;
+    height: 100vh;
+    background: #f1f1f1;
+}
+.container .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85vw;
+    height: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.container .header .nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container .header .nav .menu-right {
+    flex: 4;
+    justify-content: center;
+}
+.container .header .nav .menu-right ul{
+    display: flex;
+}
+
+.container .header .nav .menu-right ul li{
+    padding: 5px 20px;
+    border-right: 3px solid #C4C4C4;
+}
+
+.container .header .nav .menu-right ul li a{
+    font-size: 13px;
+    font-weight: 700;
+    color: #BBBBBB;
+    line-height: 16px;
+    
+}
+.container .header .nav .menu-right ul li.active{
+    color: #008000;
+    border-bottom: 3px solid #008000; 
+}
+
+.container .header .nav .user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    flex: 0.5;
+
+}
+.container .header .nav .user .nav-link a{
+    position: relative;
+    padding-left: 50px;
+}
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.container .header .nav .user .img-case img {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 80%;
+    height: 80%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.container .header .nav .user .nav-link .badge{
+    position: absolute;
+    top: 5px;
+    right: 100px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+}
+.container .header .nav .user .img-case .circle{
+    position: fixed;
+    top: 34px;
+    right: 33px;
+    background: #05D103;
+    clip-path: circle(50%);
+    height: 10px;
+    width: 10px;
+}

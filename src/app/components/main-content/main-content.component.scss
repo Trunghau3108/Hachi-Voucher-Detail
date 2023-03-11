@@ -1,0 +1,166 @@
+.container{
+  margin-top: 120px;
+  position: absolute;
+  right: 0;
+  width: 85vw;
+  height: 110vh;
+  background: #f1f1f1;
+}
+.container .content{
+    margin: 3vh;
+    min-height: 45vh;
+}
+.container .content .title{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+.container .content .info{
+    width: 1270px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    height: 44vh;
+    border-radius: 2px;
+    justify-content: space-between;
+    
+}
+
+
+.container .content .info .design{
+    width: 151px;
+    color: #000;
+}
+.container .content .info .design2{
+    width: 196px;
+    color: #000;
+}
+
+.container .content .info  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    color: #959DB3;
+  }
+  .container .content .info input,textarea,select:focus {
+    outline: 1px solid #DBDEE7;
+  }
+  .container .content .info input,
+   textarea,select{
+    display: block;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+select{
+  
+  color: #959DB3;
+}
+  .my-form #name{
+    width: 847px;
+  }
+  .my-form #type{
+    width: 151px;
+  }
+  .my-form #type2{
+    width: 196px;
+  }
+
+  .my-form #texta{
+    width: 100%;
+    text-align: left;
+    resize: none;
+   
+  }
+  .my-form .textx{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16.32px;
+    float: right;
+    padding: 0 230px;
+    margin-top: -70px;
+    color: #959DB3;
+  }
+  .my-form .textx .appr{
+    
+    color: #1A6634;
+  }
+
+
+
+
+
+
+
+.container .content-2{
+    margin: 3vh;
+    min-height: 50vh;
+    width: 1270px;
+}
+.container .content-2 .title{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+.container .content-2 .info{
+    background-color: #FFFFFF;
+    height: 240px;
+    border-radius: 2px;
+    display: flex;
+}
+
+.container .content-2 .info  label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: #959DB3;
+}
+
+.container .content-2 .info input,textarea:focus {
+  outline: 1px solid #DBDEE7;
+}
+.container .content-2 .info input,
+ textarea{
+  display: block;
+  padding: 7px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container .content-2 .info form{
+  display: flex;
+}
+.container .content-2 .info form .row{
+  padding: 25px 15px;
+}
+.container .content-2 .info form .row .col-full input{
+  width: 100%;
+}
+.container .content-2 .info form .row .col-half{
+  float: left;
+}
+.container .content-2 .info form .row .col-half .group{
+  display: inline-flex;
+  padding-left: 55px;
+}
+
+.container .content-2 .info form .row .col-half .group .custom-checkbox{
+  border: 1px solid #959DB3;
+}
+
+
+
+
+
+
+
+
+
+
