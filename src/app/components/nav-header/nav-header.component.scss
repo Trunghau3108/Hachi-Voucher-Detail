@@ -68,8 +68,11 @@
 .container .tool .cards .button-gr1 .btn5{
     background: #1A6634;
     color: #FFFFFF;
+   
 }
-
+.container .tool .cards .button-gr1 .btn5 i{
+    padding: 0 5px;
+}
 
 
 .container .tool .cards .button-gr2{
@@ -79,6 +82,9 @@
     text-align: center;
     display: flex;
     padding: 7px;
+}
+.container .tool .cards .button-gr2 i {
+    color: #959DB3;
 }
 .container .tool .cards .button-gr2 .btn-left{
     border-right: 1px solid #DBDEE7;

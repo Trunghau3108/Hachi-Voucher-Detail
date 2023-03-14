@@ -1,3 +1,5 @@
+
+
 .container{
   margin-top: 120px;
   position: absolute;
@@ -127,6 +129,7 @@ select{
 }
 .container .content-2 .info input,
  textarea{
+  
   display: block;
   padding: 7px;
   margin-bottom: 10px;
@@ -148,12 +151,27 @@ select{
 }
 .container .content-2 .info form .row .col-half .group{
   display: inline-flex;
-  padding-left: 55px;
+  padding-left: 90px;
 }
 
 .container .content-2 .info form .row .col-half .group .custom-checkbox{
   border: 1px solid #959DB3;
 }
+
+.container .content-2 .info form .row .col-half .date-picker {
+  position: relative;
+}
+
+.container .content-2 .info form .row .col-half .date-picker i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+
+
+
 
 
 

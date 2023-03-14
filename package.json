@@ -10,6 +10,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/datetime-picker": "^9.0.0",
+    "@angular-material-components/moment-adapter": "^9.0.0",
     "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",
@@ -19,6 +21,10 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@progress/kendo-ui": "^2023.1.117",
+    "date-fns": "^2.29.3",
+    "flatpickr": "^4.6.13",
+    "kendo-ui-core": "^2023.1.117",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
