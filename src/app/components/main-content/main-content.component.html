@@ -47,13 +47,13 @@
         THÔNG TIN PHIẾU MUA HÀNG
     </div>
     <div class="info">
-      <form action="">
+      <form action=""  ngModelOptions="{standalone: true}">
         <div class="row">
           <div class="col-full">
               <label for="">Số seri</label>
-              <input type="text" value="{{400 | number: '1.0-2'}}"  [(ngModel)]="inputValue" name="myNumberInput" (input)="onInputChange($event)">
+              <input type="text" value="400" [(ngModel)]="inputValue"   (input)="onInputChange($event)">
               <label for="">Mệnh giá</label>
-              <input type="text" value= "{{inputValue| number: '1.0-2'}}"[(ngModel)]="inputValue" (input)="onInputChanges($event)">
+              <input type="text" value="100,000" [(ngModel)]="inputValue" appMoneyFormat>
               
           </div>
           <div class="col-half">
@@ -67,7 +67,7 @@
             <label for="" style="margin-left: 10px;">theo ngày</label>
             </div>
             <div class="date-picker">
-              <input id="calendar" type="text" placeholder="dd/MM/yyyy" [(ngModel)]="selectedDate" [readonly]="isDisabled" style="text-align: right;">
+              <input id="calendar" type="text" placeholder="dd-MM-yyyy" [(ngModel)]="selectedDate" (input)="updateDateValue($event)" [readonly]="isDisabled"  style="text-align: right;">
               <i class="fa fa-calendar"></i>
             </div>
           </div>
@@ -80,13 +80,13 @@
           </div>
           <div class="col-half" style="padding-left: 12px;">
             <label for="">SL phát hành</label>
-            <input type="text" value="1"  style="width: 85px; text-align: right;">
+            <input type="text" value="1"  style="width: 85px; text-align: right;"  [(ngModel)]="inputValue"  (input)="onInputChange($event)">
           </div>
           <div class="col-full">
             <label for="">Giá bán</label>
-            <input type="text" value="{{85400 | number: '1.0-2'}}" >
+            <input type="text" value="85,000" [(ngModel)]="inputValue" appMoneyFormat>
             <label for="">Số lượt dùng tối đa/ 1 giao dịch</label>
-            <input type="text" value="1" >
+            <input type="text" value="1"  [(ngModel)]="inputValue"  (input)="onInputChange($event)" >
           </div>
         </div>
             <div class="row" style="font-weight: 400; width: 300px;">

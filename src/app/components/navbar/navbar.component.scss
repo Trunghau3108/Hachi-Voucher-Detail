@@ -9,6 +9,9 @@
 
 
 
+
+
+
 .container .header {
     position: fixed;
     top: 0;
@@ -31,19 +34,16 @@
 .container .header .nav .menu-right {
     flex: 4;
     justify-content: center;
-    
 }
 .container .header .nav .menu-right ul{
     display: flex;
     
 }
 
-
 .container .header .nav .menu-right ul li{
+    position: relative;
     padding: 5px 20px;
     border-right: 3px solid #C4C4C4;
-    
-    
 }
 
 .container .header .nav .menu-right ul li a{

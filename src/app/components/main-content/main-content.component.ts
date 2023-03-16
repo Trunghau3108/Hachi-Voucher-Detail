@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import flatpickr from "flatpickr";
-import { format } from 'date-fns';
+import { format,isValid,parse,setYear } from 'date-fns';
+import { yearsPerPage } from '@angular-material-components/datetime-picker';
 
 
 
@@ -16,13 +17,12 @@ export class MainContentComponent implements OnInit{
    selectedDate!:string;
    isDisabled: boolean = true;
    inputValue!: string 
+   moneyValue = '';
   
- 
-  onInputChanges(event: any){
-    const input = event.target as HTMLInputElement;
-    const value = input.value;
-  }
    constructor(){}
+
+  
+
    onInputChange(event: any) {
     const input = event.target as HTMLInputElement;
     const value = input.value;
@@ -33,14 +33,25 @@ export class MainContentComponent implements OnInit{
     }
   }
 
-
-
+  updateDateValue(event: any) {
+    const input = event.target as HTMLInputElement;
+    const value = input.value;
+    const date = parse(value, 'ddMMyyyy', new Date());
    
+    if (isValid(date)) {
+      const formattedDate = format(date, 'dd-MM-y');
+      input.value = formattedDate;
+      this.selectedDate = formattedDate;
+    }
+    // console.log(this.selectedDate);
+  }
+
+  
      ngOnInit(): void {
       flatpickr("#calendar", {
         dateFormat: "d-m-Y",
         closeOnSelect: true,
-        onChange: (selectedDates, dateStr) => {
+        onChange: (selectedDate, dateStr) => {
           this.selectedDate = dateStr;
         }
      });
@@ -53,13 +64,11 @@ export class MainContentComponent implements OnInit{
           dateFormat: "d-m-Y",
           disable: [
             function(date) {
-              // disable dates before today
               return date < new Date();
             }
           ],
           onChange: (selectedDates, dateStr) => {
             this.selectedDate = dateStr;
-            this.selectedDate = format(new Date(this.selectedDate), 'dd/MM/yyyy');
           }
         });
       } else {
@@ -68,7 +77,6 @@ export class MainContentComponent implements OnInit{
           closeOnSelect: true,
           onChange: (selectedDates, dateStr) => {
             this.selectedDate = dateStr;
-            this.selectedDate = format(new Date(this.selectedDate), 'dd/MM/yyyy');
           }
         });
       }
