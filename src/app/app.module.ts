@@ -14,7 +14,6 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { CurrencyFormatPipe } from './currency-format.pipe';
 import { LogInputDirective } from './LogInputDirective';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +22,8 @@ import { LogInputDirective } from './LogInputDirective';
     NavHeaderComponent,
     MainContentComponent,
     CurrencyFormatPipe,
-    LogInputDirective
+    LogInputDirective,
+    
     
   ],
   imports: [

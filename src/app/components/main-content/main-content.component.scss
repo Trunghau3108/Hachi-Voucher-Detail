@@ -1,45 +1,36 @@
 
 
-.container{
-  margin-top: 120px;
-  position: absolute;
-  right: 0;
-  width: 85vw;
-  height: 110vh;
-  background: #f1f1f1;
-}
-.container .content{
-    margin: 3vh;
+
+ .content{
+    margin-left: 230px;
     min-height: 45vh;
-    
+   
 }
-.container .content .title{
+ .content .title{
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
-.container .content .info{
-    width: 1270px;
+ .content .info{
     padding: 15px;
     background-color: #FFFFFF;
-    height: 44vh;
     border-radius: 2px;
     justify-content: space-between;
-    
+    width: 1280px;
 }
 
 
-.container .content .info .design{
+ .content .info .design{
     width: 151px;
     color: #000;
 }
-.container .content .info .design2{
+ .content .info .design2{
     width: 196px;
     color: #000;
 }
 
-.container .content .info  label {
+ .content .info  label {
     display: block;
     margin-bottom: 10px;
     font-weight: 700;
@@ -47,10 +38,10 @@
     line-height: 16px;
     color: #959DB3;
   }
-  .container .content .info input,textarea,select:focus {
+   .content .info input,textarea,select:focus {
     outline: 1px solid #DBDEE7;
   }
-  .container .content .info input,
+   .content .info input,
    textarea,select{
     display: block;
     padding: 7px;
@@ -59,11 +50,10 @@
     border-radius: 5px;
   }
 select{
-  
   color: #959DB3;
 }
   .my-form #name{
-    width: 847px;
+    width: 860px;
   }
   .my-form #type{
     width: 151px;
@@ -71,9 +61,8 @@ select{
   .my-form #type2{
     width: 196px;
   }
-
   .my-form #texta{
-    width: 100%;
+    width: 1250px;
     text-align: left;
     resize: none;
    
@@ -98,25 +87,27 @@ select{
 
 
 
-.container .content-2{
-    margin: 3vh;
+ .content-2{
+   
+    margin-left: 230px;
     min-height: 50vh;
-    width: 1270px;
 }
-.container .content-2 .title{
+ .content-2 .title{
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
-    margin: 10px 0;
+    margin-top: 20px;
 }
-.container .content-2 .info{
+ .content-2 .info{
+    margin-top: 10px;
     background-color: #FFFFFF;
     height: 240px;
     border-radius: 2px;
     display: flex;
+    width: 1280px;
 }
 
-.container .content-2 .info  label {
+ .content-2 .info  label {
   display: block;
   margin-bottom: 10px;
   font-weight: 700;
@@ -125,10 +116,10 @@ select{
   color: #959DB3;
 }
 
-.container .content-2 .info input,textarea:focus {
+ .content-2 .info input,textarea:focus {
   outline: 1px solid #DBDEE7;
 }
-.container .content-2 .info input,
+ .content-2 .info input,
  textarea{
   
   display: block;
@@ -138,37 +129,39 @@ select{
   border-radius: 5px;
 }
 
-.container .content-2 .info form{
+ .content-2 .info form{
   display: flex;
 }
-.container .content-2 .info form .row{
+ .content-2 .info form .row{
   padding: 25px 15px;
 }
-.container .content-2 .info form .row .col-full input{
+ .content-2 .info form .row .col-full input{
   width: 100%;
 }
-.container .content-2 .info form .row .col-half{
+ .content-2 .info form .row .col-half{
   float: left;
 }
-.container .content-2 .info form .row .col-half .group{
+ .content-2 .info form .row .col-half .group{
   display: inline-flex;
   padding-left: 90px;
 }
 
-.container .content-2 .info form .row .col-half .group .custom-checkbox{
+ .content-2 .info form .row .col-half .group .custom-checkbox{
   border: 1px solid #959DB3;
 }
 
-.container .content-2 .info form .row .col-half .date-picker {
+ .content-2 .info form .row .col-half .date-picker {
   position: relative;
 }
 
-.container .content-2 .info form .row .col-half .date-picker i {
+ .content-2 .info form .row .col-half .date-picker i {
   position: absolute;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
 }
+
+
 
 
 

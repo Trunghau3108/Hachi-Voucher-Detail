@@ -1,18 +1,9 @@
-.container {
-    position: absolute;
-    right: 0;
-    width: 85vw;
-    height: 100vh;
-    background: #f1f1f1;
-}
 
-.container .tool {
-    position: relative;
-    margin-top: 7vh;
-    min-height: 90vh;
-    background: #f1f1f1;
+.tool {
+    padding-top: 50px;
+    margin-left: 220px;
 }
-.container .tool .cards {
+.tool .cards {
     padding: 15px 10px;
     display: flex;
     align-items: center;
@@ -20,21 +11,21 @@
     flex-wrap: wrap;
     border-bottom: 1px solid #BDC2D2;
 }
-.container .tool .cards .text {
+.tool .cards .text {
     font-size: 13px;
     line-height: 16px;
     font-weight: 700;
     color: #959DB3;
 }
-.container .tool .cards .text span.active{
+.tool .cards .text span.active{
     color: #1A6634;
 }
-.container .tool .cards .text span .ngoac{
+.tool .cards .text span .ngoac{
     font-size: 19px;
     padding: 0 5px;
 }
 
-.container .tool .cards .button-gr1 button{
+.tool .cards .button-gr1 button{
     background: #FFFFFF;
     padding: 7px;
     border-radius: 3px;
@@ -45,37 +36,37 @@
     font-weight: 700;
     margin: 0 5px;
 }
-.container .tool .cards .button-gr1 .btn1{
+.tool .cards .button-gr1 .btn1{
     padding: 7px 15px;
     color: #008000;
 }
-.container .tool .cards .button-gr1 .btn1 i{
+.tool .cards .button-gr1 .btn1 i{
     padding-right: 10px;
 }
-.container .tool .cards .button-gr1 .btn2{
+.tool .cards .button-gr1 .btn2{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
-.container .tool .cards .button-gr1 .btn3{
+.tool .cards .button-gr1 .btn3{
     color: #008000;
 }
-.container .tool .cards .button-gr1 .btn3 i{
+.tool .cards .button-gr1 .btn3 i{
     padding-right: 10px;
 }
-.container .tool .cards .button-gr1 .btn4{
+.tool .cards .button-gr1 .btn4{
     background: #BDC2D2;
     color: #FFFFFF;
 }
-.container .tool .cards .button-gr1 .btn5{
+.tool .cards .button-gr1 .btn5{
     background: #1A6634;
     color: #FFFFFF;
    
 }
-.container .tool .cards .button-gr1 .btn5 i{
+.tool .cards .button-gr1 .btn5 i{
     padding: 0 5px;
 }
 
 
-.container .tool .cards .button-gr2{
+.tool .cards .button-gr2{
     background-color: #FFFFFF;
     border-radius: 3px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
@@ -83,19 +74,19 @@
     display: flex;
     padding: 7px;
 }
-.container .tool .cards .button-gr2 i {
+.tool .cards .button-gr2 i {
     color: #959DB3;
 }
-.container .tool .cards .button-gr2 .btn-left{
+.tool .cards .button-gr2 .btn-left{
     border-right: 1px solid #DBDEE7;
 }
-.container .tool .cards .button-gr2 .btn-left button{
+.tool .cards .button-gr2 .btn-left button{
     border: none;
     background-color: #FFFFFF;
     padding: 0px 3px;
     margin: 0 3px;
 }
-.container .tool .cards .button-gr2 .btn-right button{
+.tool .cards .button-gr2 .btn-right button{
     border: none;
     background-color: #FFFFFF;
     padding: 0px 5px;
