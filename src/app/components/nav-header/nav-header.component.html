@@ -1,27 +1,20 @@
 
-
-
     <div class="tool">
         <div class="cards">
             <div class="text">
                 <span><span class="active">CHÍNH SÁCH</span> <span class="ngoac"> >  </span> PHIẾU MUA HÀNG <span class="ngoac"> > </span>   CHI TIẾT ĐỢT PHÁT HÀNH </span>
             </div>
-            <div class="button-gr1">
-                <button  (click)="handleButtonClick($event)" value="DANH SÁCH P MH" class="btn1"><i class="fa fa-tv"></i>DANH SÁCH P MH</button>
-                <button  (click)="handleButtonClick($event)" value="Print" class="btn2"><i class="fa fa-print"></i></button>
-                <button (click)="handleButtonClick($event)" value="ÁP DỤNG" class="btn3"><i class="fa fa-check"></i>ÁP DỤNG</button>
-                <button (click)="handleButtonClick($event)" value="XÓA ĐỢT PHÁT HÀNH" class="btn4">XÓA ĐỢT PHÁT HÀNH</button>
-                <button  (click)="handleButtonClick($event)" value="TẠO MỚI" class="btn5"> <i class="fa fa-plus"></i> TẠO MỚI <i class="fa fa-chevron-down"></i></button>
+            <div class="group-btn">
+                <button kendoButton imageUrl="./assets/images/Chart-12.svg" (click)="handleButtonClick($event)" value="DANH SÁCH P MH"><span class="sp1">DANH SÁCH P MH</span></button>
+                <button kendoButton  class="btn2" imageUrl="./assets/images/print.svg" (click)="handleButtonClick($event)" value="Print"></button>
+                <button kendoButton imageUrl="./assets/images/n-check.svg" (click)="handleButtonClick($event)" value="ÁP DỤNG"><span class="sp3">ÁP DỤNG</span></button>
+                <button kendoButton class="btn4" (click)="handleButtonClick($event)" value="XÓA ĐỢT PHÁT HÀNH"><span class="sp4">XÓA ĐỢT PHÁT HÀNH</span></button>
+                <button kendoButton class="btn5" imageUrl="./assets/images/Group 778.svg" (click)="handleButtonClick($event)" value="TẠO MỚI"><span class="sp5">TẠO MỚI</span><img src="./assets/images/Shape.svg"></button>
             </div>
-            <div class="button-gr2">   
-                    <div class="btn-left">
-                        <button  (click)="handleButtonClick($event)"  class="btn6" value="download"><i class="fa fa-download"></i></button>
-                        <button  (click)="handleButtonClick($event)"  class="btn7" value="file"><i class="fa fa-file"></i></button> 
-                    </div> 
-                    <div class="btn-right">
-                    <button  (click)="handleButtonClick($event)"   value="download-2"><i class="fa fa-chevron-down"></i></button>
-                    
-                    </div>
-            </div>
+            <kendo-buttongroup>   
+                        <button kendoButton imageUrl="./assets/images/Group 616.svg" value="download"></button>
+                        <button kendoButton class="gr-btn2" imageUrl="./assets/images/xlsx.svg" (click)="handleButtonClick($event)" value="file" ></button> 
+                        <button kendoButton class="gr-btn3" imageUrl="./assets/images/xosuong.svg" (click)="handleButtonClick($event)" value="download-2"></button>
+            </kendo-buttongroup>
         </div>
     </div>

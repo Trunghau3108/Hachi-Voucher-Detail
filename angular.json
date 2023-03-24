@@ -30,6 +30,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.scss"
+              },
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,9 +96,12 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.scss"
+              },
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           }
         }
       }

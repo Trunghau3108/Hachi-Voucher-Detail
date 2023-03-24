@@ -1,4 +1,4 @@
-import { formatNumber } from '@angular/common';
+
 import { Directive, ElementRef,HostListener } from '@angular/core';
 
 
@@ -16,9 +16,7 @@ export class CurrencyFormatPipe{
     if (!isNaN(parseFloat(newValue))) {
       input.value = newValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       input.value = input.value.replace(/\.00$/, '');
-    } else {
-      input.value = '';
-    }
+    } 
+    else{}
   }
-
 }

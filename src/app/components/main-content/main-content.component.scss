@@ -1,178 +1,170 @@
 
 
-
- .content{
-    margin-left: 230px;
-    min-height: 45vh;
-   
-}
- .content .title{
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    margin: 15px 0;
-}
- .content .info{
-    padding: 15px;
-    background-color: #FFFFFF;
-    border-radius: 2px;
-    justify-content: space-between;
-    width: 1280px;
-}
-
-
- .content .info .design{
-    width: 151px;
-    color: #000;
-}
- .content .info .design2{
-    width: 196px;
-    color: #000;
-}
-
- .content .info  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 16px;
-    color: #959DB3;
-  }
-   .content .info input,textarea,select:focus {
-    outline: 1px solid #DBDEE7;
-  }
-   .content .info input,
-   textarea,select{
-    display: block;
-    padding: 7px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-select{
-  color: #959DB3;
-}
-  .my-form #name{
-    width: 860px;
-  }
-  .my-form #type{
-    width: 151px;
-  }
-  .my-form #type2{
-    width: 196px;
-  }
-  .my-form #texta{
-    width: 1250px;
-    text-align: left;
-    resize: none;
-   
-  }
-  .my-form .textx{
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 16.32px;
-    float: right;
-    padding: 0 230px;
-    margin-top: -70px;
-    color: #959DB3;
-  }
-  .my-form .textx .appr{
-    
-    color: #1A6634;
-  }
-
-
-
-
-
-
-
- .content-2{
-   
-    margin-left: 230px;
-    min-height: 50vh;
-}
- .content-2 .title{
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    margin-top: 20px;
-}
- .content-2 .info{
-    margin-top: 10px;
-    background-color: #FFFFFF;
-    height: 240px;
-    border-radius: 2px;
-    display: flex;
-    width: 1280px;
+.content {
+	margin-left: 230px;
+	min-height: 45vh;
+	.title {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		margin: 15px 0;
+	}
+	.info {
+		padding: 15px;
+		background-color: #FFFFFF;
+		border-radius: 2px;
+		justify-content: space-between;
+		width: 1280px;
+		.my-form {
+			#name {
+				width: 860px;
+			}
+			#type {
+				width: 151px;
+			}
+			#type2 {
+				width: 196px;
+			}
+			#texta {
+				width: 1250px;
+				text-align: left;
+				resize: none;
+			}
+			.type2{
+				margin-top: 10px;
+			}
+			kendo-dropdownlist{
+				background: #FFFFFF;
+				font-size: 
+				13px;
+				font-weight: 400;
+			}
+			.k-release{
+				height: 33px;
+				width: 151px;
+			}
+			.k-recei{
+				height: 33px;
+				width: 196px;
+			}
+			
+			.texta{
+				margin-top: 10px;
+			}
+			.textx {
+				font-size: 13px;
+				font-weight: 700;
+				line-height: 16.32px;
+				float: right;
+				padding: 0 230px;
+				margin-top: -70px;
+				color: #959DB3;
+				.appr {
+					color: #1A6634;
+				}
+			}
+			input,textarea,select {
+				display: block;
+				padding: 7px;
+				margin-bottom: 10px;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+			}
+			:focus{
+					outline: 1px solid #DBDEE7;
+			}
+			.design {
+				width: 151px;
+				color: #000;
+			}
+			.design2 {
+				width: 196px;
+				color: #000;
+			}
+			label {
+				display: block;
+				margin-bottom: 10px;
+				font-weight: 700;
+				font-size: 13px;
+				line-height: 16px;
+				color: #959DB3;
+			}
+		}
+		
+	}
 }
 
- .content-2 .info  label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 16px;
-  color: #959DB3;
+.content-2 {
+	margin-left: 230px;
+	min-height: 50vh;
+	.title {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		margin-top: 20px;
+	}
+	.info {
+		margin-top: 10px;
+		background-color: #FFFFFF;
+		height: 240px;
+		border-radius: 2px;
+		display: flex;
+		width: 1280px;
+		input,textarea {
+		display: block;
+		padding: 7px;
+		margin-bottom: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		}
+		:focus{
+			outline: 1px solid #DBDEE7;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: 700;
+			font-size: 13px;
+			line-height: 16px;
+			color: #959DB3;
+		}
+		form {
+			display: flex;
+			.row {
+				padding: 25px 15px;
+				.col-full {
+					input {
+						width: 100%;
+					}
+				}
+				.col-half {
+					float: left;
+					.group {
+						display: inline-flex;
+						padding-left: 60px;
+						.custom-checkbox {
+							border: 1px solid #959DB3;
+						}
+					}
+					.date-picker {
+						position: relative;
+						left: 10px;
+						.k-datepicker{
+							display: flex;
+  							flex-direction: row-reverse;
+							border: none;
+							background-color: #F5F6F8;
+							width: 140px;
+							height: 32px;
+							font-size: 13px;
+							font-weight: 400;
+							line-height: 16.32px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
-
- .content-2 .info input,textarea:focus {
-  outline: 1px solid #DBDEE7;
-}
- .content-2 .info input,
- textarea{
-  
-  display: block;
-  padding: 7px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
- .content-2 .info form{
-  display: flex;
-}
- .content-2 .info form .row{
-  padding: 25px 15px;
-}
- .content-2 .info form .row .col-full input{
-  width: 100%;
-}
- .content-2 .info form .row .col-half{
-  float: left;
-}
- .content-2 .info form .row .col-half .group{
-  display: inline-flex;
-  padding-left: 90px;
-}
-
- .content-2 .info form .row .col-half .group .custom-checkbox{
-  border: 1px solid #959DB3;
-}
-
- .content-2 .info form .row .col-half .date-picker {
-  position: relative;
-}
-
- .content-2 .info form .row .col-half .date-picker i {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

@@ -9,35 +9,21 @@
             THÔNG TIN ĐỢT PHÁT HÀNH
     </div>
         <div class="info">
-            <form class="my-form">
-               
+            <div class="my-form">
                 <label for="name">Tên đợt phát hành phiếu mua hàng</label>
                 <input type="text" id="name" name="name" value="Phát hành phiếu quà tặng tháng 11/2021" >
                 <div class="textx"> 
                   <span class="act">Tình Trạng</span>
                   <br><br>
                   <span class="appr">Đã phê duyệt áp dụng</span>
-              </div>
-                <label for="type1">Phân loại đợt phát hành</label>
-                
-                <select  id="classify-select" class="design" >
-                  <option value="Phiếu bán">Phiếu bán</option>
-                  <option value="">Phiếu tặng</option>
-                </select>
-                
-                <label for="type2">Đơn vị tiếp nhận</label>
-                <select  id="location-select" class="design2" >
-                  <option value="">CH Hachi Hachi CMT8</option>
-                  <option value="">CH Hachi Hachi QT</option>
-                  <option value="">CH Hachi Hachi NVT</option>
-                                    
-                </select>
-
-                <label for="texta">Diễn giải</label>
+                </div>
+                <label for="type1">Phân loại đợt phát hành</label>  
+                <kendo-dropdownlist class="k-release" [data]="listRelease" value="Phiếu bán" ></kendo-dropdownlist>
+                <label for="type2" class="type2">Đơn vị tiếp nhận</label>
+                <kendo-dropdownlist class="k-recei" [data]="listRecei" value="CH Hachi Hachi CMT8"></kendo-dropdownlist>
+                <label for="texta" class="texta">Diễn giải</label>
                 <textarea name="texta" id="texta" cols="30" rows="4">KMGBL22-Voucher lịch 100k HĐ 600k-NGÀY KÍNH LÃO-HSD 30/9/22</textarea>
-                
-              </form>
-
+              </div>
     </div>
 </div>
 
@@ -46,30 +32,37 @@
         THÔNG TIN PHIẾU MUA HÀNG
     </div>
     <div class="info">
-      <form action=""  ngModelOptions="{standalone: true}">
+      <form #myForm="ngForm" name="myForm" >
         <div class="row">
           <div class="col-full">
               <label for="">Số seri</label>
-              <input type="text" value="400" [(ngModel)]="inputValue"   (input)="onInputChange($event)">
+              <input type="text" value="400" (keypress)="onInputKeypress($event)" > 
               <label for="">Mệnh giá</label>
-              <input type="text" value="100,000" [(ngModel)]="inputValue" appMoneyFormat>
-              
+              <input type="text" value="100,000"  appMoneyFormat> 
           </div>
           <div class="col-half">
             <label for="">Thời gian hiệu lực</label>
-            <input type="text"  style="width: 108px;">
+            <input type="text" id="validity-time" style="width: 108px;" >
           </div>
           <div class="col-half" style="padding-left: 12px;">
             <div class="group">
-            <input type="checkbox" class="custom-checkbox" [(ngModel)]="isDisabled" (change)="toggleDisabled()"   style="outline: none;">
+            <input type="checkbox" kendoCheckBox [(ngModel)]="isDateEnabled" id="date-checkbox" name="check"  class="custom-checkbox" style="outline: none;">
 
             <label for="" style="margin-left: 10px;">theo ngày</label>
             </div>
-            <div class="date-picker">
-              <input id="calendar" type="text" placeholder="dd-MM-yyyy" [(ngModel)]="selectedDate" (input)="updateDateValue($event)" [readonly]="isDisabled"  style="text-align: right;">
-              <i class="fa fa-calendar"></i>
-            </div>
-          </div>
+           <div class="date-picker">
+            <kendo-datepicker class="k-datepicker"
+                  calendarType="classic"
+                  [value]="value"
+                  [format]="format"
+                  [disabledDates]="disabledDates"
+                  [readOnlyInput]="!isDateEnabled"
+                  
+                  >
+            </kendo-datepicker>
+           </div>
+                
+              </div>
         </div>
 
         <div class="row">
@@ -79,18 +72,18 @@
           </div>
           <div class="col-half" style="padding-left: 12px;">
             <label for="">SL phát hành</label>
-            <input type="text" value="1"  style="width: 85px; text-align: right;"  [(ngModel)]="inputValue"  (input)="onInputChange($event)">
+            <input type="text" value="1"  style="width: 85px; text-align: right;" (keypress)="onInputKeypress($event)">
           </div>
           <div class="col-full">
             <label for="">Giá bán</label>
-            <input type="text" value="85,000" [(ngModel)]="inputValue" appMoneyFormat>
+            <input type="text" value="85,000" appMoneyFormat>
             <label for="">Số lượt dùng tối đa/ 1 giao dịch</label>
-            <input type="text" value="1"  [(ngModel)]="inputValue"  (input)="onInputChange($event)" >
+            <input type="text" value="1" (keypress)="onInputKeypress($event)">
           </div>
         </div>
             <div class="row" style="font-weight: 400; width: 300px;">
-              <input type="checkbox" style="outline: none;float: left; border: 1px solid #1A6634; ">
-              <label for="" style="size: 13px;color: #1A6634; padding-left: 20px; margin-top: -3px;" >Duyệt bán phiếu mua hàng
+              <input type="checkbox" kendoCheckBox  style="outline: none;float: left; border: 1px solid #1A6634; ">
+              <label for="" style="size: 13px;color: #1A6634; padding-left: 25px; margin-top: -3px;" >Duyệt bán phiếu mua hàng
                 <br>
                 <span style="font-size: 11px;color: #1A6634;"><i>(ngày phê duyệt = ngày hiệu lực)</i></span>
               </label>
@@ -99,3 +92,4 @@
       </form>
     </div>
 </div>
+
