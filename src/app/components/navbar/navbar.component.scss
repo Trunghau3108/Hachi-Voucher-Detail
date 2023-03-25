@@ -74,6 +74,10 @@
 				background: #FFFFFF;
 				border: none;
 			}
+			:focus{
+				
+				box-shadow: none;
+			}
 			.badge {
 				position: relative;
 				top: -10px;

@@ -35,17 +35,27 @@
 			}
 			kendo-dropdownlist{
 				background: #FFFFFF;
-				font-size: 
-				13px;
+				font-size:13px;
 				font-weight: 400;
+				
 			}
 			.k-release{
+				border: 1px solid #ccc;
 				height: 33px;
 				width: 151px;
+			}.k-release:focus{
+				border: 2px solid #36C8CF;
+				box-shadow: none;
+				outline: none;
 			}
+			
 			.k-recei{
 				height: 33px;
 				width: 196px;
+			}.k-recei:focus{
+				border: 2px solid #36C8CF;
+				box-shadow: none;
+				outline: none;
 			}
 			
 			.texta{
@@ -63,7 +73,7 @@
 					color: #1A6634;
 				}
 			}
-			input,textarea,select {
+			input,textarea {
 				display: block;
 				padding: 7px;
 				margin-bottom: 10px;
@@ -159,6 +169,7 @@
 							font-size: 13px;
 							font-weight: 400;
 							line-height: 16.32px;
+							color: #26282E;
 						}
 					}
 				}
