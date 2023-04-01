@@ -1,0 +1,3 @@
+{
+    "calendarHeaderTitle": "{{ month }} {{ year }}"
+}

@@ -12,6 +12,7 @@
 		align-items: center;
 		text-align: center;
 		li {
+			position: relative;
 			padding: 5px 0;
 			border-right: 3px solid #C4C4C4;
 			border-radius: 2px;
@@ -26,8 +27,16 @@
 				line-height: 16px;
 				&.active {
 					color: #008000;
-					border-radius: 2px;
-					border-bottom: 3px solid #008000;
+					&::after{
+						content: '';
+						position: absolute;
+						top: 36px;
+						left: 10px;
+						width: 80%;
+						height: 3px;
+						border-radius: 3px;
+						background-color: #008000;
+					}
 				}
 			}
 		}

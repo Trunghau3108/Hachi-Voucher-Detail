@@ -1,15 +1,15 @@
 .tool {
 	padding-top: 50px;
 	margin-left: 220px;
-	width: 1298px;
+	width: 1315px;
 	.cards {
-		padding: 13px 10px;
+		padding: 15px 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		flex-wrap: wrap;
 		border-bottom: 1px solid #BDC2D2;
 		.text {
+			margin-top: 5px;
 			font-size: 13px;
 			line-height: 16px;
 			font-weight: 700;
@@ -18,25 +18,26 @@
 				&.active {
 					color: #1A6634;
 				}
-				.ngoac{
-					font-size: 19px;
-					padding: 0 5px;
+				.k-icon.k-i-arrow-chevron-right{
+					font-size: 22px;
+					padding: 0 15px;
 				}
 			}
 		}
 	}
-
-
 		.group-btn {
+			margin-left: 20px;
 			button{
 				height: 32px;
 				background: #FFFFFF;
 				border: none;
 				box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);
-				font-size: 11px;
-				line-height: 13.81px;
-				font-weight: 700;
 				margin: 0 5px;
+				span{
+					font-size: 11px;
+					line-height: 13.81px;
+					font-weight: 700;
+				}
 				.sp1{
 					padding: 0 10px;
 					color: #008000;
@@ -53,17 +54,16 @@
 					padding-right: 5px;
 					color: #FFFFFF;
 				}
-			
 		}
-		
 	}
 		.k-button-group {
+			position: relative;
+			right: 30px;
 			width: 98px;
 			height: 32px;
 			background-color: #FFFFFF;
 			border-radius: 3px;
 			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
-			margin: 7px;
 			}
 			button{
 				background-color: #FFFFFF;
@@ -73,4 +73,3 @@
 				box-shadow: none;
 			}
 	}
-

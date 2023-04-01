@@ -1,0 +1,173 @@
+
+<div class="info-coupon">
+    <div class="title">
+        <span class="tl-l">THÔNG TIN COUPON</span>
+        <span class="tl-n">Coupon giảm giá đơn hàng</span>
+        <div class="gr-ts">
+            <span class="language" [class.active]="selectedLang === 'vi'" (click)="onLangSelect('vi')">Tiếng Việt</span>
+            <span class="language" [class.active]="selectedLang === 'ja'" (click)="onLangSelect('ja')">日本語</span>
+            <span class="language" [class.active]="selectedLang === 'en'" (click)="onLangSelect('en')">English</span>
+        </div>
+    </div>
+    <div class="coupon-content">
+        <div class="col-1">
+            <div class="row-half">
+                <label>Mã bắt đầu coupon</label>
+                <input type="text" class="st-cp" value="KMGBL22">
+            </div>
+            <div class="row-half">
+                <label style="padding-left: 15px;" >SL phát hành</label>
+                <input type="text" class="sl-cp" value="10" style="text-align: right;" (keypress)="onInputKeypress($event)">
+            </div>    
+            <div class="row-full">
+                <div class="bar-cp">
+                    <input type="checkbox"> 
+                    <label>Mã coupon ngẫu nhiên gấp (x) lần</label>  
+                </div>
+                    <input type="text" value="1" (keypress)="onInputKeypress($event)">
+            </div>
+            <div class="row-full">
+                <div class="val-cp">
+                    <label>Giá trị coupon</label>
+                    <div class="gr-per">
+                        <input type="checkbox"> <label>tỷ lệ %</label> 
+                    </div>   
+                </div>
+                <input type="text" value="100,000" appMoneyFormat>
+            </div>
+            <div class="row-half">
+                <label>Thời gian hiệu lực</label>
+                <div class="date-picker">
+                        <kendo-datepicker #datepicker  class="k-datepicker"
+                            calendarType="classic" 
+                            [value]="date"
+                            [format]="format"
+                            [disabledDates]="disableDates"
+                            >
+                            <ng-template  kendoCalendarHeaderTitleTemplate let-currentDate>
+                                <span>{{currentDate | vietnameseMonth}}</span> 
+                            </ng-template>
+                        </kendo-datepicker>
+                </div>
+                
+                <div class="date-picker">
+                    <kendo-datepicker  class="k-datepicker"
+                          calendarType="classic" 
+                          [value]="date"
+                          [format]="format"
+                          [disabledDates]="disableDates"
+                          >
+                          <ng-template #monthCellTemplate kendoCalendarHeaderTitleTemplate let-currentDate>
+                            <div>{{ currentDate | date: 'MMMM, yyyy'| vietnameseMonth}}</div>
+                          </ng-template>
+                    </kendo-datepicker>
+                </div>
+            </div>
+        <div class="lb-tt">
+            <label>Tình trạng</label>
+            <span>Đã phê duyệt áp dụng</span>
+        </div>
+           
+    </div>
+
+    <div class="col-2">
+        <div class="row-full">
+          <div *ngIf="selectedLang === 'vi'">
+            <label>Tên coupon</label>
+            <input type="text" [(ngModel)]="nameVI">
+            <label>Mô tả điều kiện áp dụng</label>
+            <input type="text" [(ngModel)]="descriptionVI" >
+            <label>Diễn giải</label>
+            <textarea cols="8" rows="8" [(ngModel)]="explanationVI"></textarea>
+          </div>
+      
+          <div *ngIf="selectedLang === 'ja'">
+            <label>Tên coupon</label>
+            <input type="text" [(ngModel)]="nameJA">
+            <label>Mô tả điều kiện áp dụng</label>
+            <input type="text" [(ngModel)]="descriptionJA" >
+            <label>Diễn giải</label>
+            <textarea cols="8" rows="8" [(ngModel)]="explanationJA"></textarea>
+          </div>
+      
+          <div *ngIf="selectedLang === 'en'">
+            <label>Tên coupon</label>
+            <input type="text" [(ngModel)]="nameEN">
+            <label>Mô tả điều kiện áp dụng</label>
+            <input type="text" [(ngModel)]="descriptionEN" >
+            <label>Diễn giải</label>
+            <textarea cols="8" rows="8" [(ngModel)]="explanationEN"></textarea>
+          </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+<div class="con-apply">
+    <div class="title">
+        <span>ĐIỀU KIỆN ÁP DỤNG</span>
+    </div>
+    <div class="apply-content">
+       <div class="col-app">
+            <label for="">asdasd</label>
+            <div class="c-box">
+                <input type="checkbox" name="" id="">
+            </div>
+            <div class="cbox">
+            <input type="checkbox" name="" id="">
+                <div class="sub-cbox">
+                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="">
+                    <input type="checkbox" name="" id="">
+                </div>
+            </div>
+        </div>
+        <div class="col-app">
+            <label for="">asdasd</label>
+            <div class="item">
+                <span>asd</span> <input type="checkbox" name="" id="">
+            </div>
+            <div class="item">
+                <span>asd</span> <input type="checkbox" name="" id="">
+            </div>
+            <div class="item">
+                <span>asd</span> 
+            </div>
+            <div class="item">
+                <span>asd</span> <input type="checkbox" name="" id="">
+            </div>
+            <div class="item">
+                <span>asd</span>
+            </div>
+            <div class="item">
+                <span>asd</span> <input type="checkbox" name="" id="">
+            </div>
+        </div>
+        <div class="col-app">
+            <label for="">asdasd</label>
+            <div class="radio">
+                <span><input type="radio">asd</span>
+            </div>
+            <div class="radio">
+                <span><input type="radio">asd</span>
+                <div class="sub-radio">
+                    <span><input type="checkbox" name="" id="">asdasd</span>
+                </div>
+            </div>
+            <div class="radio">
+                <label for="">asdasd</label>
+            </div>
+            <div class="radio">
+                <span><input type="radio">asd</span>
+            </div>
+            <div class="radio">
+                <span><input type="radio">asd</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+

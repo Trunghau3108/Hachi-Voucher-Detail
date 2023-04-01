@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
-import { HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
+import { HttpClientModule, HttpClientJsonpModule  } from "@angular/common/http";
 
 
 import { AppRoutingModule }  from './app-routing.module';
@@ -18,9 +18,14 @@ import { IconsModule } from "@progress/kendo-angular-icons";
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DropDownsModule  } from '@progress/kendo-angular-dropdowns';
 import { LabelModule } from '@progress/kendo-angular-label';
-import { DateInputsModule } from "@progress/kendo-angular-dateinputs";
-import { CommonModule } from '@angular/common';
+import { DateInputsModule,DatePickerModule} from "@progress/kendo-angular-dateinputs";
+import { CommonModule,DatePipe } from '@angular/common';
+import { CouponContentComponent } from './components/coupon-content/coupon-content.component';
+import { VietnameseMonthPipe } from './vietnamese-month.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+// import "@progress/kendo-angular-intl/locales/vi/all";
 
 
 
@@ -35,6 +40,8 @@ import { CommonModule } from '@angular/common';
     MainContentComponent,
     CurrencyFormatPipe,
     LogInputDirective,
+    CouponContentComponent,
+    VietnameseMonthPipe,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,10 @@ import { CommonModule } from '@angular/common';
     LabelModule,
     DateInputsModule,
     CommonModule,
+    DatePickerModule,
+    DatePipe,
+    NgbModule,
+   
     
 
   ],
@@ -58,4 +69,6 @@ import { CommonModule } from '@angular/common';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  public date: Date = new Date(); 
+}

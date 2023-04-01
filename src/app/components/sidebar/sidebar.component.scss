@@ -14,13 +14,11 @@
 	}
 	.menu {
 		.item {
-			position: relative;
 			cursor: pointer;
 			a {
 				color: #FFFFFF;
 				font-size: 13px;
 				font-weight: 700;
-				text-decoration: none;
 				display: block;
 				padding: 0 15px;
 				line-height: 50px;
@@ -37,7 +35,9 @@
 					font-weight: 700;
 				}
 			}
-			i {
+			img{
+				position: relative;
+				top: 10px;
 				margin-right: 15px;
 			}
 			.sub-menu {
@@ -48,7 +48,7 @@
 					font-weight: 700;
 					line-height: 16px;
 					font-size: 13px;
-					padding-left: 55px;
+					padding-left: 65px;
 					padding-top: 10px;
 					justify-content: center;
 					span {

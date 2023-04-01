@@ -1,0 +1,188 @@
+
+.info-coupon{
+    margin-left: 230px;
+    min-height: 45vh;
+    .title{
+        font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		margin: 15px 0;
+        align-items: center;
+        .tl-l{
+            font-size: 16px;
+        }
+        .tl-n{
+            position: relative;
+            top: -2px;
+            padding-left: 40px;
+            color: #1A6634;
+        }
+        .gr-ts{
+            color: #BBC0BB;
+            position: relative;
+            float: right;
+            top: 12px;
+            right: 50px;
+            .language{
+                display: inline-block;
+                border-right: 1px solid #BBC0BB;
+                padding: 0 5px;
+            &:last-child{
+                border-right: none;
+            }
+            &:hover{
+                cursor: pointer;
+                color: #626662;
+            }
+            &.active{
+                color: #626662;
+            }
+            }
+        }
+    }
+    .coupon-content{
+        padding: 15px;
+        margin-top: 10px;
+		background-color: #FFFFFF;
+		height: 350px;
+		border-radius: 2px;
+		width: 1280px;
+        display: flex;
+        input,textarea {
+            resize: none;
+            display: block;
+            padding: 7px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            }
+            :focus{
+                outline: 1px solid #DBDEE7;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+                color: #959DB3;
+            }    
+        .col-1{
+            padding: 0 10px;
+            .lb-tt{
+                span{
+                    color: #1A6634;
+                }
+            }
+            .row-full {
+                input[type="text"] {
+                    width: 255px;
+                    font-weight: 400;
+                  }
+                input[type="checkbox"] {
+                   outline: none;
+                }
+                .bar-cp{
+                    display: inline-flex;
+                    label{
+                        padding-left: 5px;
+                    }
+                }
+                .val-cp{
+                    display: inline-flex;
+                    .gr-per{
+                        display: inline-flex;
+                        margin-left: 100px;
+                        input[type="checkbox"] {
+                            border: 1px solid #1A6634;
+                         }
+                        label{
+                            color: #1A6634;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+            }
+            .row-half{
+               float: left;
+               .st-cp{
+                width: 160px;
+                font-weight: 400;
+               }
+               .sl-cp{
+                margin-left: 15px;
+                width: 80px;
+                font-weight: 400;
+               }
+               .date-picker {
+                float: left;
+                margin-right: 15px;
+                .k-datepicker{
+                    flex-direction: row-reverse;
+                    border: none;
+                    background-color: #F5F6F8;
+                    width: 119px;
+                    height: 32px;
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 16.32px;
+                    margin-bottom: 7px;
+                    &:focus{
+                        border-bottom: none;
+                    }
+                    }
+                }
+            }
+        }
+        .col-2{
+            padding: 0 10px;
+            .row-full{
+               textarea{
+                    width: 940px;
+                    font-weight: 400;
+                }
+                input[type="text"] {
+                    width: 940px;
+                    font-weight: 400;
+                  }
+            }
+        }
+    }
+    
+}
+.con-apply{
+    min-height: 45vh;
+    background-color: red;
+    
+}
+
+::ng-deep{
+    thead.k-calendar-thead{
+        display: none;
+    }
+    button.k-button.k-icon-button{
+        border-left: none;
+        color:#959DB3;
+        background-color:#F5F6F8;
+    }
+    button.k-calendar-nav-today{
+        display: none;
+    }
+    input#datepicker-4,#datepicker-3.k-input-inner{
+        padding: 0 10px;
+    }
+    .k-input-solid.k-focus::after{
+        opacity: 0;
+    }
+    .k-month tbody td.day {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 50%;
+      }
+    .hidden {
+        display: none;
+    }
+    .k-other-month{
+        visibility: hidden;
+    }
+}
