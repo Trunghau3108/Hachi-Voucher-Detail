@@ -1,6 +1,5 @@
-import { Component, OnInit,ViewChild  } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { FormatSettings  } from '@progress/kendo-angular-dateinputs';
-import { DatePickerComponent } from '@progress/kendo-angular-dateinputs';
 
 import * as $ from 'jquery';
 /// <reference types="kendo-ui" />
@@ -13,7 +12,7 @@ import * as $ from 'jquery';
 })
 export class CouponContentComponent implements OnInit {
 
-  @ViewChild('datepicker') datepicker!: DatePickerComponent;
+ 
 
   selectedLang = 'vi'; 
   name = '';
@@ -55,8 +54,6 @@ export class CouponContentComponent implements OnInit {
     }
   }
   
-  
- 
   public date = new Date()
   public format: FormatSettings = {
     displayFormat: "dd/MM/yyyy",
@@ -89,7 +86,6 @@ export class CouponContentComponent implements OnInit {
     }
   
   ngOnInit(): void {
-    this.selectedLang = 'vi';
     $(document).ready(function(){
      
     });
