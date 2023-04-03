@@ -1,4 +1,53 @@
+::ng-deep{
+    thead.k-calendar-thead{
+        display: none;
+    }
+    button.k-button.k-icon-button{
+        border-left: none;
+        color:#959DB3;
+        background-color:#F5F6F8;
+    }
+    button.k-calendar-nav-today{
+        display: none;
+    }
+    input#datepicker-4,#datepicker-3.k-input-inner{
+        padding: 0 10px;
+    }
+    
+    .k-month tbody td.day {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 50%;
+      }
+    .k-other-month{
+        visibility: hidden;
+    }
+   
+   .k-link:hover{
+        background-color: #FFFFFF !important;
+        border: 1px solid #36C8CF !important;
+        border-radius: 50%;
+    }
 
+    .k-calendar-td.k-selected .k-link{
+        background-color: #36C8CF !important;
+        border-radius: 50%;
+        color: #FFFFFF;
+    }
+    .k-today{
+        background-color: #F5F6F8;
+        color: #26282E !important;
+        border-radius: 50%;
+    }  
+}
+
+
+
+
+/// UI thông tin coupon
 .info-coupon{
     margin-left: 230px;
     min-height: 45vh;
@@ -147,54 +196,113 @@
     }
     
 }
-.con-apply{
+
+/// UI cấu hình gửi thông báo
+.coupon-apply{
     min-height: 45vh;
-    background-color: red;
-    
+    .title{
+        margin-top: 15px;
+        span{
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        }
+    }
+    .apply-content{
+        padding: 20px;
+        height: 270px;
+        width: 1280px;
+        background-color: #FFFFFF;
+        display: flex;
+        .col-app{
+            margin-right: 150px;
+            span{
+                font-weight: 400;
+            }
+            .cbox{
+                margin: 15px 0;
+               align-items: center;
+            }
+            .sub-cbox{
+                margin-left: 15px;
+                .sub{
+                    margin: 15px 0;
+                }
+            }
+            input[type="checkbox"]{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px; /* khoảng cách giữa checkbox và nội dung */
+            }
+            .item{
+               padding: 2px 0;
+                .ip1{
+                    margin-left: 27px;
+                }
+                .ip2{
+                    margin-left: 44px;
+                }
+                .ip3{
+                    background-color: #DBDEE7;
+                    margin-left: 55px;
+                }
+            }
+            .radio{
+                margin: 15px 0;
+                .sub-radio{
+                    margin-top: 10px;
+                    margin-left: 25px;
+                }
+            }
+           }
+           label {
+            display: block;
+            margin-bottom: 10px;
+            color: #959DB3;
+            }
+            input[type = "text"]{
+                    width: 66px;
+                    height: 24px;
+                    padding: 7px;
+                    margin-bottom: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 3px;
+                    margin-left: 10px;
+                    text-align: right;
+                    font-weight: 400;
+                    &:focus{
+                        outline: 1px solid #DBDEE7;
+                    }       
+            }
+            input[type="radio"]{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px; /* khoảng cách giữa checkbox và nội dung */
+            }
+    }
+    .mode{
+        color: #BBC0BB;
+        position: relative;
+        float: right;
+        top: 12px;
+        right: 50px;
+        .act{
+            display: inline-block;
+            border-right: 1px solid #BBC0BB;
+            padding: 0 5px;
+            &.active{
+                color: #626662;
+            }
+            &:last-child{
+                border-right: none;
+            }
+            &:hover{
+                cursor: pointer;
+                color: #626662;
+            }
+        }
+    }
 }
 
-::ng-deep{
-    thead.k-calendar-thead{
-        display: none;
-    }
-    button.k-button.k-icon-button{
-        border-left: none;
-        color:#959DB3;
-        background-color:#F5F6F8;
-    }
-    button.k-calendar-nav-today{
-        display: none;
-    }
-    input#datepicker-4,#datepicker-3.k-input-inner{
-        padding: 0 10px;
-    }
-    
-    .k-month tbody td.day {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        text-align: center;
-        border-radius: 50%;
-      }
-    .k-other-month{
-        visibility: hidden;
-    }
-   
-   .k-link:hover{
-        background-color: #FFFFFF !important;
-        border: 1px solid #36C8CF !important;
-        border-radius: 50%;
-    }
 
-    .k-calendar .k-calendar-td.k-selected .k-link{
-        background-color: #36C8CF !important;
-        border-radius: 50%;
-        color: #FFFFFF;
-    }
-    .k-today{
-        background-color: #F5F6F8;
-        color: #26282E !important;
-        border-radius: 50%;
-    }  
-}
+

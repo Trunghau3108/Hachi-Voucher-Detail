@@ -105,68 +105,73 @@
 
 
 
-<div class="con-apply">
+<div class="coupon-apply">
     <div class="title">
         <span>ĐIỀU KIỆN ÁP DỤNG</span>
     </div>
     <div class="apply-content">
        <div class="col-app">
-            <label for="">asdasd</label>
-            <div class="c-box">
-                <input type="checkbox" name="" id="">
+            <label for="">Đơn vị áp dụng</label>
+            <div class="cbox">
+                <input type="checkbox" kendoCheckBox> <span>Website hachihachi.com.vn</span>
             </div>
             <div class="cbox">
-            <input type="checkbox" name="" id="">
-                <div class="sub-cbox">
-                    <input type="checkbox" name="" id="">
-                    <input type="checkbox" name="" id="">
-                    <input type="checkbox" name="" id="">
-                    <input type="checkbox" name="" id="">
-                </div>
+            <input type="checkbox" kendoCheckBox> <span>Tất cả cửa hàng</span>
+            </div>
+            <div class="sub-cbox">
+                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi Pastuer</span></div>
+                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi NVT</span></div>
+                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi CMT8</span></div>
+                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi PMH</span></div>
             </div>
         </div>
         <div class="col-app">
-            <label for="">asdasd</label>
+            <label for="">Hạn mức sử dụng</label>
             <div class="item">
-                <span>asd</span> <input type="checkbox" name="" id="">
+                <span>Số lượt sử dùng của coupon</span> <input class="ip1"  type="text" value="5,000" appMoneyFormat>
             </div>
             <div class="item">
-                <span>asd</span> <input type="checkbox" name="" id="">
+                <span>Số lượt dùng tồi đa/1 giao dịch</span> <input  type="text" name="" value="1" (keypress)="onInputKeypress($event)">
             </div>
             <div class="item">
-                <span>asd</span> 
+                <label>Giá trị đơn hàng được áp dụng coupon</label> 
             </div>
             <div class="item">
-                <span>asd</span> <input type="checkbox" name="" id="">
+                <span>Giá trị đơn hàng tối thiểu</span> <input class="ip2" type="text" name="" value="0" appMoneyFormat>
             </div>
             <div class="item">
-                <span>asd</span>
+                <label>Giá trị chiết khấu tối đa của coupon</label>
             </div>
             <div class="item">
-                <span>asd</span> <input type="checkbox" name="" id="">
+                <span>Giá trị chiết khấu tối đa</span> <input class="ip3" type="text" name="" value="100,000" appMoneyFormat>
             </div>
-        </div>
+        </div> 
         <div class="col-app">
-            <label for="">asdasd</label>
+            <label for="">Phân loại coupon</label>
             <div class="radio">
-                <span><input type="radio">asd</span>
+                <input type="radio" kendoRadioButton><span>công khai</span>
             </div>
             <div class="radio">
-                <span><input type="radio">asd</span>
+                <input type="radio" kendoRadioButton><span>cá nhân</span>
                 <div class="sub-radio">
-                    <span><input type="checkbox" name="" id="">asdasd</span>
+                    <input type="checkbox" kendoCheckBox><span>đích danh</span>
                 </div>
             </div>
             <div class="radio">
-                <label for="">asdasd</label>
+                <label>SL phát hành áp dụng</label>
             </div>
             <div class="radio">
-                <span><input type="radio">asd</span>
+                <input type="radio" kendoRadioButton> <span>số coupon cho từng cá nhân</span>
             </div>
             <div class="radio">
-                <span><input type="radio">asd</span>
+                <input type="radio" kendoRadioButton> <span>coupon dùng chung cho tất cả</span>
             </div>
-        </div>
+        </div> 
+    </div>
+    <div class="mode">
+        <span class="act">SMS</span>
+        <span class="act">Mobile App</span>
+        <span class="act">Giỏ hàng</span>
     </div>
 </div>
 
