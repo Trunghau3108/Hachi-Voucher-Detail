@@ -42,6 +42,25 @@
         color: #26282E !important;
         border-radius: 50%;
     }  
+
+    .k-checkbox{
+        border-color: #999999;
+        &:checked{
+            border-color: #5CB800;
+            color: #FFFFFF;
+            background-color: #5CB800;
+            
+        }
+    }
+    
+
+    .k-radio{
+        border-color: #999999;
+        &:checked{
+            border-color:  #1A6634;
+            background-color: #1A6634;
+        }
+    }
 }
 
 
@@ -209,7 +228,7 @@
         }
     }
     .apply-content{
-        padding: 20px;
+        padding: 20px 30px;
         height: 270px;
         width: 1280px;
         background-color: #FFFFFF;

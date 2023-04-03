@@ -116,13 +116,13 @@
                 <input type="checkbox" kendoCheckBox> <span>Website hachihachi.com.vn</span>
             </div>
             <div class="cbox">
-            <input type="checkbox" kendoCheckBox> <span>Tất cả cửa hàng</span>
+            <input type="checkbox" kendoCheckBox  [(ngModel)]="allChecked" (change)="onAllCboxChanged()"> <span>Tất cả cửa hàng</span>
             </div>
             <div class="sub-cbox">
-                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi Pastuer</span></div>
-                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi NVT</span></div>
-                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi CMT8</span></div>
-                <div class="sub"><input type="checkbox" kendoCheckBox><span>CH Hachi Hachi PMH</span></div>
+                <div class="sub"><input type="checkbox" kendoCheckBox [(ngModel)]="isChecked1" (change)="onSubCboxChanged()"><span>CH Hachi Hachi Pastuer</span></div>
+                <div class="sub"><input type="checkbox" kendoCheckBox [(ngModel)]="isChecked2" (change)="onSubCboxChanged()"><span>CH Hachi Hachi NVT</span></div>
+                <div class="sub"><input type="checkbox" kendoCheckBox [(ngModel)]="isChecked3" (change)="onSubCboxChanged()"><span>CH Hachi Hachi CMT8</span></div>
+                <div class="sub"><input type="checkbox" kendoCheckBox [(ngModel)]="isChecked4" (change)="onSubCboxChanged()"><span>CH Hachi Hachi PMH</span></div>
             </div>
         </div>
         <div class="col-app">
@@ -149,22 +149,22 @@
         <div class="col-app">
             <label for="">Phân loại coupon</label>
             <div class="radio">
-                <input type="radio" kendoRadioButton><span>công khai</span>
+                <input type="radio" kendoRadioButton [(ngModel)]="isPublic" value="true"><span>công khai</span>
             </div>
             <div class="radio">
-                <input type="radio" kendoRadioButton><span>cá nhân</span>
+                <input type="radio" kendoRadioButton [(ngModel)]="isPublic" value="false"><span>cá nhân</span>
                 <div class="sub-radio">
-                    <input type="checkbox" kendoCheckBox><span>đích danh</span>
+                    <input type="checkbox" kendoCheckBox [(ngModel)]="isIdentified" [disabled]="isPublic"><span>đích danh</span>
                 </div>
             </div>
             <div class="radio">
                 <label>SL phát hành áp dụng</label>
             </div>
             <div class="radio">
-                <input type="radio" kendoRadioButton> <span>số coupon cho từng cá nhân</span>
+                <input type="radio" name="option" kendoRadioButton [(ngModel)]="selectedOption" value="option1" (ngModelChange)="onOptionChange($event)"> <span>số coupon cho từng cá nhân</span>
             </div>
             <div class="radio">
-                <input type="radio" kendoRadioButton> <span>coupon dùng chung cho tất cả</span>
+                <input type="radio" name="option" kendoRadioButton [(ngModel)]="selectedOption" value="option2" (ngModelChange)="onOptionChange($event)"> <span>coupon dùng chung cho tất cả</span>
             </div>
         </div> 
     </div>
