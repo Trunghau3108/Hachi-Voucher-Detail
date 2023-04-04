@@ -1,6 +1,5 @@
 import { Component, OnInit,  } from '@angular/core';
 import { FormatSettings  } from '@progress/kendo-angular-dateinputs';
-
 import * as $ from 'jquery';
 /// <reference types="kendo-ui" />
 
@@ -38,11 +37,18 @@ export class CouponContentComponent implements OnInit {
   descriptionEN = '';
   explanationEN = '';
  
+ 
   public date = new Date()
   public format: FormatSettings = {
     displayFormat: "dd/MM/yyyy",
     inputFormat: "dd/MM/yyyy",
   };
+  public formatTime: FormatSettings = {
+    displayFormat: "dd/MM/yyyy HH:mm",
+    inputFormat: "dd/MM/yyyy HH:mm",
+  };
+  
+  
 
   // xử lí chuyển đổi form ngôn ngữ
   setCurrentLanguage(lang: string): void {
@@ -127,10 +133,18 @@ export class CouponContentComponent implements OnInit {
   
   ngOnInit(): void {
     $(document).ready(function(){
+      var $textarea = $('#tarea');
+      $textarea.scrollTop($textarea[0].scrollHeight);
+      $('kendo-popup').addClass('k-popup');
+
      
-    });
+  });
+        
+
+
+
   }; 
-  }
+}
   
   
 

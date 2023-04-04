@@ -52,7 +52,6 @@
             
         }
     }
-    
 
     .k-radio{
         border-color: #999999;
@@ -61,7 +60,18 @@
             background-color: #1A6634;
         }
     }
+        
+        
+            k-popup{
+            .k-content{
+                min-width: 270px;   
+                border-bottom: 1px solid #DBDEE7;
+            }
+        }
 }
+
+    
+
 
 
 
@@ -87,10 +97,8 @@
         }
         .gr-ts{
             color: #BBC0BB;
-            position: relative;
+            padding: 10px 20px;
             float: right;
-            top: 12px;
-            right: 50px;
             .language{
                 display: inline-block;
                 border-right: 1px solid #BBC0BB;
@@ -218,7 +226,6 @@
 
 /// UI cấu hình gửi thông báo
 .coupon-apply{
-    min-height: 45vh;
     .title{
         margin-top: 15px;
         span{
@@ -301,10 +308,9 @@
     }
     .mode{
         color: #BBC0BB;
-        position: relative;
+        padding: 10px 20px;
         float: right;
-        top: 12px;
-        right: 50px;
+        
         .act{
             display: inline-block;
             border-right: 1px solid #BBC0BB;
@@ -321,6 +327,131 @@
             }
         }
     }
+}
+
+
+//UI Cấu hình gởi thông báo
+
+.noti-config{
+    min-height: 45vh;
+    .title{
+        span{
+            font-size: 16px;
+        }
+    }
+    .noti-content{
+        background-color: #FFFFFF;
+        width:  1280px;
+        height: 447px;
+        padding: 15px 25px;
+        input,textarea{
+            resize: none;
+            display: block;
+            padding: 7px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-weight: 400;
+            }
+            :focus{
+                outline: 1px solid #DBDEE7;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+                color: #959DB3;
+            }
+        input[type = "text"],textarea{
+            width: 100%;
+        }
+        .datetimepicker{
+            flex-direction: row-reverse;
+            border: none;
+            background-color: #F5F6F8;
+            width: 235.77px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .cbox{
+            display: flex;
+            input[type="checkbox"]{
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+        }
+        .object{
+            display: flex;
+            .radio{
+                display: flex;
+                margin-right: 170px;
+                span{
+                    font-weight: 400;
+                }
+                input[type="radio"]{
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                    border-radius: 50%;
+                }
+            }
+        }    
+
+    }
+}
+
+
+.info-program{
+    .title{
+        display: flex;
+        span{
+            font-size: 16px;
+        }
+        .search-tool{
+            margin-left: 10px;
+            display: flex;
+            .search{
+                margin-right: 5px;
+                width: 372px !important;
+                box-shadow: none;
+            }
+            .btn-search{
+                background-color: #008000;
+                color: #FFFFFF;
+                border-radius: 3px;
+            }
+        }
+        .gr-btn{
+            margin-left: 200px;
+            button{
+                height: 32px;
+                margin-right: 10px;
+                box-shadow: none;
+            }
+            .btn-1{
+                width: 32px;
+                background-color: #FFFFFF;
+            }
+            .btn-2{
+               
+                background-color: #FFFFFF;
+                width: 102px;
+                span{
+                    padding: 0 5px;
+                    font-size: 13px;
+                    color:#959DB3 ;
+                }
+            }
+            .btn-3{
+                background-color: #1A6634;
+                color: #FFFFFF;
+                span{
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+    
 }
 
 
