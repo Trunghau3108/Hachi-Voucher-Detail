@@ -23,6 +23,9 @@ import { CommonModule,DatePipe } from '@angular/common';
 import { CouponContentComponent } from './components/coupon-content/coupon-content.component';
 import { VietnameseMonthPipe } from './vietnamese-month.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { ProductsService } from './services/products.service';
+import { GridProductComponent } from './components/grid-product/grid-product.component';
 
 
 // import "@progress/kendo-angular-intl/locales/vi/all";
@@ -42,6 +45,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LogInputDirective,
     CouponContentComponent,
     VietnameseMonthPipe,
+    GridProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,12 +65,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DatePickerModule,
     DatePipe,
     NgbModule,
-   
-    
-
+    GridModule,
   ],
   
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

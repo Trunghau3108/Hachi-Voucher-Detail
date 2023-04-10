@@ -1,0 +1,70 @@
+<div class="title">
+  <span>THÔNG TIN CHI TIẾT CHƯƠNG TRÌNH</span>
+  <div class="search-tool">
+      <kendo-textbox class="search"
+      [style.width.px]="300"
+      placeholder="Tìm theo barcode, poscode, tên sản phẩm"
+      [clearButton]="true"
+    >
+      <ng-template kendoTextBoxPrefixTemplate>
+        <button  kendoButton fillMode="clear" imageUrl="assets/images/search-menu.svg"></button>
+      </ng-template>
+      </kendo-textbox>
+  <button class="btn-search" imageUrl="assets/images/search-w.svg" kendoButton>Tìm</button>
+  </div>
+  <div class="gr-btn">
+      <button class="btn-1" imageUrl="assets/images/Group 1891.svg" kendoButton></button>
+      <button class="btn-2" imageUrl="assets/images/Group 616.svg" kendoButton><span>Template</span></button>
+      <button class="btn-3" imageUrl="./assets/images/Group 778.svg" kendoButton><span>THÊM MỚI SẢN PHẨM</span></button>
+  </div>
+</div>
+    <kendo-grid [data]="productList"  class="k-grid-product "
+    [scrollable]="'none'"
+    
+    [pageSize]="take"
+    [skip]="skip"
+    
+    
+    [pageable]="true"
+
+    [height]="470"
+    >
+    <kendo-grid-column>
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <div class="grid-item">
+          <div class="image-wrapper">
+            <button kendoButton imageUrl="assets/images/del.svg"></button>
+            <img src="http://test.lapson.vn{{dataItem.ImageThumb}}" width="80" height="80" alt="">
+          </div>
+          <div class="text-wrapper">
+            <span>{{dataItem.ProductName}}</span>
+            <br><br>
+            <span>{{dataItem.Barcode}}</span>
+          </div>
+        </div>
+      </ng-template>
+    </kendo-grid-column>
+    <ng-template
+      kendoPagerTemplate
+      let-totalPages="totalPages"
+      let-currentPage="currentPage"
+      class="wrapper_pagi"
+    >
+      <kendo-pager-page-sizes
+        [pageSizes]="limits"
+        
+      ></kendo-pager-page-sizes>
+     
+        <kendo-pager-prev-buttons
+        ></kendo-pager-prev-buttons>
+        <kendo-pager-numeric-buttons
+          [buttonCount]="buttonCount"
+        ></kendo-pager-numeric-buttons>
+        <kendo-pager-next-buttons
+        ></kendo-pager-next-buttons>
+     
+    </ng-template>
+
+   
+    
+  </kendo-grid>

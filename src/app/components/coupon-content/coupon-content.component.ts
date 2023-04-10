@@ -10,6 +10,8 @@ import * as $ from 'jquery';
   styleUrls: ['./coupon-content.component.scss']
 })
 export class CouponContentComponent implements OnInit {
+
+  
   allChecked: boolean = false;
   isChecked1: boolean = false;
   isChecked2: boolean = false;
@@ -44,10 +46,11 @@ export class CouponContentComponent implements OnInit {
     inputFormat: "dd/MM/yyyy",
   };
   public formatTime: FormatSettings = {
-    displayFormat: "dd/MM/yyyy HH:mm",
-    inputFormat: "dd/MM/yyyy HH:mm",
+    displayFormat: "dd/MM/yyyy HH:mm ",
+    inputFormat: "dd/MM/yyyy HH:mm ",
   };
-  
+
+
   
 
   // xử lí chuyển đổi form ngôn ngữ
@@ -132,17 +135,7 @@ export class CouponContentComponent implements OnInit {
     }
   
   ngOnInit(): void {
-    $(document).ready(function(){
-      var $textarea = $('#tarea');
-      $textarea.scrollTop($textarea[0].scrollHeight);
-      $('kendo-popup').addClass('k-popup');
-
-     
-  });
-        
-
-
-
+   
   }; 
 }
   

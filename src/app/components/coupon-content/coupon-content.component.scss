@@ -28,12 +28,12 @@
    
    .k-link:hover{
         background-color: #FFFFFF !important;
-        border: 1px solid #36C8CF !important;
+        border: 1px solid #1A6634 !important;
         border-radius: 50%;
     }
 
     .k-calendar-td.k-selected .k-link{
-        background-color: #36C8CF !important;
+        background-color: #1A6634 !important;
         border-radius: 50%;
         color: #FFFFFF;
     }
@@ -49,7 +49,9 @@
             border-color: #5CB800;
             color: #FFFFFF;
             background-color: #5CB800;
-            
+        &:focus{
+            box-shadow: none;
+        }
         }
     }
 
@@ -57,17 +59,33 @@
         border-color: #999999;
         &:checked{
             border-color:  #1A6634;
-            background-color: #1A6634;
+            background-color: #FFFFFF;
+            background-image: url("https://clipground.com/images/green-circle-clipart-6.png");
+        &:focus{
+            box-shadow: none;
+        }
         }
     }
-        
-        
-            k-popup{
-            .k-content{
-                min-width: 270px;   
-                border-bottom: 1px solid #DBDEE7;
+    input.k-radio.k-radio-md{
+        &:checked{
+            border-color:  #1A6634 !important;
+        }
+        &:focus{
+            box-shadow: none !important;
+        }
+    }
+    k-popup{
+        .k-content{
+            min-width: 270px;   
+            border-bottom: 1px solid #DBDEE7;
             }
         }
+        
+    .search img.k-image{
+        width: 15px;
+        margin-left: 5px;
+    }
+    
 }
 
     
@@ -160,6 +178,10 @@
                     label{
                         padding-left: 5px;
                     }
+                    input[type="checkbox"] {
+                        border: 1px solid #1A6634;
+                     }
+
                 }
                 .val-cp{
                     display: inline-flex;
@@ -402,56 +424,10 @@
 
 
 .info-program{
-    .title{
-        display: flex;
-        span{
-            font-size: 16px;
-        }
-        .search-tool{
-            margin-left: 10px;
-            display: flex;
-            .search{
-                margin-right: 5px;
-                width: 372px !important;
-                box-shadow: none;
-            }
-            .btn-search{
-                background-color: #008000;
-                color: #FFFFFF;
-                border-radius: 3px;
-            }
-        }
-        .gr-btn{
-            margin-left: 200px;
-            button{
-                height: 32px;
-                margin-right: 10px;
-                box-shadow: none;
-            }
-            .btn-1{
-                width: 32px;
-                background-color: #FFFFFF;
-            }
-            .btn-2{
-               
-                background-color: #FFFFFF;
-                width: 102px;
-                span{
-                    padding: 0 5px;
-                    font-size: 13px;
-                    color:#959DB3 ;
-                }
-            }
-            .btn-3{
-                background-color: #1A6634;
-                color: #FFFFFF;
-                span{
-                    font-size: 11px;
-                }
-            }
-        }
+    margin-top: 15px;
+    .grid-item{
+        height: 550px;
     }
-    
 }
 
 

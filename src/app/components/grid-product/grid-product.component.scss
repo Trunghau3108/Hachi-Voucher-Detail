@@ -1,0 +1,182 @@
+::ng-deep{
+        .k-grid-product{
+            margin-top: 10px;
+            width: 1280px;
+                background-color: #EDEFF3;
+                border: none;
+            .k-link{
+                &:hover{
+                    border: none !important;
+                }
+            }
+            .k-table-row{
+                background-color: #FFFFFF;
+                border: 1px solid #8DC63F !important;
+                
+            }
+            .k-table-row.k-table-alt-row{
+                background-color: #FFFFFF;
+            }
+            th.k-header.k-table-th{
+                display: none;
+            }
+            tbody.k-table-tbody{
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-gap: 15px;
+            }
+            .k-table-td{
+                width: 222px;
+                height: 104px;
+                &:hover{
+                    background-color: #FFFFFF;
+                }
+            }
+            .grid-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    background-color: #FFFFFF;
+                }
+            }
+            .image-wrapper{
+                button{
+                    background-color: #FFFFFF;
+                    border: none;
+                    box-shadow: none;
+                    position: relative;
+                    top: -10px;
+                    right: 15px;
+                }
+            }
+            .text-wrapper {
+                width: 60%;
+                padding-left: 5px;
+            }
+            kendo-pager {
+                background-color: #EDEFF3;
+                border: none;
+                box-shadow: none;
+                
+                .k-pager{
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+                &:focus{
+                    box-shadow: none !important;
+                }
+                kendo-pager-page-sizes{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    margin-right: 720px;
+                    kendo-dropdownlist{
+                        background-color: #EDEFF3;
+                        border: none;
+                        &:focus{
+                            box-shadow: none;
+                        }
+                        &:hover{
+                            background-color: #EDEFF3;
+                        }
+                        button{
+                            background-color: #EDEFF3 !important;
+                            kendo-icon.k-icon{
+                                font-size: 20px;
+                                margin-right: 40px;
+                                &::before{
+                                    content: "\e015";
+                                }
+                            }
+                        }
+                    }
+                    .k-label{
+                        margin-right: 15px;
+                    }
+                }
+                kendo-pager-prev-buttons{
+                    button{
+                        height: 29px;
+                        margin-left: 5px;
+                        background-color: #FFFFFF !important;
+                    }
+                }
+                kendo-pager-next-buttons{
+                    button{
+                        color: #959DB3;
+                        border-radius: 3px;
+                        height: 29px;
+                        margin-right: 5px;
+                        background-color: #FFFFFF !important;
+                    }
+                }
+                kendo-pager-numeric-buttons{
+                    .k-pager-numbers{
+                        .k-selected{
+                            color: #FFFFFF;
+                            border-radius: 3px;
+                            background-color: #959DB3 !important;
+                        }
+                    }
+                }
+              
+            }
+        }
+        .k-list-item.k-selected{
+            background-color: #1A6634 !important;
+        }
+}
+.title{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    span{
+        font-size: 16px;
+    }
+    .search-tool{
+        margin-left: 10px;
+        display: flex;
+        .search{
+            margin-right: 5px;
+            width: 372px !important;
+            box-shadow: none;
+        }
+        .btn-search{
+            background-color: #008000;
+            color: #FFFFFF;
+            border-radius: 3px;
+            box-shadow: none;
+        }
+    }
+    .gr-btn{
+        margin-left: 220px;
+        button{
+            height: 32px;
+            margin-right: 10px;
+            box-shadow: none;
+        }
+        .btn-1{
+            width: 32px;
+            background-color: #FFFFFF;
+        }
+        .btn-2{
+           
+            background-color: #FFFFFF;
+            width: 102px;
+            span{
+                padding: 0 5px;
+                font-size: 13px;
+                color:#959DB3 ;
+            }
+        }
+        .btn-3{
+            background-color: #1A6634;
+            color: #FFFFFF;
+            span{
+                font-size: 11px;
+            }
+        }
+    }
+}
