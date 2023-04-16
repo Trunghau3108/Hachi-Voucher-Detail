@@ -29,14 +29,21 @@ export class Product {
     BrandName: string = "";
   }
 
-export class ProductList{
-  StatusCode: number = 0;
-  ErrorString: any;
-  ObjectReturn?:{
-    Data: Product[];
-    Total: number;
-    AggregateResults: null;
-    Errors: null;
-  };
-}
+  export class ProductList {
+    StatusCode: number = 0;
+    ErrorString: any;
+    ObjectReturn?: {
+      Data: [
+        {
+          Code: string,
+          Barcode: string,
+          Poscode: string,
+          ProductName:string
+        }
+      ];
+      Total: number;
+      AggregateResults: null;
+      Errors: null;
+    }
+  }
   

@@ -9,22 +9,29 @@
                     border: none !important;
                 }
             }
-            .k-table-row{
-                background-color: #FFFFFF;
-                border: 1px solid #8DC63F !important;
-                
+            .k-table-tbody{
+                .k-table-row{
+                    background-color: #FFFFFF;
+                    border: 1px solid #8DC63F !important; 
+                    &:hover{
+                        background-color: #FFFFFF !important;
+                    }
+                }
             }
             .k-table-row.k-table-alt-row{
                 background-color: #FFFFFF;
             }
+            
             th.k-header.k-table-th{
                 display: none;
             }
             tbody.k-table-tbody{
+                background-color: #EDEFF3;
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 grid-template-rows: repeat(3, 1fr);
                 grid-gap: 15px;
+                
             }
             .k-table-td{
                 width: 222px;
@@ -70,7 +77,7 @@
                 kendo-pager-page-sizes{
                     display: flex;
                     flex-direction: row-reverse;
-                    margin-right: 720px;
+                    margin-right: 680px;
                     kendo-dropdownlist{
                         background-color: #EDEFF3;
                         border: none;
@@ -81,6 +88,7 @@
                             background-color: #EDEFF3;
                         }
                         button{
+                            padding: revert;
                             background-color: #EDEFF3 !important;
                             kendo-icon.k-icon{
                                 font-size: 20px;
@@ -120,6 +128,9 @@
                         }
                     }
                 }
+                .k-button-md.k-icon-button{
+                    padding: revert;
+                }
               
             }
         }
@@ -142,12 +153,15 @@
             margin-right: 5px;
             width: 372px !important;
             box-shadow: none;
+            button{
+                color: white;
+            }
         }
         .btn-search{
             background-color: #008000;
             color: #FFFFFF;
             border-radius: 3px;
-            box-shadow: none;
+            box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);
         }
     }
     .gr-btn{
@@ -155,7 +169,7 @@
         button{
             height: 32px;
             margin-right: 10px;
-            box-shadow: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
         }
         .btn-1{
             width: 32px;
@@ -165,6 +179,7 @@
            
             background-color: #FFFFFF;
             width: 102px;
+            
             span{
                 padding: 0 5px;
                 font-size: 13px;
@@ -174,6 +189,7 @@
         .btn-3{
             background-color: #1A6634;
             color: #FFFFFF;
+            box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);
             span{
                 font-size: 11px;
             }

@@ -1,0 +1,78 @@
+::ng-deep{
+    .datetimepicker{
+        flex-direction: row-reverse;
+        border: none;
+        background-color: #F5F6F8;
+        width: 235.77px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    #DatetimePicker{
+        display: none;
+    }
+    
+    .k-datetime-buttongroup{
+        display: none;
+    }
+    .k-datetime-selector{
+        display: flex;
+        flex-direction: column;
+    }
+    .k-datetime-wrap .k-calendar{
+        height: 230px;
+        border-bottom: 1px solid #DBDEE7;
+    }
+    .k-datetime-calendar-wrap{
+        flex: 0;
+    }
+    .k-datetime-time-wrap{
+        flex: 0 0 calc( 70px + 32px);
+    }
+    .k-time-tab .k-datetime-selector {
+        transform: translateX(0);
+    }
+    // .k-datetime-wrap.k-time-tab{
+    //     display: none;
+    // }
+    // .k-time-list-container{
+    //     display: none;
+    // }
+    kendo-virtualization{
+        display: none;
+    }
+    .k-datetime-footer{
+        display: none;
+    }
+    .k-time-now{
+        display: none;
+    }
+
+
+    .k-time-header .k-title{
+        .gr-allday{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            input[type="checkbox"] {
+                width: 15px;
+                height: 15px;
+                border-radius: 50% !important;
+                margin-right: 10px;
+                
+            }
+    }
+         
+    
+}
+    
+   
+    // .k-disabled{
+    //     opacity: 1;
+    //     cursor: pointer;
+    //     filter: 0;
+    //     pointer-events: 0;
+       
+    // }
+    
+}

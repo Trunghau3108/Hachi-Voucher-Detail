@@ -58,7 +58,7 @@
                           [disabledDates]="disableDates"
                           >
                           <ng-template #monthCellTemplate kendoCalendarHeaderTitleTemplate let-currentDate>
-                            <div>{{ currentDate | date: 'MMMM, yyyy'| vietnameseMonth}}</div>
+                            <div>{{ currentDate | vietnameseMonth}}</div>
                           </ng-template>
                     </kendo-datepicker>
                 </div>
@@ -188,20 +188,12 @@
         </div>
         <input type="text" value="Hachi Hachi chúc mừng bạn nhận được Coupon mã [COUPONID]">
         <label for="">Nội dung thông báo</label>
-        <textarea cols="30" rows="10" id="tarea"></textarea>
+        <textarea cols="30" rows="10" id="tarea" [value]="'Something...'"></textarea>
         <label for="">Thời điểm gởi thông báo trên App mobile</label>
-       <kendo-datetimepicker class="datetimepicker"
-        [format]="formatTime"
-        [value]="date"
-        calendarType="classic"
-       >
-          
-            <ng-template #monthCellTemplate kendoCalendarHeaderTitleTemplate let-currentDate>
-            <div>{{ currentDate | date: 'MMMM, yyyy'| vietnameseMonth}}</div>
-             </ng-template>
-       </kendo-datetimepicker>
-        
-      
+
+        <!-- datetimepicker -->
+        <app-datetimepicker></app-datetimepicker>
+
         
         <label for="">Đối tượng gởi thông báo trên App mobile</label>
         <div class="object">

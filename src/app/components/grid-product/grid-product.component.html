@@ -7,7 +7,7 @@
       [clearButton]="true"
     >
       <ng-template kendoTextBoxPrefixTemplate>
-        <button  kendoButton fillMode="clear" imageUrl="assets/images/search-menu.svg"></button>
+        <button kendoButton fillMode="clear" imageUrl="assets/images/search-menu.svg"></button>
       </ng-template>
       </kendo-textbox>
   <button class="btn-search" imageUrl="assets/images/search-w.svg" kendoButton>Tìm</button>
@@ -18,25 +18,22 @@
       <button class="btn-3" imageUrl="./assets/images/Group 778.svg" kendoButton><span>THÊM MỚI SẢN PHẨM</span></button>
   </div>
 </div>
-    <kendo-grid [data]="productList"  class="k-grid-product "
+    <kendo-grid [kendoGridBinding]="productList"  class="k-grid-product"
     [scrollable]="'none'"
-    
     [pageSize]="take"
     [skip]="skip"
-    
-    
     [pageable]="true"
-
-    [height]="470"
+    (pageChange)="pageChange($event)"
     >
     <kendo-grid-column>
       <ng-template kendoGridCellTemplate let-dataItem>
         <div class="grid-item">
           <div class="image-wrapper">
-            <button kendoButton imageUrl="assets/images/del.svg"></button>
-            <img src="http://test.lapson.vn{{dataItem.ImageThumb}}" width="80" height="80" alt="">
+            <button kendoButton class="btn-delete" imageUrl="assets/images/del.svg"  (click)="deleteSelectedProducts(dataItem.Code)"></button>
+            <img src="{{dataItem.ImageThumb}}" width="80" height="80" alt="">
           </div>
           <div class="text-wrapper">
+            <span style="visibility: hidden;">{{dataItem.Code}}</span><br>
             <span>{{dataItem.ProductName}}</span>
             <br><br>
             <span>{{dataItem.Barcode}}</span>
@@ -46,19 +43,15 @@
     </kendo-grid-column>
     <ng-template
       kendoPagerTemplate
-      let-totalPages="totalPages"
-      let-currentPage="currentPage"
-      class="wrapper_pagi"
     >
       <kendo-pager-page-sizes
         [pageSizes]="limits"
-        
       ></kendo-pager-page-sizes>
      
         <kendo-pager-prev-buttons
         ></kendo-pager-prev-buttons>
         <kendo-pager-numeric-buttons
-          [buttonCount]="buttonCount"
+          [buttonCount]="btnCount"
         ></kendo-pager-numeric-buttons>
         <kendo-pager-next-buttons
         ></kendo-pager-next-buttons>

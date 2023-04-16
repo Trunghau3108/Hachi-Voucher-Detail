@@ -13,6 +13,10 @@
     input#datepicker-4,#datepicker-3.k-input-inner{
         padding: 0 10px;
     }
+    .k-input-inner{
+        z-index: 0;
+    }
+
     
     .k-month tbody td.day {
         display: inline-block;
@@ -180,6 +184,9 @@
                     }
                     input[type="checkbox"] {
                         border: 1px solid #1A6634;
+                        &:checked{
+                           border: none; 
+                        }
                      }
 
                 }
@@ -190,6 +197,9 @@
                         margin-left: 100px;
                         input[type="checkbox"] {
                             border: 1px solid #1A6634;
+                            &:checked{
+                                border: none; 
+                             }
                          }
                         label{
                             color: #1A6634;
@@ -385,14 +395,6 @@
             }
         input[type = "text"],textarea{
             width: 100%;
-        }
-        .datetimepicker{
-            flex-direction: row-reverse;
-            border: none;
-            background-color: #F5F6F8;
-            width: 235.77px;
-            height: 30px;
-            margin-bottom: 10px;
         }
         .cbox{
             display: flex;

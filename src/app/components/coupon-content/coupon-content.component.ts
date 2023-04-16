@@ -45,10 +45,7 @@ export class CouponContentComponent implements OnInit {
     displayFormat: "dd/MM/yyyy",
     inputFormat: "dd/MM/yyyy",
   };
-  public formatTime: FormatSettings = {
-    displayFormat: "dd/MM/yyyy HH:mm ",
-    inputFormat: "dd/MM/yyyy HH:mm ",
-  };
+  
 
 
   

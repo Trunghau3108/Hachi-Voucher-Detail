@@ -1,0 +1,16 @@
+<kendo-datetimepicker class="datetimepicker"
+[format]="formatTime"
+[value]="date"
+calendarType="classic"
+[fillMode]="'flat'"
+(open)="OpenTime()"
+>
+    <ng-template #monthCellTemplate kendoCalendarHeaderTitleTemplate let-currentDate>
+    <div>{{ currentDate | vietnameseMonth}}</div>
+     </ng-template>
+</kendo-datetimepicker>
+
+<div id="DatetimePicker">
+    <button kendoButton>asdadasd</button>
+</div>
+
