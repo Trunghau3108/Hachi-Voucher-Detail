@@ -27,6 +27,9 @@ import { GridModule } from '@progress/kendo-angular-grid';
 import { ProductsService } from './services/products.service';
 import { GridProductComponent } from './components/grid-product/grid-product.component';
 import { DatetimepickerComponent } from './components/datetimepicker/datetimepicker.component';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+
+
 
 
 // import "@progress/kendo-angular-intl/locales/vi/all";
@@ -69,6 +72,7 @@ import { DatetimepickerComponent } from './components/datetimepicker/datetimepic
     DatePipe,
     NgbModule,
     GridModule,
+    LayoutModule,
   ],
   
   providers: [ProductsService],

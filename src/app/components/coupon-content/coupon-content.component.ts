@@ -1,4 +1,4 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, OnInit,Input,ViewEncapsulation   } from '@angular/core';
 import { FormatSettings  } from '@progress/kendo-angular-dateinputs';
 import * as $ from 'jquery';
 /// <reference types="kendo-ui" />
@@ -10,7 +10,7 @@ import * as $ from 'jquery';
   styleUrls: ['./coupon-content.component.scss']
 })
 export class CouponContentComponent implements OnInit {
-
+  @Input() selectedItem!: string;
   
   allChecked: boolean = false;
   isChecked1: boolean = false;

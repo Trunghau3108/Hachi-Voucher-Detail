@@ -1,24 +1,28 @@
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="side-bar">
-    <div class="brand-name">
-      <h1></h1>
-    </div>
+<kendo-drawer-container>
+  <kendo-drawer
+    #drawer
+    [items]="items"
+    mode="push"
+    [mini]="true"
+    [width]="175"
+    [(expanded)]="expanded"
+    [autoCollapse]="false"
+    [isItemExpanded]="isItemExpanded"
+    (select)="onSelect($event)"
+  >
+    
+  <ng-template kendoDrawerHeaderTemplate>
     <div class="menu">
-      <div class="item"><a href="#"><img src="./assets/images/Path 21.svg" alt="">KHUYẾN MÃI</a></div>
-      <div class="item"><a href="#"><img src="./assets/images/Path 21.svg" alt="">NỘI DUNG</a></div>
-      <div class="item"><a href="#"><img src="./assets/images/Path 21.svg" alt="">QUẢN LÝ BANNER</a></div>
-      <div class="item">
-        <a class="sub-btn"><img src="./assets/images/Path 21.svg" alt="">CHÍNH SÁCH</a>
-        <div class="sub-menu">
-          <a href="#" class="sub-item"><span class="active">Coupon</span></a>
-          <a href="#" class="sub-item">xxxxxxxxxxxxxx</a>
-          <a href="#" class="sub-item">xxxxxxxxxxxxxx</a>
-          <a href="#" class="sub-item">xxxxxxxxxxxxxx</a>
-          <a href="#" class="sub-item">xxxxxxxxxxxxxx</a>
-          <a href="#" class="sub-item">xxxxxxxxxxxxxx</a>
-        </div>
-      </div>
-      <div class="item"><a href="#"><img src="./assets/images/Path 21.svg" alt="">BÁO CÁO EXCEL</a></div>
+      <button class="btn-menu" kendoButton (click)="drawer.toggle()" icon="menu">
+      </button>
+      <span *ngIf="expanded" class="title-menu">Home</span>
     </div>
-  </div>
+  </ng-template>
+
+  </kendo-drawer>
+  <kendo-drawer-content>
+    <app-navbar></app-navbar>
+    <app-nav-header></app-nav-header>
+    <app-coupon-content></app-coupon-content> 
+  </kendo-drawer-content>
+</kendo-drawer-container>

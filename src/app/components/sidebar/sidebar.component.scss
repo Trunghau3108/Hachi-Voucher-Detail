@@ -1,63 +1,61 @@
-.side-bar {
-	background: #5A6276;
-	width: 220px;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	.brand-name {
-		height: 50px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-bottom: 1px solid #FFFFFF;
-	}
-	.menu {
-		.item {
-			cursor: pointer;
-			a {
-				color: #FFFFFF;
-				font-size: 13px;
-				font-weight: 700;
-				display: block;
-				padding: 0 15px;
-				line-height: 50px;
-				height: 50px;
-				&:hover {
-					background: #1A2334;
-					border-left: 5px solid #FFFFFF;
-				}
-			}
-			.sub-btn {
-				&.active {
-					background: #1A2334;
-					border-left: 5px solid #FFFFFF;
-					font-weight: 700;
-				}
-			}
-			img{
-				position: relative;
-				top: 10px;
-				margin-right: 15px;
-			}
-			.sub-menu {
-				background: #1A2334;
-				a {
-					height: 37px;
-					color: #959DB3;
-					font-weight: 700;
-					line-height: 16px;
-					font-size: 13px;
-					padding-left: 65px;
-					padding-top: 10px;
-					justify-content: center;
-					span {
-						&.active {
-							color: #FFFFFF;
+::ng-deep{
+	.k-drawer-container{
+		.k-drawer{
+			background-color: #5A6276;
+			color: #FFFFFF;
+			//Start -> Nội dung trong drawer
+			.k-drawer-wrapper {
+			  position: fixed;
+			  .menu{
+					border-bottom: 1px solid #FFFFFF;
+					height: 50px;
+					.btn-menu{
+						margin-left: 10px;
+						margin-top: 7px;
+						border: none;
+						background-color: #5A6276;
+						color: #FFFFFF;
+						
+						&:focus{
+							box-shadow: none;
 						}
 					}
 				}
+				ul{
+						li{
+							&:hover{
+								background-color: #1A2334;
+								color: #FFFFFF;
+							}
+						}
+						li.k-selected{
+							background-color: #1A2334;
+						}
+						li.k-level-0{
+							&:hover{
+								background-color: #1A2334;
+								color: #FFFFFF;
+							}
+							.k-item-text{
+								margin-top: 5px;
+							}
+						}
+						li.k-level-1{
+							background-color: #1A2334;
+							.k-item-text{
+								margin-top: 3px;
+								margin-left: 25px;
+								color: #959DB3;
+								&:hover{
+									color: #FFFFFF;
+								}
+							}
+						}
+				}
 			}
+			
 		}
 	}
+	
 }
+

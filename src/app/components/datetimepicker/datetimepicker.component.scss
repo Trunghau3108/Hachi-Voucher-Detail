@@ -7,10 +7,7 @@
         height: 30px;
         margin-bottom: 10px;
     }
-    #DatetimePicker{
-        display: none;
-    }
-    
+  
     .k-datetime-buttongroup{
         display: none;
     }
@@ -31,12 +28,9 @@
     .k-time-tab .k-datetime-selector {
         transform: translateX(0);
     }
-    // .k-datetime-wrap.k-time-tab{
-    //     display: none;
-    // }
-    // .k-time-list-container{
-    //     display: none;
-    // }
+    .k-time-list-container{
+        display: none;
+    }
     kendo-virtualization{
         display: none;
     }
@@ -47,25 +41,67 @@
         display: none;
     }
 
-
-    .k-time-header .k-title{
-        .gr-allday{
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            input[type="checkbox"] {
-                width: 15px;
-                height: 15px;
-                border-radius: 50% !important;
-                margin-right: 10px;
-                
+    #datetimePickerPopup{
+        .checkTime{
+            text-align: left;
+            input{
+                border-radius: 50%;
+                margin-right: 5px;
+                &:checked + span{
+                    background-color: #FFFFFF;
+                    color: #5CB800;
+                }
             }
+        }
+        .changeTime{
+            margin-top: 20px;
+            display: flex;
+            .k-dropdown{
+               margin-right: 50px;
+               width: 102px;
+               border: none;
+               font-weight: 400;
+               &:focus{
+                box-shadow: none;
+               }
+               .k-i-caret-alt-down{
+                &::before{
+                    font-size: 20px;
+                    content: "\e015";
+                }
+               }
+               .k-input-inner{
+                background-color: #FFFFFF;
+               }
+               .k-button{
+                background-color: #FFFFFF;
+               }
+
+            }
+            .btn-time{
+                display: flex;
+                button {
+                  font-weight: 400;
+                    background-color: #FFFFFF;
+                    margin: 0 5px;
+                    border: none;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    &:focus, &:hover {
+                      background-color: #5CB800;
+                      color: #FFFFFF;
+                      box-shadow: none;
+                      outline: none;
+                    }
+                }
+            } 
+        }
     }
-         
-    
+        
 }
-    
+
+   
    
     // .k-disabled{
     //     opacity: 1;
@@ -75,4 +111,3 @@
        
     // }
     
-}
