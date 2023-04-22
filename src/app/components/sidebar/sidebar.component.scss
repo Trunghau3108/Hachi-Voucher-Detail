@@ -1,5 +1,19 @@
 ::ng-deep{
+	app-coupon-content {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	  }
+	  
+	  app-coupon-content > * {
+		max-width: 100%;
+	  }
+	
 	.k-drawer-container{
+		height: 100%;
 		.k-drawer{
 			background-color: #5A6276;
 			color: #FFFFFF;
@@ -32,15 +46,18 @@
 							background-color: #1A2334;
 						}
 						li.k-level-0{
+							
+							height: 50px;
 							&:hover{
 								background-color: #1A2334;
 								color: #FFFFFF;
 							}
 							.k-item-text{
-								margin-top: 5px;
+								margin-top: 8px;
 							}
 						}
 						li.k-level-1{
+							
 							background-color: #1A2334;
 							.k-item-text{
 								margin-top: 3px;

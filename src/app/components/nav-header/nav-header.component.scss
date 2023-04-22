@@ -1,74 +1,97 @@
-.tool {
-	
-	padding-top: 50px;
-	.cards {
-		padding: 15px 0;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border-bottom: 1px solid #BDC2D2;
-		.text {
-			margin-top: 5px;
-			font-size: 13px;
-			line-height: 16px;
-			font-weight: 700;
-			color: #959DB3;
-			span {
-				&.active {
-					color: #1A6634;
-				}
-				.k-icon.k-i-arrow-chevron-right{
-					font-size: 22px;
-					padding: 0 15px;
+::ng-deep{
+	.tool {
+		padding-top: 50px;
+		.cards {
+			padding: 15px 0;
+			display: flex;
+			align-items: center;
+			border-bottom: 1px solid #BDC2D2;
+			.text {
+				margin-left: 5px;
+				margin-right: 50px;
+				.k-breadcrumb-container{
+					text-align: center;
+					align-items: center;
+					justify-content: center;
+					background-color: #EDEFF3;
+					li{
+						margin-right: 10px;
+						&:first-child{
+							color: #1A6634;
+						}
+						.k-breadcrumb-delimiter-icon{
+							margin-left: 7px;
+							.k-i-chevron-right.k-icon{
+								font-size: 20px;
+							}
+						}
+					}
 				}
 			}
 		}
-	}
-		.group-btn {
-			margin-left: 20px;
-			button{
-				height: 32px;
-				background: #FFFFFF;
-				border: none;
-				box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);
-				margin: 0 5px;
-				span{
-					font-size: 11px;
-					line-height: 13.81px;
-					font-weight: 700;
+			.group-btn {
+				margin-left: 20px;
+				margin-right: 200px;
+				button{
+					height: 32px;
+					background: #FFFFFF;
+					border: none;
+					box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);
+					margin: 0 5px;
+					span{
+						font-size: 11px;
+						line-height: 13.81px;
+						font-weight: 700;
+					}
 				}
-				.sp1{
-					padding: 0 10px;
-					color: #008000;
+				.btn1{
+					width: 156px;
+					.sp1{
+						margin-left: 5px;
+						color: #008000;
+					}
 				}
-				.sp3{
-					color: #008000;
-					padding: 0 5px;
+				.btn2{
+					width: 42px;
+					background-color: #FFFFFF;
+					box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
 				}
-				.sp4{
-					color: #FFFFFF;
+				.btn3{
+					.sp3{
+						margin-left: 10px;
+						color: #008000;
+					}
 				}
-				.sp5{
-					margin-right: 7px;
-					padding-right: 5px;
-					color: #FFFFFF;
+				.btn4{
+					background-color: #BDC2D2;
+					.sp4{
+						color: #FFFFFF;
+					}
 				}
-		}
-	}
-		.k-button-group {
-			position: relative;
-			right: 30px;
-			width: 98px;
-			height: 32px;
-			background-color: #FFFFFF;
-			border-radius: 3px;
-			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+				.btn5{
+					background-color: #1A6634;
+					.sp5{
+						margin-left: 5px;
+						color: #FFFFFF;
+						
+					}
+					img{
+						margin-left: 10px;
+					}
+				}
+				
 			}
-			button{
+			.k-button-group {
 				background-color: #FFFFFF;
-				border: none;
-			}	
-			:focus{
-				box-shadow: none;
-			}
-	}
+				border-radius: 3px;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+				}
+				button{
+					border: none;
+				}	
+				:focus{
+					box-shadow: none;
+				}
+	  }
+}
+

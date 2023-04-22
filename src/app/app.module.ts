@@ -28,6 +28,8 @@ import { ProductsService } from './services/products.service';
 import { GridProductComponent } from './components/grid-product/grid-product.component';
 import { DatetimepickerComponent } from './components/datetimepicker/datetimepicker.component';
 import { LayoutModule } from '@progress/kendo-angular-layout';
+import { NavigationModule } from '@progress/kendo-angular-navigation';
+
 
 
 
@@ -73,6 +75,7 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
     NgbModule,
     GridModule,
     LayoutModule,
+    NavigationModule,
   ],
   
   providers: [ProductsService],

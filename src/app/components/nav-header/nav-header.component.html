@@ -1,16 +1,31 @@
 
     <div class="tool">
         <div class="cards">
+            <!-- Start -> BreadCrumb theo click của menu -->
             <div class="text">
-                <span><span class="active">CHÍNH SÁCH</span>  <span class="k-icon k-i-arrow-chevron-right"></span>  COUPON  <span class=" k-icon k-i-arrow-chevron-right"></span>   CHI TIẾT ĐỢT PHÁT HÀNH </span>
+                    <kendo-breadcrumb
+                    [items]="items"
+                    [collapseMode]="'none'"
+                    >
+                    <ng-template kendoBreadCrumbItemTemplate let-item let-index="index">
+                        <div class="item" role="button">
+                        <span class="item__index">{{ item.text }}</span>
+                        </div>
+                    </ng-template>
+                    </kendo-breadcrumb>
             </div>
+            <!-- End BreadCrumb -->
+
+            <!-- Start -> Group Button middle -->
             <div class="group-btn">
-                <button kendoButton imageUrl="./assets/images/Chart-12.svg" (click)="handleButtonClick($event)" value="DANH SÁCH P MH"><span class="sp1">DANH SÁCH COUPON</span></button>
+                <button kendoButton class="btn1" imageUrl="./assets/images/Chart-12.svg" (click)="handleButtonClick($event)" value="DANH SÁCH P MH"><span class="sp1">DANH SÁCH COUPON</span></button>
                 <button kendoButton  class="btn2" imageUrl="./assets/images/print.svg" (click)="handleButtonClick($event)" value="Print"></button>
-                <button kendoButton imageUrl="./assets/images/n-check.svg" (click)="handleButtonClick($event)" value="ÁP DỤNG"><span class="sp3">ÁP DỤNG</span></button>
+                <button kendoButton class="btn3" imageUrl="./assets/images/n-check.svg" (click)="handleButtonClick($event)" value="ÁP DỤNG"><span class="sp3">ÁP DỤNG</span></button>
                 <button kendoButton class="btn4" (click)="handleButtonClick($event)" value="XÓA ĐỢT PHÁT HÀNH"><span class="sp4">XÓA ĐỢT PHÁT HÀNH</span></button>
                 <button kendoButton class="btn5" imageUrl="./assets/images/Group 778.svg" (click)="handleButtonClick($event)" value="TẠO MỚI"><span class="sp5">TẠO MỚI</span><img src="./assets/images/Shape.svg"></button>
             </div>
+            <!-- End -> Group Button middle -->
+
             <kendo-buttongroup>   
                         <button kendoButton imageUrl="./assets/images/Group 616.svg" (click)="handleButtonClick($event)" value="download"></button>
                         <button kendoButton class="gr-btn2" imageUrl="./assets/images/xlsx.svg" (click)="handleButtonClick($event)" value="file" ></button> 
