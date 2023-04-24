@@ -1,19 +1,11 @@
 ::ng-deep{
-    
-        .k-drawer{
-            width: 220px;
-            overflow: auto;
-        }
-        .k-drawer.k-drawer-end{
-            transform: translateX(0) !important;
-            background-color: #EDEFF3;
-        }
-
-
-
         .k-grid-product{
             margin-top: 10px;
+            
             width: 1280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
                 background-color: #EDEFF3;
                 border: none;
             .k-link{
@@ -69,11 +61,14 @@
                     top: -10px;
                     right: 15px;
                 }
+                
             }
             .text-wrapper {
                 width: 60%;
                 padding-left: 5px;
             }
+
+            //pager grid
             kendo-pager {
                 background-color: #EDEFF3;
                 border: none;

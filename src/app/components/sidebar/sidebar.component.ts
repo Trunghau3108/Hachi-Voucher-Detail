@@ -20,6 +20,9 @@ export class SidebarComponent {
     return this.expandedIndices.indexOf(item.id) >= 0;
   };
 
+  toggleDrawer() {
+    this.expanded = !this.expanded;
+  }
 
   public items: Array<DrawerItem> = [
    

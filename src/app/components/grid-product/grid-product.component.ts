@@ -1,4 +1,4 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { ProductList } from 'src/app/DTO/product.dto';
 import { Product } from 'src/app/DTO/product.dto';
@@ -27,10 +27,15 @@ export class GridProductComponent implements OnInit{
   take: number = 15;
   page: number = 1;
   skip: number = 0;
-  limits: number[] = [15, 20, 50];
+  limits: number[] = [10, 20, 50];
   public btnCount = 4;
   pageSize: number = 15;
   public expandMode: DrawerMode = "overlay";
+
+  isOpen = false;
+  
+
+  @Output() openDrawer = new EventEmitter<void>();
   
 
   constructor(private productService: ProductsService,private dialogService: DialogService) {}

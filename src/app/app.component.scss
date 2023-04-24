@@ -1,0 +1,102 @@
+::ng-deep{
+	.info-coupon{
+		margin-left: 30px;
+		
+	}
+
+	.k-drawer-container{
+		width: 200px;
+		height: 100%;
+		
+		&.k-drawer-expanded{
+			.k-drawer.k-drawer-start{
+				flex-basis: 220px !important;
+			}
+			.k-drawer-wrapper{
+				width: 200px !important;
+			}
+		}
+		.k-drawer{
+			background-color: #5A6276;
+			color: #FFFFFF;
+			flex-basis: 220px;
+			//Start -> Nội dung trong drawer
+			.k-drawer-wrapper {
+			  position: fixed;
+			  .menu{
+					border-bottom: 1px solid #FFFFFF;
+					height: 50px;
+					.btn-menu{
+						margin-left: 10px;
+						margin-top: 7px;
+						border: none;
+						background-color: #5A6276;
+						color: #FFFFFF;
+						
+						&:focus{
+							box-shadow: none;
+						}
+					}
+				}
+				ul{
+						li{
+							&:hover{
+								background-color: #1A2334;
+								color: #FFFFFF;
+							}
+						}
+						li.k-selected{
+							background-color: #1A2334;
+						}
+						li.k-level-0{
+							
+							height: 50px;
+							&:hover{
+								background-color: #1A2334;
+								color: #FFFFFF;
+							}
+							.k-item-text{
+								margin-top: 8px;
+							}
+						}
+						li.k-level-1{
+							
+							background-color: #1A2334;
+							.k-item-text{
+								margin-top: 3px;
+								margin-left: 25px;
+								color: #959DB3;
+								&:hover{
+									color: #FFFFFF;
+								}
+							}
+						}
+				}
+			}
+			
+		}
+	}
+
+	.wrapper {
+		//  start -> ẩn hiện drawer product
+		kendo-drawer-container {
+		  .k-drawer.k-drawer-end {
+			width: 300px;
+			display: none; // ẩn drawer khi chưa click
+			transform: translateX(-100%);
+		  }
+			&.k-drawer-expanded{
+				.k-drawer.k-drawer-end {
+					display: block; // hiện drawer khi click
+					transform: translateX(0);
+				}
+			}
+		  
+		}
+		// end -> 
+	  }
+	
+}
+
+
+

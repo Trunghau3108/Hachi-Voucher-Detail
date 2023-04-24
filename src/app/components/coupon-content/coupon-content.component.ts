@@ -46,7 +46,10 @@ export class CouponContentComponent implements OnInit {
     inputFormat: "dd/MM/yyyy",
   };
   
-
+  onToggleDrawer(isOpen: boolean) {
+    console.log(isOpen);
+    // Do something with the isOpen value
+  }
 
   
 
