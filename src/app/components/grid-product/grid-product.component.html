@@ -1,3 +1,4 @@
+<!-- Start -> Grid-fillter -->
 <div class="title">
   <span>THÔNG TIN CHI TIẾT CHƯƠNG TRÌNH</span>
   <div class="search-tool">
@@ -16,8 +17,29 @@
       <button class="btn-1" imageUrl="assets/images/Group 1891.svg" kendoButton></button>
       <button class="btn-2" imageUrl="assets/images/Group 616.svg" kendoButton><span>Template</span></button>
       <button class="btn-3" imageUrl="./assets/images/Group 778.svg" kendoButton><span>THÊM MỚI SẢN PHẨM</span></button>
+      <!-- <kendo-drawer-container>
+        <kendo-drawer
+          #drawer
+          [items]="items"
+          [mode]="'overlay'"
+          [position]="'end'"
+          [expanded]="false"  
+        >
+        
+        </kendo-drawer>
+    
+        <kendo-drawer-content>
+         
+        </kendo-drawer-content>
+    
+    
+      </kendo-drawer-container> -->
+
   </div>
 </div>
+  <!-- End -> Grid-fillter -->
+
+    <!-- Start -> Grid-product -->
     <kendo-grid [kendoGridBinding]="productList"  class="k-grid-product"
     [scrollable]="'none'"
     [pageSize]="take"
@@ -27,10 +49,19 @@
     >
     <kendo-grid-column>
       <ng-template kendoGridCellTemplate let-dataItem>
+        
         <div class="grid-item">
           <div class="image-wrapper">
-            <button kendoButton class="btn-delete" imageUrl="assets/images/del.svg"  (click)="deleteSelectedProducts(dataItem.Code)"></button>
-            <!-- <img src="{{dataItem.ImageThumb}}" width="80" height="80" alt=""> -->
+            <!-- Button Delete -->
+            <div class="btn-filter">
+              <button kendoButton class="btn-delete" imageUrl="assets/images/del.svg" (click)="showConfirmation()"></button>
+              <button kendoButton class="btn-edit" imageUrl="assets/images/edit-1.svg"></button>
+            </div>
+          
+            <!-- show dialog delete -->
+            <div kendoDialogContainer class="diaglog-product"></div>
+
+            <img src="http://test.lapson.vn/{{dataItem.ImageThumb}}" width="80" height="80" alt="">
           </div>
           <div class="text-wrapper">
             <span style="visibility: hidden;">{{dataItem.Code}}</span><br>
@@ -47,7 +78,6 @@
       <kendo-pager-page-sizes
         [pageSizes]="limits"
       ></kendo-pager-page-sizes>
-     
         <kendo-pager-prev-buttons
         ></kendo-pager-prev-buttons>
         <kendo-pager-numeric-buttons
@@ -57,7 +87,8 @@
         ></kendo-pager-next-buttons>
      
     </ng-template>
-
-   
-    
   </kendo-grid>
+
+<!-- End -> Grid-product -->
+
+  

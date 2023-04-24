@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { ProductList,Product } from '../models/product.model';
+import { ProductList,Product } from '../DTO/product.dto';
 
 
 

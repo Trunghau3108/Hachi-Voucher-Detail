@@ -29,6 +29,9 @@ import { GridProductComponent } from './components/grid-product/grid-product.com
 import { DatetimepickerComponent } from './components/datetimepicker/datetimepicker.component';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
+import { DrawerProductDetailComponent } from './drawer-product-detail/drawer-product-detail.component';
+import { DialogsModule } from '@progress/kendo-angular-dialog';
+
 
 
 
@@ -53,6 +56,7 @@ import { NavigationModule } from '@progress/kendo-angular-navigation';
     VietnameseMonthPipe,
     GridProductComponent,
     DatetimepickerComponent,
+    DrawerProductDetailComponent,
    
   ],
   imports: [
@@ -76,6 +80,7 @@ import { NavigationModule } from '@progress/kendo-angular-navigation';
     GridModule,
     LayoutModule,
     NavigationModule,
+    DialogsModule,
   ],
   
   providers: [ProductsService],

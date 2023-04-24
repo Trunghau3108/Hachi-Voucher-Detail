@@ -40,7 +40,7 @@
     "@progress/kendo-angular-layout": "^11.4.0",
     "@progress/kendo-angular-navigation": "11.4.0",
     "@progress/kendo-angular-pdf-export": "11.4.0",
-    "@progress/kendo-angular-popup": "^11.4.0",
+    "@progress/kendo-angular-popup": "11.4.0",
     "@progress/kendo-angular-treeview": "11.4.0",
     "@progress/kendo-angular-upload": "11.4.0",
     "@progress/kendo-data-query": "^1.6.0",

@@ -1,4 +1,16 @@
 ::ng-deep{
+    
+        .k-drawer{
+            width: 220px;
+            overflow: auto;
+        }
+        .k-drawer.k-drawer-end{
+            transform: translateX(0) !important;
+            background-color: #EDEFF3;
+        }
+
+
+
         .k-grid-product{
             margin-top: 10px;
             width: 1280px;
@@ -137,7 +149,37 @@
         .k-list-item.k-selected{
             background-color: #1A6634 !important;
         }
+
+        //dialog
+        kendo-dialog{
+            .k-dialog-titlebar{
+                .k-dialog-title{
+                    margin-left: 80px;
+                    color: #FD7676;
+                }
+                .k-dialog-titlebar-actions{
+                    display: none;
+                }
+            }
+            .k-dialog-actions{
+               height: 52px;
+                .k-button{
+                    width: 158px;
+                    height: 53px;
+                }
+                .k-button:nth-child(1){
+                    width: 158px;
+                    color: #959DB3;
+                }
+                .k-button:nth-child(2){
+                    width: 158px;
+                    background-color: #FD7676;
+                    color: #FFFFFF;
+                }
+            }
+        }
 }
+
 .title{
     display: flex;
     text-align: center;
