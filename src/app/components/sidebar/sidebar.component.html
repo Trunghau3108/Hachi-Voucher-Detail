@@ -21,38 +21,5 @@
 
   
   </kendo-drawer>
-  <kendo-drawer-content>
-    <app-navbar></app-navbar>
-    <app-nav-header></app-nav-header>
-    <app-coupon-content></app-coupon-content> 
-  </kendo-drawer-content>
 </kendo-drawer-container>
 
-<div class="wrapper">
-  <kendo-drawer-container>
-    <kendo-drawer #drawer
-    [mode]="'overlay'"
-    [(expanded)]="expanded"
-    [position]="'end'">
-    <ng-template kendoDrawerTemplate>
-      <form class="k-form" *ngIf="expanded">
-        <label class="k-form-field">
-          <span>First Name</span>
-          <kendo-textbox placeholder="Your Name"></kendo-textbox>
-        </label>
-        <label class="k-form-field">
-          <span>Last Name</span>
-          <kendo-textbox placeholder="Your Last Name"></kendo-textbox>
-        </label>
-        <label class="k-form-field">
-          <button kendoButton>Submit</button>
-        </label>
-      </form>
-    </ng-template>
-  </kendo-drawer>
-  <kendo-drawer-content>
-    <app-grid-product (openDrawer)="toggleDrawer()"></app-grid-product>
-  </kendo-drawer-content>
-  </kendo-drawer-container>
-  
-</div>

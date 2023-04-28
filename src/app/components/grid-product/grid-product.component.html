@@ -16,7 +16,7 @@
   <div class="gr-btn">
       <button class="btn-1" imageUrl="assets/images/Group 1891.svg" kendoButton></button>
       <button class="btn-2" imageUrl="assets/images/Group 616.svg" kendoButton><span>Template</span></button>
-      <button class="btn-3" imageUrl="./assets/images/Group 778.svg" kendoButton><span>THÊM MỚI SẢN PHẨM</span></button>
+      <button class="btn-3" imageUrl="./assets/images/Group 778.svg" kendoButton (click)="openDrawer.emit()"><span>THÊM MỚI SẢN PHẨM</span></button>
 
   </div>
 </div>
@@ -37,9 +37,9 @@
           <div class="image-wrapper">
             <!-- Button Delete -->
             <div class="btn-filter">
-              <button kendoButton class="btn-delete" imageUrl="assets/images/del.svg" (click)="showConfirmation()"></button>
-              <button kendoButton class="btn-edit" imageUrl="assets/images/edit-1.svg" [ngClass]="{ 'open': isOpen }" (click)="openDrawer.emit()"></button>
-             
+              <button kendoButton class="btn-delete" imageUrl="assets/images/del.svg" (click)="deleteProduct(dataItem.Code)"></button>
+              <button kendoButton class="btn-edit" imageUrl="assets/images/edit-green.svg" (click)="getProduct(dataItem.Code)"></button>
+              <button kendoButton class="btn-editpop" imageUrl="assets/images/edit-red.svg"></button>
             </div>
           
             <!-- show dialog delete -->

@@ -1,7 +1,7 @@
 ::ng-deep{
         .k-grid-product{
             margin-top: 10px;
-            
+            margin-left: 25px;
             width: 1280px;
             display: flex;
             align-items: center;
@@ -33,7 +33,6 @@
                 background-color: #EDEFF3;
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
-                grid-template-rows: repeat(3, 1fr);
                 grid-gap: 15px;
                 
             }

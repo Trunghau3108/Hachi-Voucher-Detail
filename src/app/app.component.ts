@@ -1,10 +1,13 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component,ViewChild} from '@angular/core';
 import {
   DrawerItem,
   DrawerItemExpandedFn,
   DrawerSelectEvent,
 } from "@progress/kendo-angular-layout";
 import { DrawerComponent } from '@progress/kendo-angular-layout';
+import { Product } from './DTO/product.dto';
+import { ProductsService } from './services/products.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,21 +16,50 @@ import { DrawerComponent } from '@progress/kendo-angular-layout';
 export class AppComponent {
   @ViewChild('drawer1') drawer1!: DrawerComponent;
   @ViewChild('drawer2') drawer2!: DrawerComponent;
+  
+  
 
+  public selectedProduct: Product | undefined;
   public selected = "Menu";
   public expanded1 = false;
   public expanded2 = false;
+ 
 
-  public  showDrawer = false;
+  constructor(private productService:ProductsService) {}
+ 
   
+
   public expandedIndices = [2];
   public isItemExpanded: DrawerItemExpandedFn = (item): boolean => {
     return this.expandedIndices.indexOf(item.id) >= 0;
   };
 
-  toggleDrawer() {
-    this.expanded2 = !this.expanded2;
+  
+  toggleDrawer(product: Product) {
+    this.selectedProduct = product;
+    this.expanded2 = true;
   }
+  
+  public updateProduct(code:any,price:any){
+    this.productService.updateProduct(code,price).subscribe(
+      (product: Product) => {
+        if (product && product.ObjectReturn) {
+          if (product.StatusCode === 0) {
+            console.log(product);
+          } else {
+            console.log(product);
+          }
+        } else {
+          console.log(product);
+        }
+      },
+      (error) => {
+        console.log('Lỗi khi cập nhật sản phẩm:', error);
+      }
+    );
+  }
+  
+
   
   public items: Array<DrawerItem> = [
    
@@ -61,9 +93,5 @@ export class AppComponent {
       this.expandedIndices.push(current);
     }
   }
-
-
-  
-
 }
 

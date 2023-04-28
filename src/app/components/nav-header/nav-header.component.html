@@ -8,12 +8,13 @@
                     [collapseMode]="'none'"
                     >
                     <ng-template kendoBreadCrumbItemTemplate let-item let-index="index">
-                        <div class="item" role="button">
-                        <span class="item__index">{{ item.text }}</span>
+                        <div>
+                        <span>{{ item.text }}</span>
                         </div>
                     </ng-template>
                     </kendo-breadcrumb>
             </div>
+            
             <!-- End BreadCrumb -->
 
             <!-- Start -> Group Button middle -->
@@ -32,4 +33,6 @@
                         <button kendoButton class="gr-btn3" imageUrl="./assets/images/xosuong.svg" (click)="handleButtonClick($event)" value="download-2"></button>
             </kendo-buttongroup>
         </div>
+  
     </div>
+

@@ -1,9 +1,9 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { ProductList } from 'src/app/DTO/product.dto';
 import { Product } from 'src/app/DTO/product.dto';
 import { PageChangeEvent } from '@progress/kendo-angular-grid';
-import { DrawerItem, DrawerMode,DrawerPosition } from "@progress/kendo-angular-layout";
+import { DrawerComponent } from "@progress/kendo-angular-layout";
 import {
   DialogService,
   DialogRef,
@@ -11,7 +11,7 @@ import {
   DialogAction,
 } from "@progress/kendo-angular-dialog";
 import * as $ from 'jquery';
-import { style } from '@angular/animations';
+
 /// <reference types="kendo-ui" />
 
 
@@ -21,42 +21,32 @@ import { style } from '@angular/animations';
   styleUrls: ['./grid-product.component.scss']
 })
 export class GridProductComponent implements OnInit{
+
+  @Input() drawerRef!: DrawerComponent;
+
+  selectedProduct: Product | null = null;
+
   
+  id: any;
   productList: any;
-  product: any;
+  product!: Product;
   take: number = 15;
   page: number = 1;
   skip: number = 0;
   limits: number[] = [10, 20, 50];
   public btnCount = 4;
   pageSize: number = 15;
-  public expandMode: DrawerMode = "overlay";
 
-  isOpen = false;
-  
-
-  @Output() openDrawer = new EventEmitter<void>();
-  
-
-  constructor(private productService: ProductsService,private dialogService: DialogService) {}
-
-
-  // show dialog
-  public showConfirmation(): void {
-    const dialog: DialogRef = this.dialogService.open({
-      title: "XÓA SẢN PHẨM",
-      content: `Bạn có chắc chắn muốn xóa sản phẩm...`,
-      actions: [{ text: "Không xóa" }, { text: "Xóa"}],
-      width: 316,
-      height: 243,
-      minWidth: 250,
-    });
-
-    dialog.result.subscribe((result) => {
-      console.log(result)
-    });
-  }
  
+  
+
+ 
+  @Output() openDrawer = new EventEmitter<Product>();
+  
+
+  constructor(private productService: ProductsService) {}
+
+
  
 // pager
   pageChange(event: PageChangeEvent): void {
@@ -66,21 +56,44 @@ export class GridProductComponent implements OnInit{
   }
   
 
-  public items: Array<DrawerItem> = [
-    { text: "Inbox", icon: "k-i-inbox", selected: true },
-    { text: "Notifications", icon: "k-i-bell" },
-    { text: "Calendar", icon: "k-i-calendar" },
-    { text: "Attachments", icon: "k-i-envelop-link" },
-    { text: "Favourites", icon: "k-i-star-outline" },
-  ];
+//Lấy thông tin sản phẩm
+ public getProduct(id: any) {
+      this.productService.getProduct(id).subscribe((product: Product) => {
+      this.openDrawer.emit(product);
+    },
+    (error) => {
+      console.log(error);
+    });
+  }
 
+
+//Xóa sản phẩm
+  public deleteProduct(id: any){
+    this.productService.deleteProduct(id).subscribe(
+      (product: Product) => {
+        if (product.StatusCode === 0) {
+          console.log('Xóa sản phẩm thành công');
+        } else {
+          console.log(product);
+        }
+      },
+      (error) => {
+        console.log('Lỗi khi xóa sản phẩm:', error);
+      }
+    );
+  }
   
   ngOnInit() {
-      // this.loadProducts();
+
+    //load list sản phẩm
       this.productService.getListProduct().subscribe((product: ProductList) => {
       this.productList = product.ObjectReturn?.Data;
-      // console.log(this.productList);
+      // console.log(this.productList);      
+    },
+    (error) => {
+      console.log(error);
     });
+    
 
 
     $(document).ready(function(){
