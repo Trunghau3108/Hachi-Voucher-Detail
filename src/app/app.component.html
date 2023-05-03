@@ -32,6 +32,7 @@
       
     
       <kendo-drawer-content>
+       
         <app-navbar></app-navbar>
         <app-nav-header></app-nav-header>
         <app-coupon-content></app-coupon-content>
@@ -40,7 +41,9 @@
 
 
     </kendo-drawer-container>
-     
+
+    <!-- <app-todo-angular></app-todo-angular> -->
+    
     <!-- Start -> drawer2 product update -->
     <div class="wrapper" >
       <kendo-drawer-container >
@@ -131,7 +134,7 @@
             
             <label class="k-form-field">
               <div class="btn-control">
-                <button kendoButton class="btn-close">ĐÓNG</button>
+                <button kendoButton class="btn-close" (click)="closeDrawer()">ĐÓNG</button>
                 <button kendoButton class="btn-update" (click)="updateProduct(selectedProduct?.ObjectReturn?.Code,selectedProduct?.ObjectReturn?.Price)">CẬP NHẬT</button>
               </div>
             </label>

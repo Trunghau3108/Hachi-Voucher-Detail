@@ -1,0 +1,25 @@
+<div class="menu">
+    <div class="logo">
+        <a>
+            <img src="https://geekup.vn/Icons/geekup-logo-general.svg" alt="logo" width="auto" height="22">
+            <h1>Test</h1>
+        </a>
+    </div>
+    <div class="item"><a>Todo</a></div>
+</div>
+<br><br><br><br><br>
+<div class="content">
+    <div class="user">
+        <h1>User</h1>
+        <kendo-dropdownlist [data]="users" [textField]="'name'" [valueField]="'id'" (valueChange)="onUserIdChange($event)"></kendo-dropdownlist>
+      </div>
+    <br><br><br><br><br>
+    <div class="task">
+       
+        <div *ngIf="tasks && tasks.length">
+            <ul>
+            <li *ngFor="let task of tasks">{{ task.title }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

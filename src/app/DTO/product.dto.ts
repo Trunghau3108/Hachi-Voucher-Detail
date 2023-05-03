@@ -50,4 +50,29 @@ export class Product {
       Errors: null;
     }
   }
+
+
+  export class User{
+    id: number = 0;
+    name: string = "";
+    username: string = "";
+    email: string = "";
+    address?: {
+      street: string;
+      suite: string;
+      city: string;
+      zipcode: string;
+      geo: {
+        lat:string;
+        lng:string;
+      }
+    }
+  }
+
+  export class Task{
+    userId: number = 0;
+    id:number = 0;
+    title: string = "";
+    completed: boolean = false;
+  }
   

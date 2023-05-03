@@ -30,6 +30,7 @@ import { DatetimepickerComponent } from './components/datetimepicker/datetimepic
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
+import { TodoAngularComponent } from './todo-angular/todo-angular.component';
 
 
 
@@ -55,6 +56,7 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
     VietnameseMonthPipe,
     GridProductComponent,
     DatetimepickerComponent,
+    TodoAngularComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient ,HttpHeaders} from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import { ProductList,Product } from '../DTO/product.dto';
+import { ProductList,Product,User,Task } from '../DTO/product.dto';
 
 
 
@@ -42,6 +42,26 @@ export class ProductsService {
     };
     return this.http.post<Product>(this.apiUrl + 'UpdateProduct', updateData);
   }
+
+
+
+
+
+
+
+  //Todo
+  //user
+  getListUser(): Observable<User> {
+    return this.http.get<User>("https://jsonplaceholder.typicode.com/users");
+  }
+
+  //task
+  getTaskList(id: number): Observable<Task[]> {
+    const url = `https://jsonplaceholder.typicode.com/users/${id}/todos`;
+    return this.http.get<Task[]>(url);
+    
+  }
+  //Todo
 }
 
 

@@ -25,7 +25,7 @@ export class GridProductComponent implements OnInit{
   @Input() drawerRef!: DrawerComponent;
 
   selectedProduct: Product | null = null;
-
+  selectProduct: any;
   
   id: any;
   productList: any;
@@ -46,6 +46,37 @@ export class GridProductComponent implements OnInit{
 
   constructor(private productService: ProductsService) {}
 
+  public openedDlgDel = false;
+  public openedDlgEdit = false;
+
+  public closeDlgDel(): void {
+    this.openedDlgDel = false;
+    this.selectProduct = null;
+  }
+  public openDlgDel(id:any): void {
+    this.productService.getProduct(id).subscribe((product: Product) => {
+      this.selectProduct = product.ObjectReturn; 
+      this.openedDlgDel = true; 
+      console.log(this.selectProduct)
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+  public closeDlgEdit(): void {
+    this.openedDlgEdit = false;
+    this.selectProduct = null;
+  }
+
+  public openDlgEdit(id:any): void {
+    this.productService.getProduct(id).subscribe((product: Product) => {
+      this.selectProduct = product.ObjectReturn; 
+      this.openedDlgEdit = true; 
+      console.log(this.selectProduct)
+    }, (error) => {
+      console.log(error);
+    });
+  }
 
  
 // pager
@@ -73,6 +104,7 @@ export class GridProductComponent implements OnInit{
       (product: Product) => {
         if (product.StatusCode === 0) {
           console.log('Xóa sản phẩm thành công');
+          this.closeDlgDel();
         } else {
           console.log(product);
         }
@@ -82,10 +114,12 @@ export class GridProductComponent implements OnInit{
       }
     );
   }
+
+  
   
   ngOnInit() {
 
-    //load list sản phẩm
+    //load list sản phẩm  
       this.productService.getListProduct().subscribe((product: ProductList) => {
       this.productList = product.ObjectReturn?.Data;
       // console.log(this.productList);      

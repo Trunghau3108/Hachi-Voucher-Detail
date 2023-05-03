@@ -52,7 +52,8 @@
                 }
             }
             .image-wrapper{
-                button{
+                .btn-filter{
+                .k-button{
                     background-color: #FFFFFF;
                     border: none;
                     box-shadow: none;
@@ -60,6 +61,7 @@
                     top: -10px;
                     right: 15px;
                 }
+            }
                 
             }
             .text-wrapper {
@@ -143,36 +145,65 @@
         .k-list-item.k-selected{
             background-color: #1A6634 !important;
         }
+      
 
         //dialog
-        kendo-dialog{
-            .k-dialog-titlebar{
-                .k-dialog-title{
-                    margin-left: 80px;
-                    color: #FD7676;
+       
+            .dlgDel{
+                .k-overlay{
+                    background-color: #E5E5E5;
                 }
-                .k-dialog-titlebar-actions{
-                    display: none;
+                .k-dialog{
+                    width: 350px !important;
+                    height:245px;
                 }
-            }
-            .k-dialog-actions{
-               height: 52px;
-                .k-button{
-                    width: 158px;
-                    height: 53px;
+                .k-dialog-titlebar{
+                    height: 50px;
+                    .k-dialog-title{
+                        overflow:unset;
+                        color: #FD7676;
+                        .k-button{
+                          margin-left: 70px;
+                          background-color: #FFFFFF;
+                          border: none;
+                          box-shadow: none;
+                            span{
+                                font-size: 15px;
+                                font-weight: 700;
+                                line-height: 18.83px;
+                                margin-left: 3px;
+                                margin-top: 5px;
+                                color: #FD7676;
+                            }
+                        }
+                    }
+                    .k-dialog-titlebar-actions{
+                        display: none;
+                    }
                 }
-                .k-button:nth-child(1){
-                    width: 158px;
-                    color: #959DB3;
-                }
-                .k-button:nth-child(2){
-                    width: 158px;
-                    background-color: #FD7676;
-                    color: #FFFFFF;
+                .k-dialog-actions{
+                  height: 50px;
+                  padding-inline: 0;
+                  .k-button{
+                    
+                    background-color: #FFFFFF;
+                    border: none;
+                    box-shadow: none;
+                  }
+                    .k-button:nth-child(1){
+                       height: 50px;
+                       width: 50%;
+                    }
+                    .k-button:nth-child(2){
+                        height: 50px;
+                       width: 50%;
+                       background-color: 
+                       #FD7676;
+                    }
                 }
             }
         }
-}
+    
 
 .title{
     display: flex;

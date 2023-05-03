@@ -34,7 +34,9 @@ export class AppComponent {
     return this.expandedIndices.indexOf(item.id) >= 0;
   };
 
-  
+  public closeDrawer(){
+    this.expanded2 = false;
+  }
   toggleDrawer(product: Product) {
     this.selectedProduct = product;
     this.expanded2 = true;

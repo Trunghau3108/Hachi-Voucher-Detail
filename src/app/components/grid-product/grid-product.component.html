@@ -37,13 +37,121 @@
           <div class="image-wrapper">
             <!-- Button Delete -->
             <div class="btn-filter">
-              <button kendoButton class="btn-delete" imageUrl="assets/images/del.svg" (click)="deleteProduct(dataItem.Code)"></button>
+              <button kendoButton class="btn-delete" imageUrl="assets/images/del.svg" *ngIf="!openedDlgDel" (click)="openDlgDel(dataItem.Code)"></button>
               <button kendoButton class="btn-edit" imageUrl="assets/images/edit-green.svg" (click)="getProduct(dataItem.Code)"></button>
-              <button kendoButton class="btn-editpop" imageUrl="assets/images/edit-red.svg"></button>
+              <button kendoButton class="btn-editpop" imageUrl="assets/images/edit-red.svg" *ngIf="!openedDlgEdit" (click)="openDlgEdit(dataItem.Code)"></button>
             </div>
           
             <!-- show dialog delete -->
-            <div kendoDialogContainer class="diaglog-product"></div>
+            <kendo-dialog class="dlgDel"
+            *ngIf="openedDlgDel"
+            >
+            <kendo-dialog-titlebar>
+              <button kendoButton imageUrl="assets/images/alert.svg"> <span>XÓA SẢN PHẨM</span></button>
+            </kendo-dialog-titlebar>
+            <p style="margin: 15px; text-align: center;">
+              Bạn chắc chắn muốn xóa sản phẩm 
+              <span style="color: #36C8CF;">{{selectProduct.ProductName | uppercase}}</span>
+            </p>
+            <p style="margin: 10px; text-align: center;">
+             Sản phẩm bị xóa sẽ <span style="color: #FD7676;">KHÔNG</span> thể khôi phục lại
+            </p>
+            <kendo-dialog-actions>
+              <div class="btn-actions">
+                <button kendoButton (click)="closeDlgDel()">KHÔNG XÓA</button>
+                <button kendoButton imageUrl="assets/images/rash.svg" (click)="deleteProduct(selectProduct.Code)" themeColor="primary">
+                  XÓA
+                </button>
+              </div>
+              
+            </kendo-dialog-actions>
+            </kendo-dialog>
+            <!-- show dialog delete -->
+
+
+            <!-- show dialog edit -->
+            <kendo-dialog class="dlgEdit"
+            *ngIf="openedDlgEdit"
+            >
+            <kendo-dialog-titlebar>
+              <span>CHỈNH SỬA SẢN PHẨM</span>
+            </kendo-dialog-titlebar>
+            <label class="k-form-field">
+              <span>Nhập mã sản phẩm</span>
+              <kendo-textbox value="{{selectProduct.Barcode}}"></kendo-textbox>
+            </label>
+            <label class="k-form-field">
+              <span>Tên sản phẩm</span>
+              <kendo-label>{{selectProduct.ProductName}}</kendo-label>
+            </label>
+            <label class="k-form-field">
+              <span>Giá gốc</span>
+              <kendo-textbox value="{{selectProduct.PriceBase}}" appMoneyFormat></kendo-textbox>
+            </label>
+            <label class="k-form-field">
+              <span>Giá</span>
+              <kendo-textbox value="{{selectProduct.Price}}" appMoneyFormat></kendo-textbox>
+            </label>
+            <label class="k-form-field">
+              <span>Giá VIP</span>
+              <kendo-textbox value="{{selectProduct.PriceVIP}}" appMoneyFormat></kendo-textbox>
+            </label>
+            <label class="k-form-field">
+              <span>Discount</span>
+              <kendo-textbox value="{{selectProduct.Discount}}" appMoneyFormat></kendo-textbox>
+            </label>
+            <label class="k-form-field">
+              <div class="gr-cbx">
+                <div class="cbx">
+                  <span>Is BestPrice</span>
+                 <input type="checkbox" kendoCheckBox>
+                </div>
+                <div class="cbx">
+                  <span>Có khuyến mãi</span>
+                 <input type="checkbox" kendoCheckBox>
+                </div>
+                <div class="cbx">
+                  <span>Is New</span>
+                 <input type="checkbox" kendoCheckBox>
+                </div>
+                <div class="cbx">
+                  <span>Is Hachi 24h</span>
+                 <input type="checkbox" kendoCheckBox>
+                </div>
+                <div class="cbx">
+                  <span>Là Special</span>
+                 <input type="checkbox" kendoCheckBox>
+                </div>
+                <div class="cbx">
+                  <span>Is Gift</span>
+                 <input type="checkbox" kendoCheckBox>
+                </div>
+                <div class="cbx">
+                  <span>Is Combo</span>
+                 <input type="checkbox" kendoCheckBox>
+                </div>
+              </div>
+            </label>
+            <label class="k-form-field">
+              <span>Orginal Name</span>
+              <kendo-textbox value="{{selectProduct.OrginalName}}"></kendo-textbox>
+            </label>
+            <label class="k-form-field">
+              <span>Brand Name</span>
+              <kendo-textbox value="{{selectProduct.BrandName}}"></kendo-textbox>
+            </label>
+            <label class="k-form-field">  
+              <kendo-label>{{"http://test.lapson.vn"+selectProduct.Alias}}</kendo-label>
+             </label>
+            <label class="k-form-field">  
+             <img src="http://test.lapson.vn/{{selectProduct.ImageThumb}}" alt="ImageThumb" style="width: 70%;">
+            </label>
+            <kendo-dialog-actions>
+              <button kendoButton (click)="closeDlgEdit()">ĐÓNG</button>
+              <button kendoButton class="btn-update">CẬP NHẬT</button>
+            </kendo-dialog-actions>
+            </kendo-dialog>
+            <!-- show dialog edit -->
 
             <img src="http://test.lapson.vn/{{dataItem.ImageThumb}}" width="80" height="80" alt="">
           </div>
@@ -54,6 +162,7 @@
             <span>{{dataItem.Barcode}}</span>
           </div>
         </div>
+        <!-- template grid stake -->
       </ng-template>
     </kendo-grid-column>
     <ng-template
@@ -69,8 +178,9 @@
         ></kendo-pager-numeric-buttons>
         <kendo-pager-next-buttons
         ></kendo-pager-next-buttons>
-     
     </ng-template>
+<!--  end template grid stake -->
+     
   </kendo-grid>
 
 <!-- End -> Grid-product -->
