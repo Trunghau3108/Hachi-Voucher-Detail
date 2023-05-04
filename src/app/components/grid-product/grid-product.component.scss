@@ -147,7 +147,7 @@
         }
       
 
-        //dialog
+        //dialog Del
        
             .dlgDel{
                 .k-overlay{
@@ -202,7 +202,60 @@
                     }
                 }
             }
+            .dlgEdit{
+                overflow: auto;
+                .k-dialog{
+                    width: 400px !important;
+                    margin-top: 300px;
+                }
+                .k-overlay{
+                    background-color: #E5E5E5 !important;
+                }
+                .k-dialog-titlebar-actions{
+                    display: none;
+                }
+                .k-dialog-actions{
+                    .btn-close{
+                        background-color: #FFFFFF;
+                        text-align: center;
+                        color: #1A6634;
+                        margin-right: 10px;
+                    }
+                    .btn-update{
+                        background-color: #1A6634;
+                        text-align: center;
+                        color: #FFFFFF;
+                    }
+                    span.k-button-text{
+                        margin-bottom: 0;
+                    }
+                    .k-button{
+                        border: none;
+                        width: 94px;
+                        height: 33.17px;
+                        box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);;
+                    }
+                }
+                .k-form-field{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 10px;
+                    span{
+                        margin-bottom: 8px;
+                    }
+                    .gr-cbx {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-column-gap: 20px;
+                        align-items: center;
+                      }
+                }
+            }
+    
         }
+      
+       
+        
     
 
 .title{

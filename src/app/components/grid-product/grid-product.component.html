@@ -45,6 +45,7 @@
             <!-- show dialog delete -->
             <kendo-dialog class="dlgDel"
             *ngIf="openedDlgDel"
+            
             >
             <kendo-dialog-titlebar>
               <button kendoButton imageUrl="assets/images/alert.svg"> <span>XÓA SẢN PHẨM</span></button>
@@ -72,10 +73,12 @@
             <!-- show dialog edit -->
             <kendo-dialog class="dlgEdit"
             *ngIf="openedDlgEdit"
+            
             >
             <kendo-dialog-titlebar>
               <span>CHỈNH SỬA SẢN PHẨM</span>
             </kendo-dialog-titlebar>
+
             <label class="k-form-field">
               <span>Nhập mã sản phẩm</span>
               <kendo-textbox value="{{selectProduct.Barcode}}"></kendo-textbox>
@@ -147,8 +150,8 @@
              <img src="http://test.lapson.vn/{{selectProduct.ImageThumb}}" alt="ImageThumb" style="width: 70%;">
             </label>
             <kendo-dialog-actions>
-              <button kendoButton (click)="closeDlgEdit()">ĐÓNG</button>
-              <button kendoButton class="btn-update">CẬP NHẬT</button>
+              <button kendoButton class="btn-close" (click)="closeDlgEdit()">ĐÓNG</button>
+              <button kendoButton class="btn-update" (click)="updateProduct(selectProduct.Code,selectProduct.Price)">CẬP NHẬT</button>
             </kendo-dialog-actions>
             </kendo-dialog>
             <!-- show dialog edit -->

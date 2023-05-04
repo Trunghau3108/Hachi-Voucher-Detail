@@ -96,7 +96,27 @@ export class GridProductComponent implements OnInit{
       console.log(error);
     });
   }
-
+  //update sản phẩm
+  public updateProduct(code:any,price:any){
+    this.productService.updateProduct(code,price).subscribe(
+      (product: Product) => {
+        if (product && product.ObjectReturn) {
+          if (product.StatusCode === 0) {
+            console.log(product);
+            console.log('success');
+            this.closeDlgEdit();
+          } else {
+            console.log(product);
+          }
+        } else {
+          console.log(product);
+        }
+      },
+      (error) => {
+        console.log('Lỗi khi cập nhật sản phẩm:', error);
+      }
+    );
+  }
 
 //Xóa sản phẩm
   public deleteProduct(id: any){
