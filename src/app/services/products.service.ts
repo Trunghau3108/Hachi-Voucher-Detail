@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { ProductList,Product,User,Task } from '../DTO/product.dto';
-
+import { DataSourceRequestState, toDataSourceRequest } from '@progress/kendo-data-query';
 
 
 @Injectable({
@@ -15,10 +15,9 @@ export class ProductsService {
  
   constructor(private http: HttpClient) { }
 // lấy danh sách sản phẩm
-  getListProduct(): Observable<ProductList> {
-    return this.http.post<ProductList>(this.apiUrl + 'GetListProduct',{
-      sort: 'Code-desc',
-    });
+  getListProduct(state: DataSourceRequestState): Observable<ProductList> {
+    let queryStr = toDataSourceRequest(state);
+    return this.http.post<ProductList>(this.apiUrl + 'GetListProduct',queryStr);
   }
 
 // lấy sản phẩm chi tiết
@@ -41,6 +40,21 @@ export class ProductsService {
       Properties: ["Price"]
     };
     return this.http.post<Product>(this.apiUrl + 'UpdateProduct', updateData);
+  }
+
+  //thêm mới sản phẩm
+  insertProduct(id = 0,barcode:any): Observable<Product>{
+    return this.http.post<Product>(this.apiUrl + 'GetProduct', { Code: id, Barcode: barcode });
+  }
+
+  //search sản phẩm
+  searchProducts(searchTerm: string): Observable<ProductList> {
+    const body = {
+      filter : `Barcode~contains~'${searchTerm}'~or~Poscode~contains~'${searchTerm}'~or~ProductName~contains~'${searchTerm}' `,
+      sort: "Code-desc"
+    }
+
+    return this.http.post<ProductList>(this.apiUrl + 'GetListProduct', body);
   }
 
 

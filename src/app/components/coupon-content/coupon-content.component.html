@@ -37,31 +37,8 @@
             </div>
             <div class="row-half">
                 <label>Thời gian hiệu lực</label>
-                <div class="date-picker">
-                        <kendo-datepicker #datepicker  class="k-datepicker"
-                            calendarType="classic" 
-                            [value]="date"
-                            [format]="format"
-                            [disabledDates]="disableDates"
-                            >
-                            <ng-template  kendoCalendarHeaderTitleTemplate let-currentDate>
-                                <span>{{currentDate | vietnameseMonth}}</span> 
-                            </ng-template>
-                        </kendo-datepicker>
-                </div>
-                
-                <div class="date-picker">
-                    <kendo-datepicker  class="k-datepicker"
-                          calendarType="classic" 
-                          [value]="date"
-                          [format]="format"
-                          [disabledDates]="disableDates"
-                          >
-                          <ng-template #monthCellTemplate kendoCalendarHeaderTitleTemplate let-currentDate>
-                            <div>{{ currentDate | vietnameseMonth}}</div>
-                          </ng-template>
-                    </kendo-datepicker>
-                </div>
+                <!-- datepicker -->
+               <app-datepicker></app-datepicker>
             </div>
         <div class="lb-tt">
             <label>Tình trạng</label>
@@ -189,11 +166,11 @@
         <input type="text" value="Hachi Hachi chúc mừng bạn nhận được Coupon mã [COUPONID]">
         <label for="">Nội dung thông báo</label>
         <textarea cols="30" rows="10" id="tarea" [value]="'Something...'"></textarea>
-        <label for="">Thời điểm gởi thông báo trên App mobile</label>
 
+        <label for="">Thời điểm gởi thông báo trên App mobile</label>
         <!-- datetimepicker -->
         <app-datetimepicker></app-datetimepicker>
-
+        <br><br>
         
         <label for="">Đối tượng gởi thông báo trên App mobile</label>
         <div class="object">
@@ -210,11 +187,4 @@
     </div>
 </div>
 
-
-
-<div class="info-program">
-    <!-- <div class="grid-item">
-        <app-grid-product></app-grid-product>
-    </div> -->
-</div>
 

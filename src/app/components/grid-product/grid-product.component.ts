@@ -1,15 +1,10 @@
-import { Component, OnInit, Output,EventEmitter,Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { ProductList } from 'src/app/DTO/product.dto';
 import { Product } from 'src/app/DTO/product.dto';
 import { PageChangeEvent } from '@progress/kendo-angular-grid';
-import { DrawerComponent } from "@progress/kendo-angular-layout";
-import {
-  DialogService,
-  DialogRef,
-  DialogCloseResult,
-  DialogAction,
-} from "@progress/kendo-angular-dialog";
+import { State } from '@progress/kendo-data-query';
+
 import * as $ from 'jquery';
 
 /// <reference types="kendo-ui" />
@@ -21,13 +16,15 @@ import * as $ from 'jquery';
   styleUrls: ['./grid-product.component.scss']
 })
 export class GridProductComponent implements OnInit{
+ 
 
-  @Input() drawerRef!: DrawerComponent;
-
-  selectedProduct: Product | null = null;
+  public productData = [];
   selectProduct: any;
+  public expanded2 = false;
+  public expanded3 = false;
+  public filterValue: string = '';
+
   
-  id: any;
   productList: any;
   product!: Product;
   take: number = 15;
@@ -37,22 +34,30 @@ export class GridProductComponent implements OnInit{
   public btnCount = 4;
   pageSize: number = 15;
 
- 
-  
-
- 
-  @Output() openDrawer = new EventEmitter<Product>();
-  
-
-  constructor(private productService: ProductsService) {}
-
+  private stake: State = {
+    skip: 1,
+    take: 50,
+    filter: {
+      logic: 'or',
+      filters: [
+        { field: 'Barcode', operator: 'contains', value: '', ignoreCase: true }
+      ]
+    },
+    sort: [{ field: 'Code', dir: 'desc' }]
+  }
   public openedDlgDel = false;
   public openedDlgEdit = false;
 
-  public closeDlgDel(): void {
-    this.openedDlgDel = false;
-    this.selectProduct = null;
-  }
+ 
+
+  
+
+  constructor(private productService: ProductsService) {}
+  
+
+
+  
+   //open dialog Delete
   public openDlgDel(id:any): void {
     this.productService.getProduct(id).subscribe((product: Product) => {
       this.selectProduct = product.ObjectReturn; 
@@ -62,12 +67,14 @@ export class GridProductComponent implements OnInit{
       console.log(error);
     });
   }
-
-  public closeDlgEdit(): void {
-    this.openedDlgEdit = false;
+  //close
+  public closeDlgDel(): void {
+    this.openedDlgDel = false;
     this.selectProduct = null;
   }
 
+ 
+  //open dialog Edit
   public openDlgEdit(id:any): void {
     this.productService.getProduct(id).subscribe((product: Product) => {
       this.selectProduct = product.ObjectReturn; 
@@ -77,6 +84,21 @@ export class GridProductComponent implements OnInit{
       console.log(error);
     });
   }
+//close
+  public closeDlgEdit(): void {
+    this.openedDlgEdit = false;
+    this.selectProduct = null;
+  }
+
+
+  public closeDrawer2(){
+    this.expanded2 = false;
+  }
+
+  public closeDrawer3(){
+    this.expanded3 = false;
+  }
+  
 
  
 // pager
@@ -90,12 +112,15 @@ export class GridProductComponent implements OnInit{
 //Lấy thông tin sản phẩm
  public getProduct(id: any) {
       this.productService.getProduct(id).subscribe((product: Product) => {
-      this.openDrawer.emit(product);
+      this.selectProduct = product.ObjectReturn;
+      this.expanded2 = true;
+      console.log(this.selectProduct)
     },
     (error) => {
       console.log(error);
     });
   }
+  
   //update sản phẩm
   public updateProduct(code:any,price:any){
     this.productService.updateProduct(code,price).subscribe(
@@ -118,6 +143,32 @@ export class GridProductComponent implements OnInit{
     );
   }
 
+
+  // Filter Product
+  public onChangeFilter(value: any) {
+    this.filterValue = value;
+  }
+  public SearchFilter(value: string) {
+    const stakeFilter: State = {
+      skip: 1,
+      take: 50,
+      filter: {
+        logic: 'or',
+        filters: [
+          { field: 'Barcode', operator: 'contains', value: value, ignoreCase: true },
+          { field: 'ProductName', operator: 'contains', value: value, ignoreCase: true },
+          { field: 'Poscode', operator: 'contains', value: value, ignoreCase: true }
+        ]
+      },
+      sort: [{ field: 'Code', dir: 'desc' }]
+    }
+    this.productService.getListProduct(stakeFilter).subscribe((product:any) => {
+    this.productList = product.ObjectReturn?.Data
+
+      console.log(this.productList)
+    })
+  }
+
 //Xóa sản phẩm
   public deleteProduct(id: any){
     this.productService.deleteProduct(id).subscribe(
@@ -135,21 +186,21 @@ export class GridProductComponent implements OnInit{
     );
   }
 
-  
-  
-  ngOnInit() {
-
-    //load list sản phẩm  
-      this.productService.getListProduct().subscribe((product: ProductList) => {
-      this.productList = product.ObjectReturn?.Data;
-      // console.log(this.productList);      
+  // load listproduct
+ public loadProduct(){
+    this.productService.getListProduct(this.stake).subscribe((product: ProductList) => {
+      this.productList = product.ObjectReturn?.Data;  
     },
     (error) => {
       console.log(error);
     });
+  }
+  
+  ngOnInit() {
+    //load list sản phẩm  
+      this.loadProduct();
     
-
-
+    // jquery
     $(document).ready(function(){
     $('kendo-pager-page-sizes .k-label').html("<span>Hiển thị mỗi trang</span>");
     $('.k-pager-first').html("<span>Đầu</span>");

@@ -1,53 +1,4 @@
 ::ng-deep{
-    thead.k-calendar-thead{
-        display: none;
-    }
-    button.k-button.k-icon-button{
-        border-left: none;
-        color:#959DB3;
-        background-color:#F5F6F8;
-    }
-    button.k-calendar-nav-today{
-        display: none;
-    }
-    input#datepicker-4,#datepicker-3.k-input-inner{
-        padding: 0 10px;
-    }
-    .k-input-inner{
-        z-index: 0;
-    }
-
-    
-    .k-month tbody td.day {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        text-align: center;
-        border-radius: 50%;
-      }
-    .k-other-month{
-        visibility: hidden;
-        
-    }
-   
-   .k-link:hover{
-        background-color: #FFFFFF !important;
-        border: 1px solid #1A6634 !important;
-        border-radius: 50%;
-    }
-
-    .k-calendar-td.k-selected .k-link{
-        background-color: #1A6634 !important;
-        border-radius: 50%;
-        color: #FFFFFF;
-    }
-    .k-today{
-        background-color: #F5F6F8;
-        color: #26282E !important;
-        border-radius: 50%;
-    }  
-
     .k-checkbox{
         border-color: #999999;
         &:checked{
@@ -219,24 +170,7 @@
                 width: 80px;
                 font-weight: 400;
                }
-               .date-picker {
-                float: left;
-                margin-right: 15px;
-                .k-datepicker{
-                    flex-direction: row-reverse;
-                    border: none;
-                    background-color: #F5F6F8;
-                    width: 119px;
-                    height: 32px;
-                    font-size: 13px;
-                    font-weight: 400;
-                    line-height: 16.32px;
-                    margin-bottom: 7px;
-                    &:focus{
-                        border-bottom: none;
-                    }
-                }
-                }
+              
             }
         }
         .col-2{

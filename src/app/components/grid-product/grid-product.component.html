@@ -1,26 +1,4 @@
-<!-- Start -> Grid-filter -->
-<div class="title">
-  <span>THÔNG TIN CHI TIẾT CHƯƠNG TRÌNH</span>
-  <div class="search-tool">
-      <kendo-textbox class="search"
-      [style.width.px]="300"
-      placeholder="Tìm theo barcode, poscode, tên sản phẩm"
-      [clearButton]="true"
-    >
-      <ng-template kendoTextBoxPrefixTemplate>
-        <button kendoButton fillMode="clear" imageUrl="assets/images/search-menu.svg"></button>
-      </ng-template>
-      </kendo-textbox>
-  <button class="btn-search" imageUrl="assets/images/search-w.svg" kendoButton>Tìm</button>
-  </div>
-  <div class="gr-btn">
-      <button class="btn-1" imageUrl="assets/images/Group 1891.svg" kendoButton></button>
-      <button class="btn-2" imageUrl="assets/images/Group 616.svg" kendoButton><span>Template</span></button>
-      <button class="btn-3" imageUrl="./assets/images/Group 778.svg" kendoButton (click)="openDrawer.emit()"><span>THÊM MỚI SẢN PHẨM</span></button>
 
-  </div>
-</div>
-  <!-- End -> Grid-fillter -->
 
     <!-- Start -> Grid-product -->
     <kendo-grid [kendoGridBinding]="productList"  class="k-grid-product"
@@ -31,6 +9,30 @@
     (pageChange)="pageChange($event)"
     >
     <kendo-grid-column>
+      <ng-template kendoGridHeaderTemplate="">
+        <div class="title">
+          <span>THÔNG TIN CHI TIẾT CHƯƠNG TRÌNH</span>
+          <div class="search-tool">
+              <kendo-textbox class="search" #search
+              [style.width.px]="300"
+              placeholder="Tìm theo barcode, poscode, tên sản phẩm"
+              [clearButton]="true"
+              (valueChange)="onChangeFilter($event)"
+            >
+              <ng-template kendoTextBoxPrefixTemplate>
+                <button kendoButton fillMode="clear" imageUrl="assets/images/search-menu.svg"></button>
+              </ng-template>
+              </kendo-textbox>
+          <button class="btn-search" imageUrl="assets/images/search-w.svg" kendoButton (click)="SearchFilter(search.value)">Tìm</button>
+          </div>
+          <div class="gr-btn">
+              <button class="btn-1" imageUrl="assets/images/Group 1891.svg" kendoButton></button>
+              <button class="btn-2" imageUrl="assets/images/Group 616.svg" kendoButton><span>Template</span></button>
+              <button class="btn-3" imageUrl="./assets/images/Group 778.svg" kendoButton (click)="drawer3.toggle()"><span>THÊM MỚI SẢN PHẨM</span></button>
+        
+          </div>
+        </div>
+      </ng-template>
       <ng-template kendoGridCellTemplate let-dataItem>
         
         <div class="grid-item">
@@ -45,13 +47,12 @@
             <!-- show dialog delete -->
             <kendo-dialog class="dlgDel"
             *ngIf="openedDlgDel"
-            
             >
             <kendo-dialog-titlebar>
               <button kendoButton imageUrl="assets/images/alert.svg"> <span>XÓA SẢN PHẨM</span></button>
             </kendo-dialog-titlebar>
             <p style="margin: 15px; text-align: center;">
-              Bạn chắc chắn muốn xóa sản phẩm 
+              Bạn chắc chắn muốn xóa sản phẩm <br>
               <span style="color: #36C8CF;">{{selectProduct.ProductName | uppercase}}</span>
             </p>
             <p style="margin: 10px; text-align: center;">
@@ -63,8 +64,7 @@
                 <button kendoButton imageUrl="assets/images/rash.svg" (click)="deleteProduct(selectProduct.Code)" themeColor="primary">
                   XÓA
                 </button>
-              </div>
-              
+              </div>       
             </kendo-dialog-actions>
             </kendo-dialog>
             <!-- show dialog delete -->
@@ -81,7 +81,7 @@
 
             <label class="k-form-field">
               <span>Nhập mã sản phẩm</span>
-              <kendo-textbox value="{{selectProduct.Barcode}}"></kendo-textbox>
+              <kendo-textbox value="{{selectProduct.Barcode}}" [disabled]="true"></kendo-textbox>
             </label>
             <label class="k-form-field">
               <span>Tên sản phẩm</span>
@@ -97,11 +97,11 @@
             </label>
             <label class="k-form-field">
               <span>Giá VIP</span>
-              <kendo-textbox value="{{selectProduct.PriceVIP}}" appMoneyFormat></kendo-textbox>
+              <kendo-textbox value="{{selectProduct.PriceVIP}}" appMoneyFormat [disabled]="true"></kendo-textbox>
             </label>
             <label class="k-form-field">
               <span>Discount</span>
-              <kendo-textbox value="{{selectProduct.Discount}}" appMoneyFormat></kendo-textbox>
+              <kendo-textbox value="{{selectProduct.Discount}}" appMoneyFormat [disabled]="true"></kendo-textbox>
             </label>
             <label class="k-form-field">
               <div class="gr-cbx">
@@ -137,11 +137,11 @@
             </label>
             <label class="k-form-field">
               <span>Orginal Name</span>
-              <kendo-textbox value="{{selectProduct.OrginalName}}"></kendo-textbox>
+              <kendo-textbox value="{{selectProduct.OrginalName}}" [disabled]="true"></kendo-textbox>
             </label>
             <label class="k-form-field">
               <span>Brand Name</span>
-              <kendo-textbox value="{{selectProduct.BrandName}}"></kendo-textbox>
+              <kendo-textbox value="{{selectProduct.BrandName}}" [disabled]="true"></kendo-textbox>
             </label>
             <label class="k-form-field">  
               <kendo-label>{{"http://test.lapson.vn"+selectProduct.Alias}}</kendo-label>
@@ -183,9 +183,217 @@
         ></kendo-pager-next-buttons>
     </ng-template>
 <!--  end template grid stake -->
-     
-  </kendo-grid>
+</kendo-grid>
 
 <!-- End -> Grid-product -->
+
+
+<!-- drawer-edit-btn -->
+<div class="wrapper">
+  <kendo-drawer-container>
+    <kendo-drawer #drawer2  class="drawer2"
+    [mode]="'overlay'"
+    [(expanded)]="expanded2"
+    [position]="'end'"
+    style="overflow-y: auto"
+    >
+    <ng-template kendoDrawerTemplate>
+   
+      <form class="k-form k-drawer-wrapper">
+        <div class="title">
+         <span>CHỈNH SỬA SẢN PHẨM</span>
+        
+        </div>
+       
+        <label class="k-form-field">
+          <span>Nhập mã sản phẩm</span>
+          <kendo-textbox value="{{selectProduct.Barcode}}" [disabled]="true"></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Tên sản phẩm</span>
+          <kendo-label>{{selectProduct.ProductName}}</kendo-label>
+        </label>
+        <label class="k-form-field">
+          <span>Giá gốc</span>
+          <kendo-textbox value="{{selectProduct.PriceBase}}" appMoneyFormat></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Giá</span>
+          <kendo-textbox value="{{selectProduct.Price}}" appMoneyFormat></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Giá VIP</span>
+          <kendo-textbox value="{{selectProduct.PriceVIP}}" appMoneyFormat [disabled]="true"></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Discount</span>
+          <kendo-textbox value="{{selectProduct.Discount}}" appMoneyFormat [disabled]="true"></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <div class="gr-cbx">
+            <div class="cbx">
+              <span>Is BestPrice</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Có khuyến mãi</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is New</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is Hachi 24h</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Là Special</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is Gift</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is Combo</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+          </div>
+        </label>
+        <label class="k-form-field">
+          <span>Orginal Name</span>
+          <kendo-textbox value="{{selectProduct.OrginalName}}" [disabled]="true"></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Brand Name</span>
+          <kendo-textbox value="{{selectProduct.BrandName}}" [disabled]="true"></kendo-textbox>
+        </label>
+        <label class="k-form-field">  
+          <kendo-label>{{"http://test.lapson.vn"+selectProduct.Alias}}</kendo-label>
+         </label>
+        <label class="k-form-field">  
+         <img src="http://test.lapson.vn/{{selectProduct.ImageThumb}}" alt="ImageThumb" style="width: 70%;">
+        </label>
+        
+        <label class="k-form-field">
+          <div class="btn-control">
+            <button kendoButton class="btn-close" (click)="closeDrawer2()">ĐÓNG</button>
+            <button kendoButton class="btn-update" (click)="updateProduct(selectProduct.Code,selectProduct.Price)">CẬP NHẬT</button>
+          </div>
+        </label>
+      </form>
+    </ng-template>
+  </kendo-drawer>
+ 
+  </kendo-drawer-container>
+</div>
+
+<!--end  drawer-edit-btn -->
+
+
+
+
+
+<!-- drawer-insert-btn -->
+<div class="wrapper-new">
+  <kendo-drawer-container >
+    <kendo-drawer #drawer3 class="drawer3"
+    [mode]="'overlay'"
+    [(expanded)]="expanded3"
+    [position]="'end'"
+    style="overflow-y: auto"
+    >
+    <ng-template kendoDrawerTemplate>
+   
+      <form class="k-form k-drawer-wrapper">
+        <div class="title">
+         <span>THÊM MỚI SẢN PHẨM</span>
+        </div>
+        <label class="k-form-field">
+          <span>Nhập mã sản phẩm</span>
+          <kendo-textbox></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Tên sản phẩm</span>
+          <kendo-label></kendo-label>
+        </label>
+        <label class="k-form-field">
+          <span>Giá gốc</span>
+          <kendo-textbox appMoneyFormat></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Giá</span>
+          <kendo-textbox appMoneyFormat></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Giá VIP</span>
+          <kendo-textbox  appMoneyFormat></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Discount</span>
+          <kendo-textbox appMoneyFormat></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <div class="gr-cbx">
+            <div class="cbx">
+              <span>Is BestPrice</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Có khuyến mãi</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is New</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is Hachi 24h</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Là Special</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is Gift</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+            <div class="cbx">
+              <span>Is Combo</span>
+             <input type="checkbox" kendoCheckBox>
+            </div>
+          </div>
+        </label>
+        <label class="k-form-field">
+          <span>Orginal Name</span>
+          <kendo-textbox ></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+          <span>Brand Name</span>
+          <kendo-textbox ></kendo-textbox>
+        </label>
+        <label class="k-form-field">  
+          <kendo-label>{{"http://test.lapson.vn"}}</kendo-label>
+         </label>
+        <label class="k-form-field">  
+         <img src="http://test.lapson.vn/" alt="ImageThumb" style="width: 70%;">
+        </label>
+        
+        <label class="k-form-field">
+          <div class="btn-control">
+            <button kendoButton class="btn-close" (click)="closeDrawer3()">ĐÓNG</button>
+            <button kendoButton class="btn-update" (click)="updateProduct(selectProduct.Code,selectProduct.Price)">CẬP NHẬT</button>
+          </div>
+        </label>
+      </form>
+    </ng-template>
+  </kendo-drawer>
+  </kendo-drawer-container>
+</div>
+
+<!-- end  drawer-insert-btn -->
+
 
   

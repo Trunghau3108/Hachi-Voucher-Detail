@@ -10,18 +10,11 @@
     button.k-calendar-nav-today{
         display: none;
     }
-    input#datepicker-4,#datepicker-3.k-input-inner{
-        padding: 0 10px;
-    }
+   
     .k-input-inner{
         z-index: 0;
     }
-    .k-content.k-calendar-table{
-        min-width: 250px;
-        border-bottom: 1px solid #000000;
-    }
 
-    
     .k-month tbody td.day {
         display: inline-block;
         width: 24px;
@@ -34,7 +27,6 @@
         visibility: hidden;
         
     }
-   
    .k-link:hover{
         background-color: #FFFFFF !important;
         border: 1px solid #1A6634 !important;
@@ -51,14 +43,14 @@
         color: #26282E !important;
         border-radius: 50%;
     }  
-    .datetime-picker{
+    .date-picker {
         float: left;
         margin-right: 15px;
-        .k-datetimepicker{
+        .k-datepicker{
             flex-direction: row-reverse;
             border: none;
             background-color: #F5F6F8;
-            width: 200px !important;
+            width: 119px;
             height: 32px;
             font-size: 13px;
             font-weight: 400;
@@ -68,6 +60,6 @@
                 border-bottom: none;
             }
         }
-    }
+        }
 
 }

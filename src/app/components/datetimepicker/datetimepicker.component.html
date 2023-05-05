@@ -1,38 +1,16 @@
-<kendo-datetimepicker class="datetimepicker" #datetimepicker
+<div class="datetime-picker">
+  <kendo-datepicker #datepicker  class="k-datetimepicker"
+      calendarType="classic" 
+      [value]="date"
+      [format]="format"
+      [disabledDates]="disableDates"
+      >
+      <ng-template  kendoCalendarHeaderTitleTemplate let-currentDate>
+          <span>{{currentDate | vietnameseMonth}}</span> 
+      </ng-template>
+  </kendo-datepicker>
+</div>
 
-[format]="formatTime"
-[value]="date"
-calendarType="classic"
-[fillMode]="'flat'"
-(open)="onOpen()"
-(close)="onClose()"
-(select)="onSelect($event)"
-(valueChange)="onValueChange($event)"
->
-    <ng-template #monthCellTemplate kendoCalendarHeaderTitleTemplate let-currentDate>
-    <div>{{ currentDate | vietnameseMonth}}</div>
-     </ng-template>
-</kendo-datetimepicker>
-
-<div id="datetimePickerPopup">
-    <div class="checkTime">
-      <input type="checkbox" kendoCheckBox>
-      <span>Cả ngày</span>
-    </div>
-  
-    <div class="changeTime">
-      <kendo-dropdownlist class="k-dropdown" #timePicker
-        [data]="TimeValue"
-        [value]="'hh : mm'"
-        (valueChange)="onTimePickerValueChange($event)"
-      ></kendo-dropdownlist>
-      <div class="btn-time">
-        <button kendoButton class="active" (click)="onMeridianButtonClick('AM')">AM</button>
-        <button kendoButton class="active" (click)="onMeridianButtonClick('PM')">PM</button>
-      </div>
-    </div>
-  
-    
-  </div>
-
-
+<div class="wrapper-datepicker">
+  <h1>asdasdsa</h1>
+</div>

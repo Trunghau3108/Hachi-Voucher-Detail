@@ -5,6 +5,8 @@ import {
   DrawerSelectEvent,
 } from "@progress/kendo-angular-layout";
 
+
+
 @Component({
  
   selector: 'app-sidebar',
@@ -12,18 +14,16 @@ import {
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  
+ 
   public selected = "Menu";
-  public expanded = false;
+  public expanded1 = false;
+  
   
   public expandedIndices = [2];
   public isItemExpanded: DrawerItemExpandedFn = (item): boolean => {
     return this.expandedIndices.indexOf(item.id) >= 0;
   };
-
-  toggleDrawer() {
-    this.expanded = !this.expanded;
-  }
-
   public items: Array<DrawerItem> = [
    
     { text: "KHUYẾN MÃI", icon: "k-i-inbox"},
@@ -56,6 +56,37 @@ export class SidebarComponent {
       this.expandedIndices.push(current);
     }
   }
+  constructor() {}
+
+  // public closeDrawer(){
+  //   this.expanded2 = false;
+  // }
+  
+  // toggleDrawer(product: Product) {
+  //   this.selectedProduct = product;
+  //   this.expanded2 = true;
+  // }
+  
+  // public updateProduct(code:any,price:any){
+  //   this.productService.updateProduct(code,price).subscribe(
+  //     (product: Product) => {
+  //       if (product && product.ObjectReturn) {
+  //         if (product.StatusCode === 0) {
+  //           console.log(product);
+  //         } else {
+  //           console.log(product);
+  //         }
+  //       } else {
+  //         console.log(product);
+  //       }
+  //     },
+  //     (error) => {
+  //       console.log('Lỗi khi cập nhật sản phẩm:', error);
+  //     }
+  //   );
+  // }
+
+
 
 
   

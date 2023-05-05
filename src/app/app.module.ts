@@ -31,6 +31,7 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { TodoAngularComponent } from './todo-angular/todo-angular.component';
+import { DatepickerComponent } from './components/datepicker/datepicker.component';
 
 
 
@@ -57,6 +58,7 @@ import { TodoAngularComponent } from './todo-angular/todo-angular.component';
     GridProductComponent,
     DatetimepickerComponent,
     TodoAngularComponent,
+    DatepickerComponent,
   ],
   imports: [
     BrowserModule,

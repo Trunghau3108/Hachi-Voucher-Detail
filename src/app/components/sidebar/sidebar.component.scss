@@ -11,16 +11,28 @@
 	  app-coupon-content > * {
 		max-width: 100%;
 	  }
+	  .k-overlay{
+		z-index: 0;
+	  }
 	
-	.k-drawer-container{
-		width: 100%;
+	  .k-drawer-container{
+		width: 200px;
 		height: 100%;
+		
+		&.k-drawer-expanded{
+			.k-drawer.k-drawer-start{
+				flex-basis: 220px !important;
+			}
+			.k-drawer-wrapper{
+				width: 200px !important;
+			}
+		}
 		.k-drawer{
 			background-color: #5A6276;
 			color: #FFFFFF;
 			//Start -> Nội dung trong drawer
 			.k-drawer-wrapper {
-			  position: fixed;
+				position: fixed;
 			  .menu{
 					border-bottom: 1px solid #FFFFFF;
 					height: 50px;
@@ -74,6 +86,5 @@
 			
 		}
 	}
-	
 }
 

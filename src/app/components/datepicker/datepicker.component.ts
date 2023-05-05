@@ -1,16 +1,16 @@
 import { Component,OnInit } from '@angular/core';
 import { FormatSettings  } from '@progress/kendo-angular-dateinputs';
 @Component({
-  selector: 'app-datetimepicker',
-  templateUrl: './datetimepicker.component.html',
-  styleUrls: ['./datetimepicker.component.scss']
+  selector: 'app-datepicker',
+  templateUrl: './datepicker.component.html',
+  styleUrls: ['./datepicker.component.scss']
 })
-export class DatetimepickerComponent implements OnInit {
-  
+export class DatepickerComponent implements OnInit {
+
   public date = new Date()
   public format: FormatSettings = {
-    displayFormat: "dd/MM/yyyy hh:mm",
-    inputFormat: "dd/MM/yyyy hh:mm",
+    displayFormat: "dd/MM/yyyy",
+    inputFormat: "dd/MM/yyyy",
   };
   
   disableDates(date: Date) {
@@ -33,7 +33,5 @@ export class DatetimepickerComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  
+
 }
-
-

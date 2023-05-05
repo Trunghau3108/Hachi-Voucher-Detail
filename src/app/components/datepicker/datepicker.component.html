@@ -1,0 +1,25 @@
+<div class="date-picker">
+    <kendo-datepicker #datepicker  class="k-datepicker"
+        calendarType="classic" 
+        [value]="date"
+        [format]="format"
+        [disabledDates]="disableDates"
+        >
+        <ng-template  kendoCalendarHeaderTitleTemplate let-currentDate>
+            <span>{{currentDate | vietnameseMonth}}</span> 
+        </ng-template>
+    </kendo-datepicker>
+</div>
+
+<div class="date-picker">
+<kendo-datepicker  class="k-datepicker"
+      calendarType="classic" 
+      [value]="date"
+      [format]="format"
+      [disabledDates]="disableDates"
+      >
+      <ng-template #monthCellTemplate kendoCalendarHeaderTitleTemplate let-currentDate>
+        <div>{{ currentDate | vietnameseMonth}}</div>
+      </ng-template>
+</kendo-datepicker>
+</div>
