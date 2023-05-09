@@ -24,7 +24,7 @@ export class GridProductComponent implements OnInit{
   public expanded3 = false;
   public filterValue: string = '';
 
-  
+  public barcode: string = '';
   productList: any;
   product!: Product;
   take: number = 15;
@@ -48,7 +48,9 @@ export class GridProductComponent implements OnInit{
   public openedDlgDel = false;
   public openedDlgEdit = false;
 
- 
+  status = [
+    
+  ]
 
   
 
@@ -120,27 +122,32 @@ export class GridProductComponent implements OnInit{
       console.log(error);
     });
   }
+
   
   //update sản phẩm
-  public updateProduct(code:any,price:any){
-    this.productService.updateProduct(code,price).subscribe(
-      (product: Product) => {
-        if (product && product.ObjectReturn) {
-          if (product.StatusCode === 0) {
-            console.log(product);
-            console.log('success');
-            this.closeDlgEdit();
+  public updateSelectedProduct(code:number,price:number,priceBase:number) {
+      this.productService.updateProduct(code,price,priceBase).subscribe(
+        (product: Product) => {
+          if (product && product.ObjectReturn) {
+            if (product.StatusCode === 0) {
+              console.log(product.ObjectReturn);
+              console.log('success');
+              this.closeDlgEdit();
+            } else {
+              console.log(product);
+            }
           } else {
             console.log(product);
           }
-        } else {
-          console.log(product);
+        },
+        (error) => {
+          console.log('Lỗi khi cập nhật sản phẩm:', error);
         }
-      },
-      (error) => {
-        console.log('Lỗi khi cập nhật sản phẩm:', error);
-      }
-    );
+      );
+  }
+
+  updateFields() {
+    this.SearchFilter(this.barcode)
   }
 
 
@@ -163,7 +170,7 @@ export class GridProductComponent implements OnInit{
       sort: [{ field: 'Code', dir: 'desc' }]
     }
     this.productService.getListProduct(stakeFilter).subscribe((product:any) => {
-    this.productList = product.ObjectReturn?.Data
+    this.productList = product.ObjectReturn?.Data;
 
       console.log(this.productList)
     })

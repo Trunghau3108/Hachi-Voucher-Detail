@@ -51,7 +51,39 @@ export class Product {
     }
   }
 
-
+  // export class UpdateProduct{
+  //   DTO?: {
+  //     Code: number 
+  //     Barcode: number 
+  //     ProductName: string 
+  //     Alias: string 
+  //     ImageThumb: string 
+  //     ImageSmall: string 
+  //     ImageLarge: string 
+  //     FreeShippingImage: string 
+  //     TypeData: number ;
+  //     StatusID: number ;
+  //     IsNew: boolean ;
+  //     IsHachi24h: boolean ;
+  //     IsBestPrice: boolean ;
+  //     IsSpecial: boolean ;
+  //     IsGift: boolean ;
+  //     IsPromotion: boolean ;
+  //     PromotionID: number ;
+  //     GroupIDList?: [];
+  //     IsCombo: boolean ;
+  //     Price: number ;
+  //     PriceBase: number ;
+  //     PriceVIP: number ;
+  //     Discount: number ;
+  //     CategoryID: number ;
+  //     OrginalID: number ;
+  //     OrginalName: string 
+  //     BrandID: number ;
+  //     BrandName: string ;
+  //   }
+  //   Properties?: String []
+  // }
 
 
 

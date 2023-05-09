@@ -151,7 +151,7 @@
             </label>
             <kendo-dialog-actions>
               <button kendoButton class="btn-close" (click)="closeDlgEdit()">ĐÓNG</button>
-              <button kendoButton class="btn-update" (click)="updateProduct(selectProduct.Code,selectProduct.Price)">CẬP NHẬT</button>
+              <button kendoButton class="btn-update" (click)="updateSelectedProduct(selectProduct.Code,selectProduct.Price,selectProduct.PriceBase)">CẬP NHẬT</button>
             </kendo-dialog-actions>
             </kendo-dialog>
             <!-- show dialog edit -->
@@ -199,12 +199,13 @@
     >
     <ng-template kendoDrawerTemplate>
    
-      <form class="k-form k-drawer-wrapper">
+      <form class="k-form k-drawer-wrapper" >
         <div class="title">
          <span>CHỈNH SỬA SẢN PHẨM</span>
-        
         </div>
-       
+        <label class="k-form-field" style="visibility: hidden;">
+          <kendo-textbox [(value)]="selectProduct.Code"></kendo-textbox>
+        </label>
         <label class="k-form-field">
           <span>Nhập mã sản phẩm</span>
           <kendo-textbox value="{{selectProduct.Barcode}}" [disabled]="true"></kendo-textbox>
@@ -215,11 +216,11 @@
         </label>
         <label class="k-form-field">
           <span>Giá gốc</span>
-          <kendo-textbox value="{{selectProduct.PriceBase}}" appMoneyFormat></kendo-textbox>
+          <kendo-numerictextbox [(value)]="selectProduct.PriceBase" appMoneyFormat></kendo-numerictextbox>
         </label>
         <label class="k-form-field">
           <span>Giá</span>
-          <kendo-textbox value="{{selectProduct.Price}}" appMoneyFormat></kendo-textbox>
+          <kendo-numerictextbox [(value)]="selectProduct.Price" appMoneyFormat></kendo-numerictextbox>
         </label>
         <label class="k-form-field">
           <span>Giá VIP</span>
@@ -279,7 +280,7 @@
         <label class="k-form-field">
           <div class="btn-control">
             <button kendoButton class="btn-close" (click)="closeDrawer2()">ĐÓNG</button>
-            <button kendoButton class="btn-update" (click)="updateProduct(selectProduct.Code,selectProduct.Price)">CẬP NHẬT</button>
+            <button kendoButton class="btn-update" (click)="updateSelectedProduct(selectProduct.Code,selectProduct.Price,selectProduct.PriceBase)">CẬP NHẬT</button>
           </div>
         </label>
       </form>
@@ -312,7 +313,7 @@
         </div>
         <label class="k-form-field">
           <span>Nhập mã sản phẩm</span>
-          <kendo-textbox></kendo-textbox>
+          <kendo-textbox [(value)]="selectProduct.Barcode" (blur)="updateFields()" (keyup.enter)="updateFields()"></kendo-textbox>
         </label>
         <label class="k-form-field">
           <span>Tên sản phẩm</span>
@@ -384,7 +385,7 @@
         <label class="k-form-field">
           <div class="btn-control">
             <button kendoButton class="btn-close" (click)="closeDrawer3()">ĐÓNG</button>
-            <button kendoButton class="btn-update" (click)="updateProduct(selectProduct.Code,selectProduct.Price)">CẬP NHẬT</button>
+            <button kendoButton class="btn-update">CẬP NHẬT</button>
           </div>
         </label>
       </form>

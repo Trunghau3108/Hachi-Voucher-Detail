@@ -33,6 +33,10 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { TodoAngularComponent } from './todo-angular/todo-angular.component';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 
+import { WorklocationContentComponent } from './components/HachiHR/work-location/worklocation-content/worklocation-content.component';
+import { TreeListModule } from '@progress/kendo-angular-treelist';
+
+
 
 
 
@@ -59,6 +63,7 @@ import { DatepickerComponent } from './components/datepicker/datepicker.componen
     DatetimepickerComponent,
     TodoAngularComponent,
     DatepickerComponent,
+    WorklocationContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +87,7 @@ import { DatepickerComponent } from './components/datepicker/datepicker.componen
     LayoutModule,
     NavigationModule,
     DialogsModule,
+    TreeListModule,
   ],
   
   providers: [ProductsService],

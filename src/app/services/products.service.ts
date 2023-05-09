@@ -3,6 +3,7 @@ import { HttpClient,HttpParams } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { ProductList,Product,User,Task } from '../DTO/product.dto';
 import { DataSourceRequestState, toDataSourceRequest } from '@progress/kendo-data-query';
+import { data, error } from 'jquery';
 
 
 @Injectable({
@@ -31,21 +32,63 @@ export class ProductsService {
   }
 
   //update sản phẩm
-  updateProduct(code: number, price:number): Observable<Product> {
-    const updateData = {
-      DTO: {
-        Code: code,
-        Price: price,
-      },
-      Properties: ["Price"]
-    };
-    return this.http.post<Product>(this.apiUrl + 'UpdateProduct', updateData);
+  updateProduct(code: number, price:number, priceBase: number){
+      return new Observable<any>((obs) => {
+        this.http.post<Product>(this.apiUrl + 'UpdateProduct', { 
+          DTO: {
+          Code: code,
+          Price: price,
+          PriceBase: priceBase
+        },
+        Properties: ["Price","PriceBase"]
+      }).subscribe((data) => {
+          console.log(data); //thanh cong thi console data
+          console.log(data.ErrorString);
+          obs.complete()
+      },(error) =>{
+          // console.log(error);
+          obs.error(error);
+      })
+      });
   }
 
-  //thêm mới sản phẩm
-  insertProduct(id = 0,barcode:any): Observable<Product>{
-    return this.http.post<Product>(this.apiUrl + 'GetProduct', { Code: id, Barcode: barcode });
+
+  getProductUpdate(barcode: number){
+    return new Observable<any> ((obs) => {
+      this.http.post<Product>(this.apiUrl + 'GetProduct', { Code: 0, Barcode: barcode }
+      ).subscribe((data) => {
+        console.log(data); //thanh cong thi console data
+        obs.complete()
+      },(error) =>{
+        // console.log(error);
+        obs.error(error);
+    });
+    });
   }
+  
+
+  //thêm mới sản phẩm
+  insertProduct(price:number, priceBase: number){
+    return new Observable<any>((obs) => {
+      this.http.post<Product>(this.apiUrl + 'UpdateProduct', { 
+        DTO: {
+        Code: 0,
+        Price: price,
+        PriceBase: priceBase
+      },
+      Properties: ["Price","PriceBase"]
+    }).subscribe((data) => {
+        console.log(data); //thanh cong thi console data
+        console.log(data.ErrorString);
+        obs.complete()
+    },(error) =>{
+        // console.log(error);
+        obs.error(error);
+    })
+    });
+}
+
+  
 
   //search sản phẩm
   searchProducts(searchTerm: string): Observable<ProductList> {
