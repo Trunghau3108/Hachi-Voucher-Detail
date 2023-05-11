@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { ProductList,Product,User,Task } from '../DTO/product.dto';
 import { DataSourceRequestState, toDataSourceRequest } from '@progress/kendo-data-query';
-import { data, error } from 'jquery';
 
 
 @Injectable({

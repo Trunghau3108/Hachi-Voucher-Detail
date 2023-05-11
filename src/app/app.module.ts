@@ -35,6 +35,7 @@ import { DatepickerComponent } from './components/datepicker/datepicker.componen
 
 import { WorklocationContentComponent } from './components/HachiHR/work-location/worklocation-content/worklocation-content.component';
 import { TreeListModule } from '@progress/kendo-angular-treelist';
+import { OrganiContentComponent } from './components/HachiHR/organization-structre/organi-content/organi-content.component';
 
 
 
@@ -64,6 +65,7 @@ import { TreeListModule } from '@progress/kendo-angular-treelist';
     TodoAngularComponent,
     DatepickerComponent,
     WorklocationContentComponent,
+    OrganiContentComponent,
   ],
   imports: [
     BrowserModule,

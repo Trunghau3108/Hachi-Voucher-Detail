@@ -1,0 +1,194 @@
+<div class="worklocation-header">
+    <div class="item-header">
+        <div class="left">
+            <span><img src="assets/images/filter.svg" alt="filter" width="15">LỌC DỮ LIỆU</span>
+             <button kendoButton class="btn-del">Xóa bộ lọc</button>
+        </div>
+        <div class="middle">
+            <span>Tìm kiếm</span> 
+            <div class="search">
+                <kendo-textbox  
+                [style.width.px]="372"
+                [style.height.px]="32"
+                placeholder="Tìm theo mã, họ và tên nhân viên, chức danh"
+                [clearButton]="true"
+                >
+                <ng-template kendoTextBoxPrefixTemplate>
+                    <img class="img-search" src="assets/images/search.svg"  alt="filter" width="15">
+                </ng-template>
+
+            </kendo-textbox>
+                <button kendoButton imageUrl="assets/images/search-w.svg" class="btn-search">Tìm</button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="btn-addLocation">
+                <button kendoButton imageUrl="assets/images/add.svg" class="btn-addwork1" (click)="drawerDV.toggle()">THÊM ĐIỂM LÀM VIỆC</button>
+                <button kendoButton imageUrl="assets/images/add.svg" class="btn-addwork2" (click)="drawerDV.toggle()">THÊM ĐIỂM LÀM VIỆC CON</button>
+                <button kendoButton imageUrl="assets/images/add.svg" class="btn-addwork3" (click)="drawerCD.toggle()">THÊM MỚI CHỨC DANH</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<kendo-treelist
+    [kendoTreeListFlatBinding]="data"
+    kendoTreeListExpandable
+    scrollable="none"
+    idField="id"
+    parentIdField="managerId"
+>
+    <kendo-treelist-column
+        [expandable]="true" 
+    >
+   
+    <ng-template kendoTreeListCellTemplate let-dataItem>
+        <img src="assets/images/Location.svg" alt="location"> {{dataItem.name}}
+    </ng-template>
+    <ng-template kendoTreeListColumnMenuItemContentTemplate let-dataItem>
+        {{dataItem.title}}
+    </ng-template>
+    </kendo-treelist-column>
+    <kendo-treelist-column
+        field="title"
+        [expandable]="true" 
+    >
+    </kendo-treelist-column>
+    <kendo-treelist-column
+        field="jobTitle"
+        [expandable]="true" 
+>
+</kendo-treelist-column>
+    <kendo-treelist-column class="btn">
+
+    <ng-template kendoTreeListCellTemplate>
+        <button kendoButton (click)="drawerDV.toggle()">...</button>
+    </ng-template>
+    </kendo-treelist-column>
+</kendo-treelist>
+
+
+<!-- drawer info don vi -->
+<kendo-drawer-container>
+    <kendo-drawer #drawerDV  class="drawer"
+    [mode]="'overlay'"
+    [(expanded)]="expanded1"
+    [position]="'end'"
+    style="overflow-y: auto"
+    >
+    <ng-template kendoDrawerTemplate>
+   
+      <form class="k-form k-drawer-wrapper" >
+        <div class="title">
+         <span> <img src="assets/images/addgreen.svg" alt="location">THÔNG TIN ĐƠN VỊ</span>
+        </div>
+        
+        <label class="k-form-field">
+          <span>Tên đơn vị</span>
+          <kendo-textbox  ></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+            <div class="col-half">
+                <span>Mã đơn vị</span>
+                <kendo-textbox ></kendo-textbox>
+            </div>
+            <div class="col-half">
+                <span>Tên viết tắt</span>
+                <kendo-textbox ></kendo-textbox>
+            </div>
+        </label>
+        <label class="k-form-field">
+            <span>Đơn vị trực thuộc</span>
+            <kendo-dropdownlist></kendo-dropdownlist>
+        </label>
+        <label class="k-form-field">
+            <span>Điểm làm việc</span>
+            <kendo-textbox  ></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+            <span>Điện thoại</span>
+            <kendo-dropdownlist></kendo-dropdownlist>
+        </label>
+        <label class="k-form-field">
+            <span>Fax</span>
+            <kendo-dropdownlist ></kendo-dropdownlist>
+        </label>
+        <label class="k-form-field">  
+            <span>Chức năng, nhiệm vụ</span>
+           <kendo-textarea [rows]="5" [cols]="5" resizable="none"></kendo-textarea>
+         </label>
+         <label class="k-form-field">  
+            <span>Tình trạng</span>
+            <kendo-dropdownlist></kendo-dropdownlist>
+         </label>
+        <label class="k-form-field">
+          <div class="btn-control">
+            <button kendoButton class="btn-close">ĐÓNG</button>
+            <button kendoButton class="btn-update">CẬP NHẬT</button>
+          </div>
+        </label>
+      </form>
+    </ng-template>
+  </kendo-drawer>
+ 
+  </kendo-drawer-container>
+<!-- end  -->
+
+
+<!-- drawer info chuc danh -->
+<kendo-drawer-container>
+    <kendo-drawer #drawerCD  class="drawer"
+    [mode]="'overlay'"
+    [(expanded)]="expanded2"
+    [position]="'end'"
+    style="overflow-y: auto"
+    >
+    <ng-template kendoDrawerTemplate>
+   
+      <form class="k-form k-drawer-wrapper" >
+        <div class="title">
+         <span> <img src="assets/images/addgreen.svg" alt="location">THÔNG TIN CHỨC DANH</span>
+        </div>
+        
+        <label class="k-form-field">
+          <span>Tên chức danh</span>
+          <kendo-textbox  ></kendo-textbox>
+        </label>
+        <label class="k-form-field">
+            <div class="col-half">
+                <span>Mã chức danh</span>
+                <kendo-textbox ></kendo-textbox>
+            </div>
+            <div class="col-half">
+                <span>Đơn vị trực thuộc</span>
+                <kendo-textbox ></kendo-textbox>
+            </div>
+        </label>
+        <label class="k-form-field">
+            <span>Chức danh quản lý hành chính</span>
+            <kendo-dropdownlist></kendo-dropdownlist>
+        </label>
+        <label class="k-form-field">
+            <span>Phân nhóm</span>
+            <kendo-dropdownlist></kendo-dropdownlist>
+        </label>
+        <label class="k-form-field">
+            <span>Vai trò sử dụng tài nguyên hệ thống</span>
+            <kendo-textbox ></kendo-textbox>
+        </label>
+         <label class="k-form-field">  
+            <span>Tình trạng</span>
+            <kendo-dropdownlist></kendo-dropdownlist>
+         </label>
+        <label class="k-form-field">
+          <div class="btn-control">
+            <button kendoButton class="btn-close">ĐÓNG</button>
+            <button kendoButton class="btn-update">CẬP NHẬT</button>
+          </div>
+        </label>
+      </form>
+    </ng-template>
+  </kendo-drawer>
+ 
+  </kendo-drawer-container>
+<!-- end -->

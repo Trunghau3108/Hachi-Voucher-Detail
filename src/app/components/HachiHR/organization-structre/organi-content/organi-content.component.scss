@@ -1,0 +1,276 @@
+::ng-deep{
+    //nav-header
+        .worklocation-header{
+            width: 100%;
+            margin-top: 55px;
+            border-bottom: 1px solid #000000;
+            .item-header{
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 margin-bottom: 10px;
+                 .left{
+                    margin-left: 10px;
+                    width: 200px;
+                    display: flex;
+                    flex-direction: column;
+                    img{
+                       margin-right: 10px;
+                    }
+                    .btn-del{
+                        width: 63px;
+                        height: 16px;
+                        margin-top: 10px;
+                        margin-left: 25px;
+                        background-color: none;
+                        color: #008000;
+                        border: none;
+                        box-shadow: none;
+                        &:hover{
+                            background-color: none;
+                           color: none;
+                            
+                        }
+                    }
+                }
+                .middle{
+                    margin-top: 13px;
+                    width: 400px;
+                    margin-right: 200px;
+                    span{
+                        color: #959DB3;
+                        margin-bottom: 10px;
+                    }
+                    .search{
+                        display: flex;
+                        .k-i-x::before{
+                            margin-top: 10px;
+                        }
+                        .img-search{
+                           margin-top: 10px;
+                           margin-left: 10px;
+                        }
+                        .k-textbox{
+                            margin-top: 5px;
+                        }
+                        .btn-search{
+                            margin-left: 5px;
+                            margin-top: 7px;
+                            width: 52px;
+                            height: 29px;
+                            background-color: #008000;
+                            box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);;
+                            ;
+                            .k-button-icon.k-icon{
+                                margin-top: 10px;
+                                img{
+                                    width: 15px;                
+                                }
+                            }
+                            .k-button-text{
+                                margin-top: 10px;
+                                color: #FFFFFF
+                            }
+    
+                        }
+                    }
+                }
+                .right{
+                  margin-top: 15px;
+                    .btn-addLocation{
+                        
+                        display: flex;
+                        .k-button{
+                            background-color: #008000;
+                            color: #FFFFFF;
+                            height: 33px;
+                            box-shadow: 0 4px 8px 0 rgba(19, 104, 215, 0.4);;
+                            .k-button-text{
+                                font-size: 11px ;
+                            }
+                        }
+                        .btn-addwork1{
+                           width: 156px;
+                           margin-right: 10px;
+                        }
+                        .btn-addwork3{
+                            width: 168px;
+                            margin-left: 10px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    //end navheader
+    
+        //Treelist
+        kendo-treelist{
+            margin: 15px 10px;
+        }
+       
+        .k-header.k-table-th{
+          display: none;
+        }
+        .k-table-td{
+            background-color: #FFFFFF;
+            height: 58px;
+            &:nth-child(1){
+                width: 250px;
+            }
+            &:nth-child(2){
+                width: 300px;
+            }
+            &:nth-child(4){
+                width: 40px;
+            }
+            .k-button{
+                border: none;
+                background-color: #FFFFFF;
+                box-shadow: none;
+                &:hover{
+                    background-color: #FFFFFF;
+                }
+                .k-button-text{
+                    font-size: 20px;
+                }
+            }
+        }
+        .k-table-tbody{
+            .k-table-row.k-alt.k-table-alt-row{
+               .k-table-td.k-text-nowrap{
+                &:last-child{
+                    border-bottom: none;
+                }
+               }
+            }
+        }
+        .k-table-td.k-text-nowrap{
+            border-bottom: 5px solid #EDEFF3;
+            border-left: none;
+            font-weight: 700;
+            .k-icon{
+                margin-right: 20px;
+            }
+            img{
+                margin-right: 20px;
+            }
+            &:nth-child(1){
+                .k-i-caret-alt-down{
+                    margin-bottom: 5px;
+                    font-size: 20px;
+                    &::before{
+                        content: "\e015";
+                    }
+                }
+                .k-i-caret-alt-right{
+                    margin-bottom: 5px;
+                    font-size: 20px;
+                    &::before{
+                        content: "\e013";
+                    } 
+                }
+            }
+            &:nth-child(2),&:nth-child(3){
+                .k-i-caret-alt-down, .k-i-caret-alt-right{
+                    display: none;
+                }
+            }
+        }
+        .k-table-td.btn{
+            border-bottom: 5px solid #EDEFF3;
+        }
+    
+    
+        //drawer
+        kendo-drawer-container {
+          
+            .k-drawer-overlay .k-drawer{
+               
+                margin-top: 50px;
+                z-index: 0;
+            }
+            .drawer.k-drawer.k-drawer-end {
+                width: 400px;
+                display: none;
+              // ẩn drawer khi chưa click
+              }
+                &.k-drawer-expanded{
+                    .drawer.k-drawer.k-drawer-end {
+                        display: block; // hiện drawer khi click
+                        height: 100%;
+                        position: fixed;
+                    }
+                }
+            .drawer{
+                background-color: #FFFFFF !important;
+                .k-drawer-wrapper{
+                    .k-drawer-wrapper.k-form{
+                        height: 130vh !important;
+                        width: 100% !important;
+                        .title{
+                            color: #1A6634;
+                            height: 30px;
+                            border-bottom: 1px solid #000000;
+                            margin-top: 20px;
+                            span{
+                                font-size: 13px;
+                                margin-bottom: 10px;
+                                img{
+                                    margin: 0 15px;
+                                 }
+                            }
+                        }
+                        .k-form-field{
+                            display: flex;
+                            flex-direction: column;
+                            margin: 10px;
+                            
+                            .k-dropdownlist{
+                                width: 145px;
+                                height: 37px;
+                                background-color: #FFFFFF;
+                                box-shadow: none;
+                                .k-input-value-text{
+                                    margin-top: 15px;
+                                }
+                            }
+                            span{
+                                margin-bottom: 8px;
+                            }
+                            .btn-control{
+                                
+                                .btn-close{
+                                    
+                                    background-color: #FFFFFF;
+                                    text-align: center;
+                                    color: #1A6634;
+                                    margin-right: 10px;
+                                }       
+                                .btn-update{
+                                   
+                                    background-color: #1A6634;
+                                    text-align: center;
+                                    color: #FFFFFF;
+                                }
+                                span.k-button-text{
+                                    margin-bottom: 0;
+                                }
+                                .k-button{
+                                    border: none;
+                                    width: 94px;
+                                    height: 33.17px;
+                                    box-shadow: 0 4px 8px 0 rgba(2, 48, 19, 0.4);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+          
+        }
+    
+       
+        
+        
+    }

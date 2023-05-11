@@ -2,7 +2,6 @@
 	app-coupon-content {
 		width: 100%;
 		max-width: 100%;
-		min-width: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -18,7 +17,6 @@
 	  .k-drawer-container{
 		width: 200px;
 		height: 100%;
-		
 		&.k-drawer-expanded{
 			.k-drawer.k-drawer-start{
 				flex-basis: 220px !important;
