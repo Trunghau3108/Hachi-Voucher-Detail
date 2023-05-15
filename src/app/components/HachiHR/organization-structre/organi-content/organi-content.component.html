@@ -31,6 +31,7 @@
     </div>
 </div>
 
+<!-- treelist -->
 <kendo-treelist
     [kendoTreeListFlatBinding]="data"
     kendoTreeListExpandable
@@ -61,12 +62,33 @@
 </kendo-treelist-column>
     <kendo-treelist-column class="btn">
 
-    <ng-template kendoTreeListCellTemplate>
-        <button kendoButton (click)="drawerDV.toggle()">...</button>
-    </ng-template>
+        <ng-template kendoTreeListCellTemplate let-dataItem let-rowIndex="rowIndex">
+            <button #anchorButton kendoButton (click)="onToggle(rowIndex)" [ngClass]="{'active': dataItem.showPopup}">...</button>
+          
+            <kendo-popup *ngIf="dataItem.showPopup"
+             [anchor]="anchorButton"
+             on
+             >
+              <div class="content">
+                <!-- User-defined content -->
+                <div class="filter">
+                    <button kendoButton imageUrl="assets/images/edit.svg">Chỉnh sửa</button>
+                </div>
+                <div class="filter">
+                    <button kendoButton imageUrl="assets/images/new.svg">Thêm mới đơn vị</button>
+                </div>
+                <div class="filter">
+                    <button kendoButton imageUrl="assets/images/new.svg">Thêm mới đơn vị con</button>
+                </div>
+                <div class="filter">
+                    <button kendoButton imageUrl="assets/images/User.svg">Thêm mới chức danh</button>
+                </div>
+              </div>
+            </kendo-popup>
+          </ng-template>
     </kendo-treelist-column>
 </kendo-treelist>
-
+<!-- treelist -->
 
 <!-- drawer info don vi -->
 <kendo-drawer-container>

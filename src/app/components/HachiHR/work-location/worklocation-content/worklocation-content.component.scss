@@ -97,6 +97,45 @@
     }
 //end navheader
 
+//popup
+    .k-popup{
+        border: none;
+        background-color: inherit;
+        box-shadow: none;
+        .content{
+            width: 168px;
+            position: relative;
+            top: -20px;
+            right: 180px;
+            background-color: #BDC2D2;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        .filter{
+            .k-button{
+                width: 167px;
+                height: 30px;
+                background-color: #BDC2D2;
+                color: #FFFFFF;
+                box-shadow: none;
+                
+                &:hover{
+                    background-color: #959DB3;
+                }
+                .k-button-text{
+                    font-size: 13px;
+                    font-weight: 400;
+                  
+                }
+            }
+            .k-rounded-md{
+                border-radius: 0;
+            }  
+        }
+    }
+}
+ // end popup
+
+
+
     //Treelist
     kendo-treelist{
         margin: 15px 10px;
@@ -121,11 +160,18 @@
             &:hover{
                 background-color: #FFFFFF;
             }
+            &.active{
+                color: #FFFFFF;
+                background-color: #BDC2D2;
+            }
             .k-button-text{
                 font-size: 20px;
             }
         }
     }
+    //end treelist
+
+    
     .k-table-tbody{
         .k-table-row.k-alt.k-table-alt-row{
            .k-table-td.k-text-nowrap{
@@ -136,7 +182,7 @@
         }
     }
     .k-table-td.k-text-nowrap{
-        border-bottom: 5px solid #E5E5E5;
+        border-bottom: 5px solid #EDEFF3;
         border-left: none;
         font-weight: 700;
         .k-icon{
@@ -168,7 +214,7 @@
         }
     }
     .k-table-td.btn{
-        border-bottom: 5px solid #E5E5E5;
+        border-bottom: 5px solid #EDEFF3;
     }
 
 

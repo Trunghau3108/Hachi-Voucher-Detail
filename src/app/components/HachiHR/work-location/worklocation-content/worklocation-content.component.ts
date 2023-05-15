@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
-
-
+import { LocationService } from '../shared/services/location.service';
+import { Location, LocationTree } from '../shared/dto/location.dto';
 @Component({
   selector: 'app-worklocation-content',
   templateUrl: './worklocation-content.component.html',
@@ -8,7 +8,25 @@ import { Component , OnInit} from '@angular/core';
 })
 export class WorklocationContentComponent implements OnInit {
 
+  listLocationTree: any;
   expanded = false;
+ 
+  constructor(private locationService: LocationService){}
+
+  public show = false;
+
+  onToggle(rowIndex: number) {
+    this.data[rowIndex].showPopup = !this.data[rowIndex].showPopup;
+  }
+  
+  getData() {
+    // Lấy dữ liệu từ nguồn
+    this.data.forEach(item => {
+      item.showPopup = false;
+    });
+  }
+
+
   public data: any[] = [
     {
       id: 1,
@@ -48,6 +66,7 @@ export class WorklocationContentComponent implements OnInit {
     },
   ];
 
+
   public VP = [
     'Văn phòng 1',
     'Văn phòng 2',
@@ -76,10 +95,20 @@ export class WorklocationContentComponent implements OnInit {
     'Chờ duyệt',
     'Đang áp dụng'
   ]
-  
+
+  // public loadLocationTree(){
+  //   this.locationService.getListLocationTree().subscribe((locationTree: LocationTree) => {
+  //     this.listLocationTree = locationTree.ObjectReturn;  
+  //     console.log(this.listLocationTree);
+  //   },
+  //   (error) => {
+  //     console.log(error);
+  //   });
+  // }
 
  
   ngOnInit(): void {
-    
+    // this.loadLocationTree();
+    this.getData();
   }
 }

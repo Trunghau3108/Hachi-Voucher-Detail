@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-organi-content',
   templateUrl: './organi-content.component.html',
   styleUrls: ['./organi-content.component.scss']
 })
-export class OrganiContentComponent {
+export class OrganiContentComponent implements OnInit {
   expanded1 = false;
   expanded2 = false;
+  onToggle(rowIndex: number) {
+    this.data[rowIndex].showPopup = !this.data[rowIndex].showPopup;
+  }
+  
+  getData() {
+    // Lấy dữ liệu từ nguồn
+    this.data.forEach(item => {
+      item.showPopup = false;
+    });
+  }
   public data: any[] = [
     {
       id: 1,
@@ -59,4 +69,7 @@ export class OrganiContentComponent {
       managerId: 5,
     },
   ];
+  ngOnInit(): void {
+    this.getData();
+  }
 }

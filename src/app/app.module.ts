@@ -36,6 +36,9 @@ import { DatepickerComponent } from './components/datepicker/datepicker.componen
 import { WorklocationContentComponent } from './components/HachiHR/work-location/worklocation-content/worklocation-content.component';
 import { TreeListModule } from '@progress/kendo-angular-treelist';
 import { OrganiContentComponent } from './components/HachiHR/organization-structre/organi-content/organi-content.component';
+import { EmployeeComponent } from './components/HachiHR/employee/employee-content/employee.component';
+import { PopupModule } from '@progress/kendo-angular-popup';
+
 
 
 
@@ -66,6 +69,7 @@ import { OrganiContentComponent } from './components/HachiHR/organization-struct
     DatepickerComponent,
     WorklocationContentComponent,
     OrganiContentComponent,
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +94,7 @@ import { OrganiContentComponent } from './components/HachiHR/organization-struct
     NavigationModule,
     DialogsModule,
     TreeListModule,
+    PopupModule,
   ],
   
   providers: [ProductsService],
