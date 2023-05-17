@@ -99,7 +99,7 @@
 //                                             "StatusName": null,
 //                                             "ListChild": null,
 //                                             "Code": 26,
-//                                             "PositionID": "WSAD",
+//                                             "PositionID": "WSAD",x`
 //                                             "Position": "Admin phòng bán sỉ",
 //                                             "IsLeader": false,
 //                                             "DepartmentID": 4,

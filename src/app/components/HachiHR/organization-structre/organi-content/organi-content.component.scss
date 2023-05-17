@@ -28,7 +28,7 @@
                         box-shadow: none;
                         &:hover{
                             background-color: none;
-                           color: none;
+                            color: none;
                             
                         }
                     }
@@ -147,11 +147,19 @@
             margin: 15px 10px;
         }
        
-        .k-header.k-table-th{
+        .k-grid-header.k-table-thead{
           display: none;
         }
+        .k-table-row{
+            &:hover{
+                background-color: #008000 !important;
+                color: #FFFFFF;
+            }
+        }
+        .k-table-alt-row{
+            background-color: #FFFFFF !important;
+        }
         .k-table-td{
-            background-color: #FFFFFF;
             height: 58px;
             &:nth-child(1){
                 width: 250px;

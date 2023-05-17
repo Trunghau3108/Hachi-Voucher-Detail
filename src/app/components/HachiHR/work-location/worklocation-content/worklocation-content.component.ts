@@ -96,19 +96,21 @@ export class WorklocationContentComponent implements OnInit {
     'Đang áp dụng'
   ]
 
-  // public loadLocationTree(){
-  //   this.locationService.getListLocationTree().subscribe((locationTree: LocationTree) => {
-  //     this.listLocationTree = locationTree.ObjectReturn;  
-  //     console.log(this.listLocationTree);
-  //   },
-  //   (error) => {
-  //     console.log(error);
-  //   });
-  // }
+  loadLocationTree(){
+    this.locationService.getListLocationTree().subscribe(
+      (locationTree: LocationTree) => {
+          this.listLocationTree = locationTree.ObjectReturn;
+          console.log(this.listLocationTree);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 
  
   ngOnInit(): void {
-    // this.loadLocationTree();
+    this.loadLocationTree();
     this.getData();
   }
 }

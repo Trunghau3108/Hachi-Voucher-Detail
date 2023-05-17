@@ -33,11 +33,11 @@
 <!-- treelist  -->
 
 <kendo-treelist
-    [kendoTreeListFlatBinding]="data"
+    [kendoTreeListFlatBinding]="listLocationTree"
     kendoTreeListExpandable
     scrollable="none"
-    idField="id"
-    parentIdField="managerId"
+    idField="LocationID"
+    parentIdField="ParentID"
 >
     <kendo-treelist-column
         [expandable]="true" 
@@ -59,7 +59,6 @@
 
         <ng-template kendoTreeListCellTemplate let-dataItem let-rowIndex="rowIndex">
             <button #anchorButton kendoButton (click)="onToggle(rowIndex)" [ngClass]="{'active': dataItem.showPopup}">...</button>
-          
             <kendo-popup *ngIf="dataItem.showPopup"
              [anchor]="anchorButton"
              on
@@ -85,7 +84,7 @@
 
 <!-- drawer -->
 <kendo-drawer-container>
-    <kendo-drawer #drawer  class="drawer"
+    <kendo-drawer #drawer  class="w-drawer"
     [mode]="'overlay'"
     [(expanded)]="expanded"
     [position]="'end'"
@@ -103,18 +102,21 @@
           <kendo-textbox  ></kendo-textbox>
         </label>
         <label class="k-form-field">
-            <div class="col-half">
-                <span>Mã điểm làm việc</span>
-                <kendo-textbox ></kendo-textbox>
+            <div class="col">
+                <div class="col-half1">
+                    <span>Mã điểm làm việc</span>
+                    <kendo-textbox ></kendo-textbox>
+                </div>
+                <div class="col-half2">
+                    <span>Tên viết tắt</span>
+                    <kendo-textbox ></kendo-textbox>
+                </div>
             </div>
-            <div class="col-half">
-                <span>Tên viết tắt</span>
-                <kendo-textbox ></kendo-textbox>
-            </div>
+           
         </label>
         <label class="k-form-field">
             <span>Trực thuộc</span>
-            <kendo-dropdownlist [data]="VP" [(value)]="VP[0]"></kendo-dropdownlist>
+            <kendo-dropdownlist [data]="VP" ></kendo-dropdownlist>
         </label>
         <label class="k-form-field">
             <span>Địa chỉ liên hệ</span>
@@ -122,15 +124,15 @@
         </label>
         <label class="k-form-field">
             <span>Tỉnh thành</span>
-            <kendo-dropdownlist [data]="TT" [(value)]="TT[0]"></kendo-dropdownlist>
+            <kendo-dropdownlist [data]="TT" ></kendo-dropdownlist>
         </label>
         <label class="k-form-field">
             <span>Quận huyện</span>
-            <kendo-dropdownlist [data]="QH" [(value)]="QH[0]"></kendo-dropdownlist>
+            <kendo-dropdownlist [data]="QH" ></kendo-dropdownlist>
         </label>
         <label class="k-form-field">
             <span>Phường/xã</span>
-            <kendo-dropdownlist [data]="PX" [(value)]="PX[0]"></kendo-dropdownlist>
+            <kendo-dropdownlist [data]="PX"></kendo-dropdownlist>
         </label>
         <label class="k-form-field">  
             <span>Mô tả</span>
@@ -138,7 +140,7 @@
          </label>
          <label class="k-form-field">  
             <span>Tình trạng</span>
-            <kendo-dropdownlist [data]="Ttrang" [(value)]="Ttrang[0]"></kendo-dropdownlist>
+            <kendo-dropdownlist [data]="Ttrang" ></kendo-dropdownlist>
          </label>
         <label class="k-form-field">
           <div class="btn-control">

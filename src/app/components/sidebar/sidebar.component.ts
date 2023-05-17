@@ -29,7 +29,6 @@ export class SidebarComponent {
     { text: "KHUYẾN MÃI", icon: "k-i-inbox"},
     { text: "NỘI DUNG WEBSITE", icon: "k-i-bell" },
     { text: "QUẢN LÝ BANNER", icon: "k-i-calendar" },
-
     { text: "CHÍNH SÁCH", icon: "k-i-envelop-link",id:4 },
     //text-child
     { text: "Coupon", parentId:4 },

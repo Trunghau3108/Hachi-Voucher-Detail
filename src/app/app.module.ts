@@ -38,9 +38,15 @@ import { TreeListModule } from '@progress/kendo-angular-treelist';
 import { OrganiContentComponent } from './components/HachiHR/organization-structre/organi-content/organi-content.component';
 import { EmployeeComponent } from './components/HachiHR/employee/employee-content/employee.component';
 import { PopupModule } from '@progress/kendo-angular-popup';
+import { RouterModule, Routes } from '@angular/router';
 
+// const appRoutes: Routes = [
+//   { path: 'employee', component: EmployeeComponent },
+//   { path: 'organization', component: OrganiContentComponent },
+//   { path: 'work-location', component: WorklocationContentComponent },
 
-
+ 
+// ];
 
 
 
@@ -95,6 +101,8 @@ import { PopupModule } from '@progress/kendo-angular-popup';
     DialogsModule,
     TreeListModule,
     PopupModule,
+    
+     
   ],
   
   providers: [ProductsService],

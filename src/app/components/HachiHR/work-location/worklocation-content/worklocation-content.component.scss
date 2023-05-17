@@ -115,15 +115,13 @@
                 height: 30px;
                 background-color: #BDC2D2;
                 color: #FFFFFF;
-                box-shadow: none;
-                
+                box-shadow: none;           
                 &:hover{
                     background-color: #959DB3;
                 }
                 .k-button-text{
                     font-size: 13px;
-                    font-weight: 400;
-                  
+                    font-weight: 400;       
                 }
             }
             .k-rounded-md{
@@ -133,7 +131,6 @@
     }
 }
  // end popup
-
 
 
     //Treelist
@@ -224,19 +221,20 @@
             margin-top: 50px;
             z-index: 0;
         }
-        .drawer.k-drawer.k-drawer-end {
+        
+        .w-drawer.k-drawer.k-drawer-end {
             width: 400px;
             display: none;
           // ẩn drawer khi chưa click
           }
             &.k-drawer-expanded{
-                .drawer.k-drawer.k-drawer-end {
+                .w-drawer.k-drawer.k-drawer-end {
                     display: block; // hiện drawer khi click
-                    height: 100%;
-                    position: fixed;
+                    height: 100% !important;
+                    position: absolute;
                 }
             }
-        .drawer{
+        .w-drawer{
             background-color: #FFFFFF !important;
             .k-drawer-wrapper{
                 .k-drawer-wrapper.k-form{
@@ -259,7 +257,18 @@
                         display: flex;
                         flex-direction: column;
                         margin: 10px;
-                        
+                        .col{
+                            display: flex;
+                            .col-half1{
+                                width: 145px;
+                                margin-right: 35px;
+                            }
+                            .col-half2{
+                                width: 197px;
+                            }
+                            
+                        }
+                       
                         .k-dropdownlist{
                             width: 145px;
                             height: 37px;
@@ -267,6 +276,11 @@
                             box-shadow: none;
                             .k-input-value-text{
                                 margin-top: 15px;
+                            }
+                            .k-i-caret-alt-down{
+                                &::before{
+                                    content: "\e015";
+                                }
                             }
                         }
                         span{
@@ -300,7 +314,18 @@
         }
       
     }
-
+//dropdown format
+.k-list{
+    .k-list-ul{
+        border: 1px solid #1A6634;
+        .k-list-item.k-selected{
+            background-color: #008000;
+        }
+        .k-list-item.k-focus{
+            box-shadow: none;
+        }
+    }
+}
    
     
     

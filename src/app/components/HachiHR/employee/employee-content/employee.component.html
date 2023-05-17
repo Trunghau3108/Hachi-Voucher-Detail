@@ -1,1 +1,114 @@
-<p>employee works!</p>
+<div class="btn-filter">
+    <div class="left">
+        <button kendoButton>107 - Đang làm việc <input type="checkbox" kendoCheckBox></button>
+        <button kendoButton>1 - Thủ tục nghỉ việc <input type="checkbox" kendoCheckBox></button>
+        <button kendoButton>120 - Đã nghỉ việc <input type="checkbox" kendoCheckBox></button>
+    </div>
+    <div class="right">
+        <button kendoButton> + TẠO MỚI</button>
+    </div>
+</div>
+<br>
+<hr style="color: #BDC2D2 !important">
+<div class="search-filter">
+    <div class="left">
+        <span><img src="assets/images/filter.svg" alt="filter" width="15">LỌC DỮ LIỆU</span>
+         <button kendoButton class="btn-del">Xóa bộ lọc</button>
+    </div>
+    <div class="middle">
+        <span>Tìm kiếm</span> 
+        <div class="search">
+            <kendo-textbox  
+            [style.width.px]="372"
+            [style.height.px]="32"
+            placeholder="Tìm theo mã, họ và tên nhân viên, chức danh"
+            [clearButton]="true"
+            >
+            <ng-template kendoTextBoxPrefixTemplate>
+                <img class="img-search" src="assets/images/search.svg"  alt="filter" width="15">
+            </ng-template>
+
+        </kendo-textbox>
+            <button kendoButton imageUrl="assets/images/search-w.svg" class="btn-search">Tìm</button>
+        </div>
+    </div>
+</div>
+<br>
+<hr>
+
+<div class="grid-employee">
+    <kendo-grid
+    [pageSize]="20"
+    [pageable]="true"
+    [sortable]="true"
+    [groupable]="true"
+    [reorderable]="true"
+    [resizable]="true"
+    [scrollable]="'none'"
+    [height]="500"
+    >
+    <kendo-grid-checkbox-column
+    [width]="20"
+    [headerClass]="{ 'text-center': true }"
+    [class]="{ 'text-center': true }"
+    [resizable]="false"
+    [columnMenu]="false"
+    [showSelectAll]="true"
+    >
+    </kendo-grid-checkbox-column>
+    <kendo-grid-column field="full_name" title="Họ và tên" [width]="70">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <div class="image-avt">
+
+            </div>
+          <div class="customer-name">{{ dataItem.full_name }}</div>
+        </ng-template>
+      </kendo-grid-column>
+
+      <kendo-grid-column field="job_title" title="Đơn vị công tác" [width]="60">
+      </kendo-grid-column>
+
+      <kendo-grid-column
+        field="country"
+        title="Điểm làm việc"
+        [width]="60"
+      >
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <div class="">{{ dataItem.full_name }}</div>
+      </ng-template>
+      </kendo-grid-column>
+
+      <kendo-grid-column field="job_title" title="Giới tính" [width]="60">
+    </kendo-grid-column>
+    <kendo-grid-column field="job_title" title="Năm sinh" [width]="60">
+    </kendo-grid-column>
+    <kendo-grid-column field="job_title" title="Ngày vào làm" [width]="60">
+    </kendo-grid-column>
+    <kendo-grid-column field="job_title" title="Loại nhân viên" [width]="70">
+    </kendo-grid-column>
+    <kendo-grid-column field="job_title" title="Tình trạng" [width]="60">
+    </kendo-grid-column>
+    <kendo-grid-column [width]="20">
+    </kendo-grid-column>
+      
+
+    </kendo-grid>
+</div>
+
+<kendo-popup *ngIf="showPopup"
+
+>
+ <div class="content">
+   <!-- User-defined content -->
+   <div class="filter">
+       <button kendoButton imageUrl="assets/images/edit.svg">Chỉnh sửa</button>
+   </div>
+   <div class="filter">
+       <button kendoButton imageUrl="assets/images/new.svg">Xin nghỉ việc</button>
+   </div>
+   <div class="filter">
+       <button kendoButton imageUrl="assets/images/new.svg">Duyệt nghỉ việc</button>
+   </div>
+  
+ </div>
+</kendo-popup>
